@@ -82,3 +82,16 @@ A linguagem de programação utilizada é Python, na sua versão de número 3.11
 --------------------|--------|-------------|
 PyQt5               | 5.15.2.|[PyQt5](https://doc.qt.io/qt-5.15/)
 reportlab           |10.1.0  |[reportlab](https://docs.reportlab.com/)
+
+#
+## LAYOUT PRINCIPAL
+#
+No presente momento, o aplicativo tem o seguinte layout principal, sem outras janelas para as funcionalidades, por enquanto:
+
+![](./layout-sgt.png)
+
+Na primeira **coluna COBERTURAS**, temos a opção, sob a forma de checkboxes, de seleção das coberturas de acordo com o TIPO DE PLANO. Futuramente será implementada a funcionalidade de preenchimento automático das coberturas de acordo com o plano.
+
+A vantagem da seleção manual da cobertura estar disponível é que, em alguns casos, os clientes escolhem não ter alguma das coberturas que fazem parte de algum plano a fim de abater no valor da mensalidade. Por exemplo, um cliente pode optar por retirar a cobertura de perda total do seu plano Ouro.
+
+Em seguida, temos a **coluna DADOS DO CLIENTE**. Aqui são colocados os dados do cliente  a fim de serem colocados no termo que desejar gerar ao final do cadastro.
