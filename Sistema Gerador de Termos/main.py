@@ -385,14 +385,14 @@ class Ui_MainWindow(object):
                 self.cnv.drawImage(r'company_data.png', x=290, y=710, width=270, height=55)
                                 #INSERIR DADOS DA EMPRESA
                 self.cnv.setFont(psfontname='Times-Roman',size=12)
-                self.cnv.drawString(x=298,y=737, text='CLUBE DE BENEFICIOS MÁXIMA PROTEÇÃO')
-                self.cnv.drawString(x=298,y=725, text='40.989.892/0001-10')
+                self.cnv.drawString(x=298,y=737, text='')
+                self.cnv.drawString(x=298,y=725, text='')
 
                 #INSERIR IMAGEM DO TIPO DE TERMO:
                 self.cnv.drawImage(r'term_type.png',x=40,y=710,width=230,height=20)
                                 #INSERIR TIPO DE TERMO
                 self.cnv.setFont(psfontname='Times-Bold',size=12)
-                self.cnv.drawString(x=100,y=717, text= 'CANCELAMENTO')
+                self.cnv.drawString(x=100,y=717, text= '')
 
                 #INSERIR IMAGEM DOS DETALHES DO TIPO DE TERMO:
                 self.cnv.drawImage(r'details_term_cancel.png',x=40,y=615,width=520,height=94)
@@ -401,19 +401,19 @@ class Ui_MainWindow(object):
                 self.cnv.drawImage(r'clientdata_cancel.png',x=40,y=520,width=520,height=94)
                 #INSERIR DADOS DO ASSOCIADO:
                                 #NOME/RAZÃO SOCIAL:
-                self.cnv.drawString(x=155, y=571, text= 'NOME DO ASSOCIADO')
+                self.cnv.drawString(x=155, y=571, text= '')
                                 #CPF/CNPJ:
-                self.cnv.drawString(x=85, y=549, text= 'CPF/CNPJ')
+                self.cnv.drawString(x=85, y=549, text= '')
                                 #MONTADORA:
-                self.cnv.drawString(x=285, y=549, text= 'MONTADORA')
+                self.cnv.drawString(x=285, y=549, text= '')
                                 #MODELO:
-                self.cnv.drawString(x=415, y=549, text= 'MODELO')
+                self.cnv.drawString(x=415, y=549, text= '')
                                 #ANO:
-                self.cnv.drawString(x=85, y=527, text= 'ANO')
+                self.cnv.drawString(x=85, y=527, text= '')
                                 #PLACA:
-                self.cnv.drawString(x=265, y=527, text= 'PLACA')
+                self.cnv.drawString(x=265, y=527, text= '')
                                 #COR:
-                self.cnv.drawString(x=405, y=527, text= 'COR')
+                self.cnv.drawString(x=405, y=527, text= '')
 
                 #INSERIR IMAGEM DOS DADOS FINANCEIROS:
                 self.cnv.drawImage(r'finance.png',x=40,y=470,width=520,height=50)
