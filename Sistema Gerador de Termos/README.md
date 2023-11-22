@@ -140,7 +140,7 @@ O **Termo de Adesão**  possui o seguinte layout, conforme imagem abaixo:
 
 <br>![termo de adesão](termodeadesao.png)  
 
-<br>Como visto acima, o termo de adesão é o único que tem todos os campos para preenhcimento das informações oriundas das colunas **COBERTURA**,  **DADOS DO CLIENTE**, **DADOS DO ASSOCIADO** e **TIPO DE PLANO**.<br>
+<br>Como visto acima, o termo de adesão é o único que tem todos os campos para preenchimento das informações oriundas das colunas **COBERTURA**,  **DADOS DO CLIENTE**, **DADOS DO ASSOCIADO** e **TIPO DE PLANO**.<br>
 #
 
 O **TERMO DE ENCAMINHAMENTO** tem o seguinte layout:
@@ -150,16 +150,16 @@ O **TERMO DE ENCAMINHAMENTO** tem o seguinte layout:
 <br>Como visto na imagem, o termo de encaminhamento mostra, logo após a especificação no DETALHAMENTO, os seguintes campos que receberão os dados inseridos nos inputs das colunas:<br>
 
 - Nome completo/Razão Social;
-- CPF/CNPJ;
-- Montadora;
-- Modelo;
- - Ano;
- - Placa;
- - Cor.
- - Mensalidade;
+- CPF/CNPJ
+- Montadora
+- Modelo
+ - Ano
+ - Placa
+ - Cor
+ - Mensalidade
  - Taxa de Adesão
- - Taxa de Cancelamento;
- - Pagamento Total.
+ - Taxa de Cancelamento
+ - Pagamento Total
 
 O **TERMO DE CANCELAMENTO** tem o seguinte layout:
 
