@@ -10,10 +10,10 @@ Vale destacar que, por estar ainda em desenvolvimento, este programa de computad
 <br>Eis os nomes dos planos e suas coberturas:
 
 
-|<br>MONITORAMENTO   
--------------- 
+### <br>MONITORAMENTO
+-----------------   
 Rastreamento
-Monitoramento
+<br>Monitoramento
 
 |<br>BRONZE 01   
 -------------- 
