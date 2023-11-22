@@ -3,9 +3,9 @@
 <br>*Trata-se de um programa que gera algumas espécies de termos para empresas de proteção veicular.* 
 
 ## <br>PLANOS E SUAS COBERTURAS
-#
 
-Vale destacar que, por estar ainda em desenvolvimento, este programa de computador tem caráter restrito as características de operação da empresa na qual seu desenvolvedor trabalha. Especificamente, tal empresa trabalha com categorias de planos de proteção veicular que se diferenciam de acordo com as coberturas a eles atreladas . 
+
+<br>Vale destacar que, por estar ainda em desenvolvimento, este programa de computador tem caráter restrito as características de operação da empresa na qual seu desenvolvedor trabalha. Especificamente, tal empresa trabalha com categorias de planos de proteção veicular que se diferenciam de acordo com as coberturas a eles atreladas . 
 
 <br>Eis os nomes dos planos e suas coberturas:
 
@@ -15,63 +15,63 @@ Vale destacar que, por estar ainda em desenvolvimento, este programa de computad
 Rastreamento
 <br>Monitoramento
 
-|<br>BRONZE 01   
+### <br>BRONZE 01   
 -------------- 
 Rastreamento
-Monitoramento
-Roubo
-Furto
-Três reboques gratuitos a.a.
+<br>Monitoramento
+<br>Roubo
+<br>Furto
+<br>Três reboques gratuitos a.a.
 
-|<br>BRONZE 02   
+### <br>BRONZE 02   
 -------------- 
 Rastreamento
-Monitoramento
-Roubo
-Furto
-Três reboques gratuitos a.a.
-Vidros em geral
+<br>Monitoramento
+<br>Roubo
+<br>Furto
+<br>Três reboques gratuitos a.a.
+<br>Vidros em geral
 
-|<br>PRATA 01   
+### <br>PRATA 01   
 -------------- 
 Rastreamento
-Monitoramento
-Roubo
-Furto
-Colisão
-Seis reboques gratuitos a.a.
-Reboque ilimitado por quebra
-Quinhentos quilômetros de reboque
+<br>Monitoramento
+<br>Roubo
+<br>Furto
+<br>Colisão
+<br>Seis reboques gratuitos a.a.
+<br>Reboque ilimitado por quebra
+<br>Quinhentos quilômetros de reboque
 
-|<br>PRATA 02   
+### <br>PRATA 02   
 -------------- 
 Rastreamento
-Monitoramento
-Roubo
-Furto
-Colisão
-Seis reboques gratuitos a.a.
-Reboque ilimitado por quebra
-Quinhentos quilômetros de reboque
-Vidros em geral
+<br>Monitoramento
+<br>Roubo
+<br>Furto
+<br>Colisão
+<br>Seis reboques gratuitos a.a.
+<br>Reboque ilimitado por quebra
+<br>Quinhentos quilômetros de reboque
+<br>Vidros em geral
 
 
-|<br>OURO    
+### <br>OURO    
 -------------- 
 Rastreamento
-Monitoramento
+<br>Monitoramento
 Roubo
-Furto
-Colisão
-Perda Total
-Seis reboques gratuitos a.a.
-Reboque ilimitado por quebra
-Quinhentos quilômetros de reboque
-Vidros em geral
+<br>Furto
+<br>Colisão
+<br>Perda Total
+<br>Seis reboques gratuitos a.a.
+<br>Reboque ilimitado por quebra
+<br>Quinhentos quilômetros de reboque
+<br>Vidros em geral
 
 ## <br>TECNOLOGIAS UTILIZADAS
-#
-### _Linguagem de Programação_
+
+### <br>_Linguagem de Programação_
 
 A linguagem de programação utilizada é Python, na sua versão de número 3.11.5. A documentação está disponível [aqui](https://docs.python.org/3.11/).
 
@@ -85,8 +85,8 @@ reportlab           |10.1.0  |[reportlab](https://docs.reportlab.com/)
 
 
 ## <br>LAYOUT PRINCIPAL
-#
-No presente momento, o aplicativo tem o seguinte layout principal, sem outras janelas para as funcionalidades, por enquanto:
+
+<br>No presente momento, o aplicativo tem o seguinte layout principal, sem outras janelas para as funcionalidades, por enquanto:
 
 ![](./layout-sgt.png)
 
@@ -122,8 +122,8 @@ Gerar Termo de Cancelamento| Gera termo de cancelamento para associados (as) que
 
 
 ## <br>TIPOS DE TERMOS
-#
-O Sistema Gerador de Termos elabora, de forma simples, quatro termos com base na biblioteca reportlab. Até o momento, o programa ainda não gera somente o **RECIBO** e o template para o TERMO DE ENTREGA DE VEÍCULO ainda está em construção, mas os restante dos termos são gerados normalmente.
+
+<br>O Sistema Gerador de Termos elabora, de forma simples, quatro termos com base na biblioteca reportlab. Até o momento, o programa ainda não gera somente o **RECIBO** e o template para o TERMO DE ENTREGA DE VEÍCULO ainda está em construção, mas os restante dos termos são gerados normalmente.
 
 <br>Cada um dos termos apresenta a descrição de seu tipo no campo **DETALHAMENTO**. Nele tem-se a especificação do caráter do termo.
 
@@ -167,9 +167,9 @@ O **TERMO DE CANCELAMENTO** tem o seguinte layout:
 <br>O termo de cancelamento possui os mesmos campos do template PDF do termo de encaminhamento.<br>
 
 ## <br>ONDE OS ARQUIVOS EM PDF SÃO SALVOS
-#
-Quando qualquer dos botões para geração de algum termo ou, futuramente, recibo é pressionado, os arquivos gerados são salvos na pasta raíz onde o arquivo *main.py* está presente, enquanto não é implementada a funcionalidade de dar a liberdade ao usuário de salvar tais arquivos onde desejar. 
+
+<br>Quando qualquer dos botões para geração de algum termo ou, futuramente, recibo é pressionado, os arquivos gerados são salvos na pasta raíz onde o arquivo *main.py* está presente, enquanto não é implementada a funcionalidade de dar a liberdade ao usuário de salvar tais arquivos onde desejar. 
 
 ## <br>NOME DOS ARQUIVOS GERADOS
-#
+
 <br>Vale destacar que, quando gerados, os arquivos são nomeados da seguinte forma: **Nome do Associado(a) + tipo do termo**. Por exemplo, caso o associado esteja aderindo a quaisquer dos planos e clicar-se no botão Gerar Termo de Adesão, tal documento será criado sob o nome do associado seguido do tipo de termo (adesão, nesse caso).
