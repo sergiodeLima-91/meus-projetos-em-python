@@ -286,7 +286,7 @@ class Ui_MainWindow(object):
 #========================================== GERAÇÃO DE TERMO DE ENTREGA DE VEÍCULO ==========================================
 
         def GerarTermoDeEntregaDeVeiculo(self):
-                self.cnv = canvas.Canvas(f'{self.lineEdit_name.text().upper()} - ENTREGA DE VEÍCULO.pdf')
+                self.cnv = canvas.Canvas(f'{self.lineEdit_name.text()} - ENTREGA DE VEÍCULO.pdf')
 
                 #INSERIR IMAGEM DO NOME DO PROGRAMA E LOGO:
                 self.cnv.drawImage(r'system_name_logo.png',x=40,y=800,width=190,height=30)
@@ -296,77 +296,83 @@ class Ui_MainWindow(object):
                 self.cnv.drawImage(r'company_data.png', x=290, y=710, width=270, height=55)
                                 #INSERIR DADOS DA EMPRESA
                 self.cnv.setFont(psfontname='Times-Roman',size=12)
-                self.cnv.drawString(x=298,y=737, text= self.lineEdit_razao_social.text().upper())
-                self.cnv.drawString(x=298,y=725, text= self.lineEdit_cnpj.text().upper())
+                self.cnv.drawString(x=298,y=737, text='CLUBE DE BENEFICIOS MÁXIMA PROTEÇÃO')
+                self.cnv.drawString(x=298,y=725, text='40.989.892/0001-10')
 
                 #INSERIR IMAGEM DO TIPO DE TERMO:
                 self.cnv.drawImage(r'term_type.png',x=40,y=710,width=230,height=20)
                                 #INSERIR TIPO DE TERMO
                 self.cnv.setFont(psfontname='Times-Bold',size=12)
-                self.cnv.drawString(x=100,y=717, text= 'ENCAMINHAMENTO')
+                self.cnv.drawString(x=100,y=716.5, text= 'ENTREGA DE VEÍCULO')
 
                 #INSERIR IMAGEM DOS DETALHES DO TIPO DE TERMO:
-                self.cnv.drawImage(r'details_term_entregadeveiculo.png',x=40,y=466,width=520,height=150)
+                self.cnv.drawImage(r'details_term_entregadeveiculo.png',x=40,y=560,width=520,height=150)
 
                 #INSERIR IMAGEM DOS DADOS DO ASSOCIADO:
                 self.cnv.drawImage(r'clientdata_cancel.png',x=40,y=466,width=520,height=94)
                 #INSERIR DADOS DO ASSOCIADO:
                                 #NOME/RAZÃO SOCIAL:
-                self.cnv.drawString(x=155, y=517, text= 'NOME DO ASSOCIADO')
+                self.cnv.drawString(x=155, y=517, text= self.lineEdit_name.text())
                                 #CPF/CNPJ:
-                self.cnv.drawString(x=85, y=496, text= 'CPF/CNPJ')
+                self.cnv.drawString(x=85, y=496, text= self.lineEdit_cpf.text())
                                 #MONTADORA:
-                self.cnv.drawString(x=285, y=496, text= 'MONTADORA')
+                self.cnv.drawString(x=285, y=496, text= self.lineEdit_assembler.text())
                                 #MODELO:
-                self.cnv.drawString(x=415, y=496, text= 'MODELO')
+                self.cnv.drawString(x=415, y=496, text= self.lineEdit_model.text())
                                 #ANO:
-                self.cnv.drawString(x=85, y=473, text= 'ANO')
+                self.cnv.drawString(x=85, y=473, text= self.lineEdit_year.text())
                                 #PLACA:
-                self.cnv.drawString(x=265, y=473, text= 'PLACA')
+                self.cnv.drawString(x=265, y=473, text= self.lineEdit_plate.text())
                                 #COR:
-                self.cnv.drawString(x=405, y=473, text= 'COR')
+                self.cnv.drawString(x=405, y=473, text= self.lineEdit_color.text())
+
+                #INSERIR IMAGEM DOS DADOS DO EVENTO:
+                self.cnv.drawImage(r'event_data.png', x=40, y=350, width=520, height=115)
+                #INSERIR DADOS DO EVENTO:
+                                #DATA:
+                self.cnv.drawString(x=70, y=422.5, text= self.dateEdit_start.text())
 
                 #ENCERRAMENTO:
                                 #CAPTAÇÃO DA DATA ATUAL:
-                self.day = date.today().day
-                self.month = date.today().month
-                self.year = date.today().year
-                self.month_current = str()
-                if self.month == 1:
-                        self.month_current = 'JANEIRO'
-                elif self.month == 2:
-                        self.month_current = 'FEVEREIRO'
-                elif self.month == 3:
-                        self.month_current = 'MARCO'
-                elif self. month == 4:
-                        self.month_current = 'ABRIL'
-                elif self.month == 5:
-                        self.month_current = 'MAIO'
-                elif self.month == 6:
-                        self.month_current = 'JUNHO'
-                elif self.month == 7:
-                        self.month_current = 'JULHO'
-                elif self.month == 8:
-                        self.month_current = 'AGOSTO'
-                elif self.month == 9:
-                        self.month_current = 'SETEMBRO'
-                elif self.month == 10:
-                        self.month_current = 'OUTUBRO'
-                elif self.month == 11:
-                        self.month_current = 'NOVEMBRO'
-                elif self.month == 12:
-                        self.month_current = 'DEZEMBRO'
+                day = date.today().day
+                month = date.today().month
+                year = date.today().year
+                month_current = str()
+                if month == 1:
+                        month_current = 'JANEIRO'
+                elif month == 2:
+                        month_current = 'FEVEREIRO'
+                elif month == 3:
+                        month_current = 'MARCO'
+                elif month == 4:
+                        month_current = 'ABRIL'
+                elif month == 5:
+                        month_current = 'MAIO'
+                elif month == 6:
+                        month_current = 'JUNHO'
+                elif month == 7:
+                        month_current = 'JULHO'
+                elif month == 8:
+                        month_current = 'AGOSTO'
+                elif month == 9:
+                        month_current = 'SETEMBRO'
+                elif month == 10:
+                        month_current = 'OUTUBRO'
+                elif month == 11:
+                        month_current = 'NOVEMBRO'
+                elif month == 12:
+                        month_current = 'DEZEMBRO'
 
-                self.cnv.drawString(x=40,y=400, text='Sem mais,')
+                self.cnv.drawString(x=40,y=300, text='Sem mais,')
                 self.cnv.setFont(psfontname='Times-Italic',size=12)
-                                #NOME FANTASIA DA EMPRESA PARA ASSINATURA:
-                self.cnv.line(40, 313, 350, 313)
-                self.cnv.drawString(x=40,y=300,text= 'CONSULTOR / VISTORIADOR AUTORIZADO')
-                self.cnv.line(40, 255, 350, 255)
-                self.cnv.drawString(x=40,y=242,text= 'ASSOCIADO (A)')
+                                #NOME FANTASIA DA EMPRESA  E DO ASSOCIADO PARA ASSINATURA:
+                self.cnv.line(40, 232, 350, 232)
+                self.cnv.drawString(x=40,y=220,text= 'CONSULTOR / VISTORIADOR AUTORIZADO')
+                self.cnv.line(40, 152, 350, 152)
+                self.cnv.drawString(x=40,y=140,text= 'ASSOCIADO (A)')
                 self.cnv.setFont(psfontname='Times-BoldItalic',size=12)
                                 #IMPRIMIR DATA ATUAL E CIDADE DA SEDE ADMINISTRATIVA NO DOCUMENTO:
-                self.cnv.drawString(x=40,y=200,text= 'CAMPINA GRANDE ,'  + f' {self.day} de {self.month_current} de {self.year}')
+                self.cnv.drawString(x=40,y=23,text= 'CAMPINA GRANDE ,'  + f' {day} de {month_current} de {year}')
 
 
                 #SALVAR PDF:
