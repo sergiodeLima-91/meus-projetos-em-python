@@ -100,7 +100,8 @@ Em seguida, temos a coluna **DADOS DO CLIENTE**. Aqui são colocados os dados do
 Cada tipo de termo possui seus campos nos quais nem todas as informações do cliente (dados pessoais ou do veículo) são usadas. O termo de cancelamento, por exemplo, não solicita os campos de endereço do cliente, conforme imagem abaixo:
 
 ![termo de cancelamento](termocancelamento.png)
-Os detalhes sobre os dados que cada tipo de termo solicita serão passados na seção **TIPOS DE TERMOS**.
+
+<br>Os detalhes sobre os dados que cada tipo de termo solicita serão passados na seção **TIPOS DE TERMOS**.
 #
 Na coluna **DADOS DO VEÍCULO**, como o próprio nome já diz, captamos o dados do veículo do cliente
 
