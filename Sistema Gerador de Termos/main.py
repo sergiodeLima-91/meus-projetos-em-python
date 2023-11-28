@@ -9,12 +9,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QComboBox
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from datetime import date
 
 
-class Ui_MainWindow(object):
+class Ui_MainWindow(object):                
 
         def GerarTermoDeAdesao(self):
                 self.cnv = canvas.Canvas(f'{self.lineEdit_name.text().upper()} - ADESÃO.pdf')
@@ -385,7 +386,7 @@ class Ui_MainWindow(object):
 #========================================== GERAÇÃO DE TERMO DE CANCELAMENTO ==========================================
 
         def GerarTermoDeCancelamento(self):
-                self.cnv = canvas.Canvas(f'{self.lineEdit_name.text()} - CANCELAMENTO.pdf')
+                self.cnv = canvas.Canvas(f'{self.lineEdit_name.text().upper()} - CANCELAMENTO.pdf')
 
                 #INSERIR IMAGEM DO NOME DO PROGRAMA E LOGO:
                 self.cnv.drawImage(r'system_name_logo.png',x=40,y=800,width=190,height=30)
@@ -395,14 +396,14 @@ class Ui_MainWindow(object):
                 self.cnv.drawImage(r'company_data.png', x=290, y=710, width=270, height=55)
                                 #INSERIR DADOS DA EMPRESA
                 self.cnv.setFont(psfontname='Times-Roman',size=12)
-                self.cnv.drawString(x=298,y=737, text='')
-                self.cnv.drawString(x=298,y=725, text='')
+                self.cnv.drawString(x=298,y=737, text= self.lineEdit_razao_social.text().upper())
+                self.cnv.drawString(x=298,y=725, text= self.lineEdit_cnpj.text().upper())
 
                 #INSERIR IMAGEM DO TIPO DE TERMO:
                 self.cnv.drawImage(r'term_type.png',x=40,y=710,width=230,height=20)
                                 #INSERIR TIPO DE TERMO
                 self.cnv.setFont(psfontname='Times-Bold',size=12)
-                self.cnv.drawString(x=100,y=717, text= '')
+                self.cnv.drawString(x=100,y=717, text= 'CANCELAMENTO')
 
                 #INSERIR IMAGEM DOS DETALHES DO TIPO DE TERMO:
                 self.cnv.drawImage(r'details_term_cancel.png',x=40,y=615,width=520,height=94)
@@ -411,19 +412,19 @@ class Ui_MainWindow(object):
                 self.cnv.drawImage(r'clientdata_cancel.png',x=40,y=520,width=520,height=94)
                 #INSERIR DADOS DO ASSOCIADO:
                                 #NOME/RAZÃO SOCIAL:
-                self.cnv.drawString(x=155, y=571, text= '')
+                self.cnv.drawString(x=155, y=571, text= self.lineEdit_name.text().upper())
                                 #CPF/CNPJ:
-                self.cnv.drawString(x=85, y=549, text= '')
+                self.cnv.drawString(x=85, y=549, text= self.lineEdit_cpf.text().upper())
                                 #MONTADORA:
-                self.cnv.drawString(x=285, y=549, text= '')
+                self.cnv.drawString(x=285, y=549, text= self.lineEdit_assembler.text().upper())
                                 #MODELO:
-                self.cnv.drawString(x=415, y=549, text= '')
+                self.cnv.drawString(x=415, y=549, text= self.lineEdit_model.text().upper())
                                 #ANO:
-                self.cnv.drawString(x=85, y=527, text= '')
+                self.cnv.drawString(x=85, y=527, text= self.lineEdit_year.text().upper())
                                 #PLACA:
-                self.cnv.drawString(x=265, y=527, text= '')
+                self.cnv.drawString(x=265, y=527, text= self.lineEdit_plate.text().upper())
                                 #COR:
-                self.cnv.drawString(x=405, y=527, text= '')
+                self.cnv.drawString(x=405, y=527, text= self.lineEdit_color.text().upper())
 
                 #INSERIR IMAGEM DOS DADOS FINANCEIROS:
                 self.cnv.drawImage(r'finance.png',x=40,y=470,width=520,height=50)
@@ -1569,8 +1570,10 @@ class Ui_MainWindow(object):
                 self.label_formapagto.setObjectName("label_formapagto")
                 self.verticalLayout_8.addWidget(self.label_formapagto)
                 self.comboBox_formapagto = QtWidgets.QComboBox(self.frame_playndate_2)
+                self.payments = ['BOLETO','DINHEIRO','DÉBITO','CRÉDITO','TRANSFERÊNCIA', 'DEPÓSITO BANCÁRIO','PIX', 'NÃO INFORMADO']
+                self.comboBox_formapagto.addItems(self.payments)
                 self.comboBox_formapagto.setStyleSheet("QComboBox{\n"
-        "    border-radius: 2px;\n"
+        "    border-radius: 2px; font: bold;\n"
         "}")
                 self.comboBox_formapagto.setObjectName("comboBox_formapagto")
                 self.verticalLayout_8.addWidget(self.comboBox_formapagto)
@@ -1773,14 +1776,13 @@ class Ui_MainWindow(object):
 
 
                 #
-                #FUNÇÕES?
+                #FUNÇÕES
                 #
 
                 self.pushButton_adhesion.pressed.connect(self.GerarTermoDeAdesao)
                 self.pushButton_forwarding.pressed.connect(self.GerarTermoDeEncaminhamento)
                 self.pushButton_vehicle_delivery.pressed.connect(self.GerarTermoDeEntregaDeVeiculo)
                 self.pushButton_cancel.pressed.connect(self.GerarTermoDeCancelamento)
-
 
                 self.retranslateUi(MainWindow)
                 QtCore.QMetaObject.connectSlotsByName(MainWindow)
