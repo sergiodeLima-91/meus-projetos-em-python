@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1505</width>
-    <height>672</height>
+    <height>499</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -154,7 +154,7 @@ QScrollBar::add-line:horizontal{
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
+         <y>-177</y>
          <width>1491</width>
          <height>700</height>
         </rect>
@@ -291,7 +291,7 @@ p, li { white-space: pre-wrap; }
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-image: url(:/backgrounds/Images/background-blue-1715x980.jpg);
+              <string notr="true">background-image: url(./background-blue-1715x980.jpg);
 border-radius: 8px;</string>
              </property>
              <property name="frameShape">
@@ -618,8 +618,7 @@ QCheckBox:hover{
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-image: url(:/backgrounds/Images/background-blue-1715x980.jpg);
-border-radius: 8px;</string>
+              <string notr="true">background-image: url(./background-blue-1715x980.jpg);border-radius: 8px;</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1044,8 +1043,7 @@ QLineEdit:focus{
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-image: url(:/backgrounds/Images/background-blue-1715x980.jpg);
-border-radius: 8px;</string>
+              <string notr="true">background-image: url(./background-blue-1715x980.jpg);border-radius: 8px;</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1306,6 +1304,28 @@ QLineEdit:focus{
                    </property>
                   </widget>
                  </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_hora">
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit{
+	
+	background-color: rgb(148, 148, 148);
+	border: 1px solid rgb(10,10,10);
+	border-radius: 5px;
+	padding: 2px;
+}
+QLineEdit:hover{
+	border: 1px solid rgb(150,150,150);
+}
+QLineEdit:focus{
+	border: 2px solid rgb(100, 100, 255);
+}</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>HORARIO DE EVENTOS</string>
+                   </property>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
               </item>
@@ -1530,7 +1550,7 @@ QRadioButton:hover{
                 <property name="minimumSize">
                  <size>
                   <width>161</width>
-                  <height>231</height>
+                  <height>286</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -1739,21 +1759,137 @@ QLineEdit:focus{
                    </layout>
                   </widget>
                  </item>
+                 <item>
+                  <widget class="QFrame" name="frame_playndate_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>142</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Segoe UI</family>
+                    </font>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_8">
+                    <item>
+                     <widget class="QLabel" name="label_detail_recibo">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Detalhamento para Recibo</string>
+                      </property>
+                      <property name="textFormat">
+                       <enum>Qt::PlainText</enum>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QTextEdit" name="textEdit_detail_pagto_obs">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>58</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QTextEdit{
+	
+	background-color: rgb(142, 216, 141);
+	border: 2px solid rgb(0, 102, 52);
+	border-radius: 5px;
+	padding: 2px;
+}
+QTextEdit:hover{
+	border: 2px solid rgb(100, 202, 152);
+}
+QTextEdit:focus{
+	border: 2px solid rgb(0, 0, 255);
+}</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>OBSERVAÇÕES</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_formapagto">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Forma de Pagamento</string>
+                      </property>
+                      <property name="textFormat">
+                       <enum>Qt::PlainText</enum>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QComboBox" name="comboBox_formapagto">
+                      <property name="styleSheet">
+                       <string notr="true">QComboBox{
+	border-radius: 2px;
+}</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
               </item>
               <item>
-               <widget class="QFrame" name="frame_client_data_outside_2">
+               <widget class="QFrame" name="frame_company_data_outside_2">
                 <property name="minimumSize">
                  <size>
                   <width>150</width>
-                  <height>208</height>
+                  <height>120</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
                   <width>300</width>
-                  <height>201</height>
+                  <height>200</height>
                  </size>
                 </property>
                 <property name="styleSheet">
@@ -1772,7 +1908,7 @@ background-color: rgb(170, 255, 255);</string>
                    <property name="minimumSize">
                     <size>
                      <width>150</width>
-                     <height>190</height>
+                     <height>118</height>
                     </size>
                    </property>
                    <property name="styleSheet">
