@@ -474,6 +474,104 @@ class Ui_MainWindow(object):
                 self.cnv.drawString(x=40,y=200,text= 'CAMPINA GRANDE ,'  + f' {self.day} de {self.month_current} de {self.year}')
 
 
+                #SALVAR PDF:self.
+                self.cnv.save()
+
+#========================================== GERAÇÃO DE RECIBO ==========================================
+
+        
+        def GerarRecibo(self):
+                self.cnv = canvas.Canvas(f'{self.lineEdit_name.text().upper()} - RECIBO.pdf')
+
+                #INSERIR IMAGEM DO NOME DO PROGRAMA E LOGO:
+                self.cnv.drawImage(r'system_name_logo.png',x=40,y=800,width=190,height=30)
+                self.cnv.drawImage(r'system_name_logo.png',x=372,y=10,width=190,height=30)
+
+                #INSERIR IMAGEM DOS DADOS DA EMPRESA:
+                self.cnv.drawImage(r'company_data.png', x=290, y=710, width=270, height=55)
+                                #INSERIR DADOS DA EMPRESA
+                self.cnv.setFont(psfontname='Times-Roman',size=12)
+                self.cnv.drawString(x=298,y=737, text= 'MAXIMA PROTEÇAÕ VEICULAR')
+                self.cnv.drawString(x=298,y=725, text= '414.252.0001-85')
+
+                #INSERIR IMAGEM DO TIPO DE TERMO:
+                self.cnv.drawImage(r'term_type.png',x=40,y=710,width=230,height=20)
+                                #INSERIR TIPO DE TERMO
+                self.cnv.setFont(psfontname='Times-Bold',size=12)
+                self.cnv.drawString(x=100,y=717, text= 'RECIBO')
+
+                #INSERIR IMAGEM DOS DETALHES DO TIPO DE TERMO:
+                self.cnv.drawImage(r'recibo_detalhamento.png',x=40,y=588,width=520,height=120)
+
+                #INSERIR IMAGEM DOS DADOS DO ASSOCIADO:
+                self.cnv.drawImage(r'clientdata_cancel.png',x=40,y=495,width=520,height=94)
+                #INSERIR DADOS DO ASSOCIADO:
+                                #NOME/RAZÃO SOCIAL:
+                self.cnv.drawString(x=155, y=546, text= self.lineEdit_name.text().upper())
+                                #CPF/CNPJ:
+                self.cnv.drawString(x=85, y=524, text= self.lineEdit_cpf.text().upper())
+                                #MONTADORA:
+                self.cnv.drawString(x=285, y=524, text= self.lineEdit_assembler.text().upper())
+                                #MODELO:
+                self.cnv.drawString(x=415, y=524, text= self.lineEdit_model.text().upper())
+                                #ANO:
+                self.cnv.drawString(x=85, y=502, text= self.lineEdit_year.text().upper())
+                                #PLACA:
+                self.cnv.drawString(x=265, y=502, text= self.lineEdit_plate.text().upper())
+                                #COR:
+                self.cnv.drawString(x=405, y=502, text= self.lineEdit_color.text().upper())
+
+                #INSERIR IMAGEM DOS DADOS FINANCEIROS:
+                self.cnv.drawImage(r'finance.png',x=40,y=445,width=520,height=50)
+                #INSERIR DADOS FINANCEIROS:
+                                #MENSALIDADE:
+                self.cnv.drawString(x=106, y=452.5, text= self.lineEdit_monthly_payment.text().upper())
+                                #TAXA DE CANCELAMENTO:
+                self.cnv.drawString(x=362, y=452.5, text= self.lineEdit_membership_fee.text().upper())
+
+                #ENCERRAMENTO:
+                        #CAPTAÇÃO DA DATA ATUAL:
+                self.day = date.today().day
+                self.month = date.today().month
+                self.year = date.today().year
+                self.month_current = str()
+                if self.month == 1:
+                        month_current = 'JANEIRO'
+                elif self.month == 2:
+                        month_current = 'FEVEREIRO'
+                elif self.month == 3:
+                        month_current = 'MARCO'
+                elif self.month == 4:
+                        month_current = 'ABRIL'
+                elif self.month == 5:
+                        month_current = 'MAIO'
+                elif self.month == 6:
+                        month_current = 'JUNHO'
+                elif self.month == 7:
+                        month_current = 'JULHO'
+                elif self.month == 8:
+                        month_current = 'AGOSTO'
+                elif self.month == 9:
+                        month_current = 'SETEMBRO'
+                elif self.month == 10:
+                        month_current = 'OUTUBRO'
+                elif self.month == 11:
+                        month_current = 'NOVEMBRO'
+                elif self.month == 12:
+                        month_current = 'DEZEMBRO'
+
+                self.cnv.drawString(x=40,y=350, text='Sem mais,')
+                self.cnv.setFont(psfontname='Times-Italic',size=12)
+                                #NOME FANTASIA DA EMPRESA PARA ASSINATURA:
+                self.cnv.line(40, 232, 350, 232)
+                self.cnv.drawString(x=40,y=220,text= 'CONSULTOR / VISTORIADOR AUTORIZADO')
+                self.cnv.line(40, 152, 350, 152)
+                self.cnv.drawString(x=40,y=140,text= 'ASSOCIADO (A)')
+                self.cnv.setFont(psfontname='Times-BoldItalic',size=12)
+                                #IMPRIMIR DATA ATUAL E CIDADE DA SEDE ADMINISTRATIVA NO DOCUMENTO:
+                self.cnv.drawString(x=40,y=30,text= 'CAMPINA GRANDE ,'  + f' {self.day} de {self.month_current} de {self.year}')
+
+
                 #SALVAR PDF:
                 self.cnv.save()
 
@@ -1783,6 +1881,7 @@ class Ui_MainWindow(object):
                 self.pushButton_forwarding.pressed.connect(self.GerarTermoDeEncaminhamento)
                 self.pushButton_vehicle_delivery.pressed.connect(self.GerarTermoDeEntregaDeVeiculo)
                 self.pushButton_cancel.pressed.connect(self.GerarTermoDeCancelamento)
+                self.pushButton_receipt.pressed.connect(self.GerarRecibo)
 
                 self.retranslateUi(MainWindow)
                 QtCore.QMetaObject.connectSlotsByName(MainWindow)
