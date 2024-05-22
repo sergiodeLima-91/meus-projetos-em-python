@@ -1,6 +1,6 @@
 # Diretórios
 /venv
-/_pycache_
+/__pycache__
 
 # Arquivos
 file_rc.py
