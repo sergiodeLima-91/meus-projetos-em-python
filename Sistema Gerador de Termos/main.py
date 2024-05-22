@@ -730,7 +730,7 @@ class Ui_MainWindow(object):
                 self.frame_coverages_outside = QtWidgets.QFrame(self.frame_fill_fiedls)
                 self.frame_coverages_outside.setMinimumSize(QtCore.QSize(150, 0))
                 self.frame_coverages_outside.setMaximumSize(QtCore.QSize(300, 16777215))
-                self.frame_coverages_outside.setStyleSheet("background-image: url(./background-blue-1715x980.jpg);\n"
+                self.frame_coverages_outside.setStyleSheet("background-image: url(./src/images/background-blue-1715x980.jpg);\n"
         "border-radius: 8px;")
                 self.frame_coverages_outside.setFrameShape(QtWidgets.QFrame.StyledPanel)
                 self.frame_coverages_outside.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -920,7 +920,7 @@ class Ui_MainWindow(object):
                 self.frame_client_data_outside = QtWidgets.QFrame(self.frame_fill_fiedls)
                 self.frame_client_data_outside.setMinimumSize(QtCore.QSize(150, 0))
                 self.frame_client_data_outside.setMaximumSize(QtCore.QSize(300, 16777215))
-                self.frame_client_data_outside.setStyleSheet("background-image: url(./background-blue-1715x980.jpg);border-radius: 8px;")
+                self.frame_client_data_outside.setStyleSheet("background-image: url(././src/images/background-blue-1715x980.jpg);border-radius: 8px;")
                 self.frame_client_data_outside.setFrameShape(QtWidgets.QFrame.StyledPanel)
                 self.frame_client_data_outside.setFrameShadow(QtWidgets.QFrame.Raised)
                 self.frame_client_data_outside.setObjectName("frame_client_data_outside")
@@ -1192,7 +1192,7 @@ class Ui_MainWindow(object):
                 self.frame_vehicle_pain_data_outside = QtWidgets.QFrame(self.frame_fill_fiedls)
                 self.frame_vehicle_pain_data_outside.setMinimumSize(QtCore.QSize(0, 0))
                 self.frame_vehicle_pain_data_outside.setMaximumSize(QtCore.QSize(300, 16777215))
-                self.frame_vehicle_pain_data_outside.setStyleSheet("background-image: url(./background-blue-1715x980.jpg);border-radius: 8px;")
+                self.frame_vehicle_pain_data_outside.setStyleSheet("background-image: url(././src/images/background-blue-1715x980.jpg);border-radius: 8px;")
                 self.frame_vehicle_pain_data_outside.setFrameShape(QtWidgets.QFrame.StyledPanel)
                 self.frame_vehicle_pain_data_outside.setFrameShadow(QtWidgets.QFrame.Raised)
                 self.frame_vehicle_pain_data_outside.setObjectName("frame_vehicle_pain_data_outside")
