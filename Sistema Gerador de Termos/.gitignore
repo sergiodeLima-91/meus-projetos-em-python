@@ -1,0 +1,12 @@
+# Diretórios
+/venv
+/_pycache_
+
+# Arquivos
+file_rc.py
+file_rcV3.py
+file_rcV4.py
+layouts_maker.docx
+main.ui
+Sistema Gerador de Termos.exe
+testes.py
