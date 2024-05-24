@@ -79,8 +79,14 @@
         <item>
          <widget class="QFrame" name="frameLogo">
           <property name="styleSheet">
-           <string notr="true">background-image: url(:/Logo/logo.png);
-background-repeat: no-repeat;</string>
+           <string notr="true">QFrame{
+	
+	image: url(:/Logo/images/logo.png);
+	background-repeat: no-repeat;
+}
+
+
+</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::NoFrame</enum>
@@ -216,7 +222,7 @@ background-repeat: no-repeat;</string>
   </widget>
  </widget>
  <resources>
-  <include location="src/images/file_rc.qrc"/>
+  <include location="src/file_rc_main_window.qrc"/>
  </resources>
  <connections/>
 </ui>

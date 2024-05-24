@@ -8,6 +8,7 @@ file_rc.qrc
 file_rcV3.py
 file_rcV4.py
 layouts_maker.docx
-main.ui
+main-window.ui
 Sistema Gerador de Termos.exe
 testes.py
+/src/file_rc_main_window.qrc
