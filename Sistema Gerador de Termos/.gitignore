@@ -12,3 +12,4 @@ main-window.ui
 Sistema Gerador de Termos.exe
 testes.py
 /src/file_rc_main_window.qrc
+window-termo-adesao.ui
