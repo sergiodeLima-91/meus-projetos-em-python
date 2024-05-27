@@ -11,4 +11,4 @@ file_rcV4.py
 .ui
 .exe
 testes.py
-/src/file_rc_main_window.qrc
+file_rc_main_window.qrc

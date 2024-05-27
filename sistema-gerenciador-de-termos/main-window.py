@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from adesao import Ui_Adesao_MainWindow
+from adhesion import Ui_Adesao_MainWindow
 
 
 class Ui_MainWindow(object):
