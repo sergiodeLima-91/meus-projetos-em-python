@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="icon"/>
+  <qresource prefix="backgrounds">
+    <file>images/background-blue-1715x980.jpg</file>
+  </qresource>
+  <qresource prefix="Logo">
+    <file>images/logo.png</file>
+  </qresource>
+</RCC>
