@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from adhesion import Ui_Adesao_MainWindow
+from adhesion import Ui_Adhesion_MainWindow
 
 
 class Ui_MainWindow(object):
@@ -105,7 +105,7 @@ class Ui_MainWindow(object):
 
     def criarTermoAdesao(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_Adesao_MainWindow()
+        self.ui = Ui_Adhesion_MainWindow()
         self.ui.setupUi(self.window)
         self.window.show()
 

@@ -15,7 +15,7 @@ from reportlab.lib.pagesizes import A4
 from datetime import date
 
 
-class Ui_Adesao_MainWindow(object):                
+class Ui_Adhesion_MainWindow(object):                
 
         def GerarTermoDeAdesao(self):
                 self.cnv = canvas.Canvas(f'{self.lineEdit_name.text().upper()} - ADESÃO.pdf')
@@ -1998,7 +1998,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_Adesao_MainWindow()
+    ui = Ui_Adhesion_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
