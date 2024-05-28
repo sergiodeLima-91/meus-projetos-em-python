@@ -1,15 +1,31 @@
-# Diretórios
+# Folders:
 /venv
 /__pycache__
 
-# Arquivos
+# Files:
+#.py
 file_rc.py
 file_rc.qrc
 file_rcV3.py
 file_rcV4.py
-layouts_maker.docx
-main-window.ui
-Sistema Gerador de Termos.exe
+main-window-temp.py
+adhesion-temp.py
+temp3.py
+text-editor.py
 testes.py
-/src/file_rc_main_window.qrc
-.ui
+
+#.docx
+layouts_maker.docx
+
+#.ui
+main-window.ui
+text-editor.ui
+window-cancel.ui
+window-declaration.ui
+window-adhesion.ui
+
+#.exe
+Sistema Gerador de Termos.exe
+
+#.qrc
+/src/file_rc_main_window.qrc 
