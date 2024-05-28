@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'main-window.ui'
+# Form implementation generated from reading ui file '.\main-window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -10,6 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from adhesion import Ui_Adhesion_MainWindow
+from declaration import Ui_Declaration_MainWindow
+from cancel import Ui_Cancel_MainWindow
 
 
 class Ui_MainWindow(object):
@@ -39,8 +41,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.frameLogo = QtWidgets.QFrame(self.scrollAreaWidgetContents)
         self.frameLogo.setStyleSheet("QFrame{\n"
-"    image: url(:/Logo/logo.png);\n"
+"    \n"
+"    image: url(:/Logo/images/logo.png);\n"
 "    background-repeat: no-repeat;\n"
+"    \n"
 "}\n"
 "\n"
 "\n"
@@ -50,44 +54,80 @@ class Ui_MainWindow(object):
         self.frameLogo.setObjectName("frameLogo")
         self.verticalLayout_2.addWidget(self.frameLogo)
         self.frameMenus = QtWidgets.QFrame(self.scrollAreaWidgetContents)
-        self.frameMenus.setStyleSheet("")
+        self.frameMenus.setStyleSheet("QFrame {\n"
+"    border-color: rgb(0, 0, 0);\n"
+"}")
         self.frameMenus.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frameMenus.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frameMenus.setObjectName("frameMenus")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.frameMenus)
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.frameButton3 = QtWidgets.QFrame(self.frameMenus)
-        self.frameButton3.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frameButton3.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frameButton3.setObjectName("frameButton3")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frameButton3)
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_3.setSpacing(0)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.pushButton = QtWidgets.QPushButton(self.frameButton3)
-        self.pushButton.setObjectName("pushButton")
-        self.verticalLayout_3.addWidget(self.pushButton)
-        self.horizontalLayout.addWidget(self.frameButton3)
-        self.frameButton2 = QtWidgets.QFrame(self.frameMenus)
-        self.frameButton2.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frameButton2.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frameButton2.setObjectName("frameButton2")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.frameButton2)
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_4.setSpacing(0)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.horizontalLayout.addWidget(self.frameButton2)
-        self.frameButton1 = QtWidgets.QFrame(self.frameMenus)
-        self.frameButton1.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frameButton1.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frameButton1.setObjectName("frameButton1")
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.frameButton1)
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_5.setSpacing(0)
-        self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.horizontalLayout.addWidget(self.frameButton1)
+        self.frameButtonAdesao = QtWidgets.QFrame(self.frameMenus)
+        self.frameButtonAdesao.setStyleSheet("QFrame {\n"
+"    margin: auto;\n"
+"}")
+        self.frameButtonAdesao.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frameButtonAdesao.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frameButtonAdesao.setObjectName("frameButtonAdesao")
+        self.pushButtonAdesao = QtWidgets.QPushButton(self.frameButtonAdesao)
+        self.pushButtonAdesao.setGeometry(QtCore.QRect(38, 131, 75, 23))
+        self.pushButtonAdesao.setMaximumSize(QtCore.QSize(90, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButtonAdesao.setFont(font)
+        self.pushButtonAdesao.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.pushButtonAdesao.setStyleSheet("background-color: rgb(150, 170, 255);\n"
+"text-align: center;\n"
+"\n"
+"")
+        self.pushButtonAdesao.setObjectName("pushButtonAdesao")
+        self.horizontalLayout.addWidget(self.frameButtonAdesao)
+        self.frameButtonDec = QtWidgets.QFrame(self.frameMenus)
+        self.frameButtonDec.setStyleSheet("QFrame {\n"
+"    margin: auto;\n"
+"}")
+        self.frameButtonDec.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frameButtonDec.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frameButtonDec.setObjectName("frameButtonDec")
+        self.pushButtonDec = QtWidgets.QPushButton(self.frameButtonDec)
+        self.pushButtonDec.setGeometry(QtCore.QRect(38, 131, 81, 23))
+        self.pushButtonDec.setMaximumSize(QtCore.QSize(90, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButtonDec.setFont(font)
+        self.pushButtonDec.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.pushButtonDec.setStyleSheet("background-color: rgb(150, 170, 255);\n"
+"text-align: center;\n"
+"\n"
+"")
+        self.pushButtonDec.setObjectName("pushButtonDec")
+        self.horizontalLayout.addWidget(self.frameButtonDec)
+        self.frameButtonCanc = QtWidgets.QFrame(self.frameMenus)
+        self.frameButtonCanc.setStyleSheet("QFrame {\n"
+"    margin: auto;\n"
+"}")
+        self.frameButtonCanc.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frameButtonCanc.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frameButtonCanc.setObjectName("frameButtonCanc")
+        self.pushButtonCanc = QtWidgets.QPushButton(self.frameButtonCanc)
+        self.pushButtonCanc.setGeometry(QtCore.QRect(38, 131, 118, 23))
+        self.pushButtonCanc.setMinimumSize(QtCore.QSize(100, 0))
+        self.pushButtonCanc.setMaximumSize(QtCore.QSize(90, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButtonCanc.setFont(font)
+        self.pushButtonCanc.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.pushButtonCanc.setStyleSheet("background-color: rgb(150, 170, 255);\n"
+"text-align: center;\n"
+"")
+        self.pushButtonCanc.setObjectName("pushButtonCanc")
+        self.horizontalLayout.addWidget(self.frameButtonCanc)
         self.verticalLayout_2.addWidget(self.frameMenus)
         self.scrollAreaMain.setWidget(self.scrollAreaWidgetContents)
         self.verticalLayout.addWidget(self.scrollAreaMain)
@@ -96,20 +136,38 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        self.pushButton.clicked.connect(self.criarTermoAdesao)
+        # Connecting in to Buttons:
+        self.pushButtonAdesao.clicked.connect(self.createAdhesionTerm)
+        self.pushButtonDec.clicked.connect(self.createDeclarationTerm)
+        self.pushButtonCanc.clicked.connect(self.createCancelTerm)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Sistema Gerador de Termos"))
-        self.pushButton.setText(_translate("MainWindow", "ADESÃO"))
+        self.pushButtonAdesao.setText(_translate("MainWindow", "ADESÃO"))
+        self.pushButtonDec.setText(_translate("MainWindow", "DECLARAÇÃO"))
+        self.pushButtonCanc.setText(_translate("MainWindow", "CANCELAMENTO"))
 
-    def criarTermoAdesao(self):
+        # Functions:
+    def createAdhesionTerm(self):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_Adhesion_MainWindow()
         self.ui.setupUi(self.window)
         self.window.show()
 
-    import file_rc_main_window
+    def createDeclarationTerm(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_Declaration_MainWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+    
+    def createCancelTerm(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_Cancel_MainWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()         
+
+import file_rc_main_window
 
 
 if __name__ == "__main__":
