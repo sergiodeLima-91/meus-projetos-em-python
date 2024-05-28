@@ -19,6 +19,9 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(600, 600)
         MainWindow.setMaximumSize(QtCore.QSize(600, 600))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon/src/images/logo.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(0, 0))
         self.centralwidget.setMaximumSize(QtCore.QSize(600, 600))
@@ -40,9 +43,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.frameLogo = QtWidgets.QFrame(self.scrollAreaWidgetContents)
-        self.frameLogo.setStyleSheet("QFrame{\n"
-"    \n"
-"    image: url(:/Logo/images/logo.png);\n"
+        self.frameLogo.setStyleSheet("QFrame{        \n"
+"    image: url(:/Logo/src/images/logo.png);\n"
 "    background-repeat: no-repeat;\n"
 "    \n"
 "}\n"
@@ -114,7 +116,7 @@ class Ui_MainWindow(object):
         self.frameButtonCanc.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frameButtonCanc.setObjectName("frameButtonCanc")
         self.pushButtonCanc = QtWidgets.QPushButton(self.frameButtonCanc)
-        self.pushButtonCanc.setGeometry(QtCore.QRect(38, 131, 118, 23))
+        self.pushButtonCanc.setGeometry(QtCore.QRect(38, 131, 100, 23))
         self.pushButtonCanc.setMinimumSize(QtCore.QSize(100, 0))
         self.pushButtonCanc.setMaximumSize(QtCore.QSize(90, 16777215))
         font = QtGui.QFont()
@@ -148,7 +150,7 @@ class Ui_MainWindow(object):
         self.pushButtonDec.setText(_translate("MainWindow", "DECLARAÇÃO"))
         self.pushButtonCanc.setText(_translate("MainWindow", "CANCELAMENTO"))
 
-        # Functions:
+            # Functions:
     def createAdhesionTerm(self):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_Adhesion_MainWindow()
@@ -165,9 +167,11 @@ class Ui_MainWindow(object):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_Cancel_MainWindow()
         self.ui.setupUi(self.window)
-        self.window.show()         
+        self.window.show()
 
 import file_rc_main_window
+
+
 
 
 if __name__ == "__main__":

@@ -1,9 +1,9 @@
 <RCC>
-  <qresource prefix="icon"/>
-  <qresource prefix="backgrounds">
-    <file>images/background-blue-1715x980.jpg</file>
+  <qresource prefix="icon">
+    <file>src/images/logo.ico</file>
   </qresource>
+  <qresource prefix="backgrounds"/>
   <qresource prefix="Logo">
-    <file>images/logo.png</file>
+    <file>src/images/logo.png</file>
   </qresource>
 </RCC>
