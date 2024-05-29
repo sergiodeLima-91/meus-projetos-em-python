@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>src/images/sublinhado.png</file>
+    <file>src/images/italico.png</file>
+    <file>src/images/negrito.png</file>
+  </qresource>
+</RCC>
