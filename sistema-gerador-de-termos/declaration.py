@@ -1138,7 +1138,7 @@ class Ui_Declaration_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Termo de Adesão"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Declaração"))
         self.label_coverage.setText(_translate("MainWindow", "COBERTURAS"))
         self.checkBox_monitoring.setText(_translate("MainWindow", "Monitoramento e Rastreamento"))
         self.checkBox_robbery.setText(_translate("MainWindow", "Roubo"))
