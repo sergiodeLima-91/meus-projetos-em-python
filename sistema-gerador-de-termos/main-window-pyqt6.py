@@ -7,9 +7,9 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from adhesion import Ui_Adhesion_MainWindow
-from declaration import Ui_Declaration_MainWindow
-from cancel import Ui_Cancel_MainWindow
+from adhesion_pyqt6 import Ui_Adhesion_MainWindow
+from declaration_pyqt6 import Ui_Declaration_MainWindow
+from cancel_pyqt6 import Ui_Cancel_MainWindow
 
 
 class Ui_MainWindow(object):
