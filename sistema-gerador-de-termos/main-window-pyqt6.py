@@ -167,7 +167,7 @@ class Ui_MainWindow(object):
         self.ui.setupUi(self.window)
         self.window.show()
 
-import file_rc_main_window
+import file_rc_mw_pyqt6
 
 if __name__ == "__main__":
     import sys
