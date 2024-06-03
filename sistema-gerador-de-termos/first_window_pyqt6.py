@@ -25,6 +25,12 @@ btn.setStyleSheet('background-color: blue')
 label = QLabel("Texto", window)
 # Posicionando o Label:
 label.move(400, 100)
+# Mudando cor do texto
+def mudaCorTexto():
+    return label.setStyleSheet('color: red')
+
+# Criando evento de clique:
+btn.clicked.connect(mudaCorTexto)
 
 
 
