@@ -79,7 +79,7 @@ class Ui_MainWindow(object):
         self.pushButtonAdesao.setFont(font)
         self.pushButtonAdesao.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.pushButtonAdesao.setStyleSheet("background-color: rgb(150, 170, 255);\n"
-"text-align: center;\n"
+"text-align: center; font-weight: bold;\n"
 "\n"
 "")
         self.pushButtonAdesao.setObjectName("pushButtonAdesao")
@@ -101,7 +101,7 @@ class Ui_MainWindow(object):
         self.pushButtonDec.setFont(font)
         self.pushButtonDec.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.pushButtonDec.setStyleSheet("background-color: rgb(150, 170, 255);\n"
-"text-align: center;\n"
+"text-align: center; font-weight: bold\n"
 "\n"
 "")
         self.pushButtonDec.setObjectName("pushButtonDec")
@@ -124,7 +124,7 @@ class Ui_MainWindow(object):
         self.pushButtonCanc.setFont(font)
         self.pushButtonCanc.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.pushButtonCanc.setStyleSheet("background-color: rgb(150, 170, 255);\n"
-"text-align: center;\n"
+"text-align: center; font-weight: bold\n"
 "")
         self.pushButtonCanc.setObjectName("pushButtonCanc")
         self.horizontalLayout.addWidget(self.frameButtonCanc)
