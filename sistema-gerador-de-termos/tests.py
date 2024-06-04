@@ -11,10 +11,11 @@ app = QApplication(sys.argv)
 window = QWidget()
 #Redimensionando a Janela:
 window.resize(500, 400)
-window.setWindowTitle('Aplicar negrito')
+window.setWindowTitle('Editor de Texto')
 
 # == FUNÇÕES:
-def aplicarNegrito():
+# Negrito
+def applyBold():
     # Obtem o cursor do texto:
     cursor = textEdit.textCursor()
     # Criação do objeto para manipulação do estilo do texto:
@@ -25,14 +26,45 @@ def aplicarNegrito():
     char_format.setFont(font)
     cursor.mergeCharFormat(char_format)
     textEdit.mergeCurrentCharFormat(char_format)
+# Italico
+def applyItalic():
+    cursor = textEdit.textCursor()
+    char_format = QTextCharFormat()
+    font = QFont()
+    font.setItalic( not cursor.charFormat().font().italic())
+    char_format.setFont(font)
+    cursor.mergeCharFormat(char_format)
+    textEdit.mergeCurrentCharFormat(char_format)
+# Sublinhado:
+def applyUnderline():
+    cursor = textEdit.textCursor()
+    char_format = QTextCharFormat()
+    font = QFont()
+    font.setUnderline(not cursor.charFormat().font().underline())
+    char_format.setFont(font)
+    cursor.mergeCharFormat(char_format)
+    textEdit.mergeCurrentCharFormat(char_format)
 
 
-btn = QPushButton("Negrito", window)
-btn.setGeometry(150, 150, 75, 25)
-btn.clicked.connect(aplicarNegrito)
+# === Botões ===:
+# Negrito:
+btn_bold = QPushButton("Negrito", window)
+btn_bold.setGeometry(150, 110, 75, 25)
+# Itálico:
+btn_italic = QPushButton("Itálico", window)
+btn_italic.setGeometry(150,140, 72, 25)
+# Sublinhado:
+btn_under = QPushButton("Sublinhado", window)
+btn_under.setGeometry(150, 170, 75, 25)
 
+# Campo de Testo:
 textEdit = QTextEdit("", window)
 textEdit.setGeometry(250, 110, 100, 100)
+
+# Eventos:
+btn_bold.clicked.connect(applyBold)
+btn_italic.clicked.connect(applyItalic)
+btn_under.clicked.connect(applyUnderline)
 
 
 # Start da Janela:
