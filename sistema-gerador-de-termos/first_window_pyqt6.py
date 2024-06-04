@@ -25,7 +25,7 @@ def mudaCorBotao():
     return btn.setStyleSheet('QPushButton:pressed{background-color: yellow; font-weight: bold;}')
 # Aplicar negrito:
 btn_negrito = QPushButton('B', window)
-btn_negrito.adjustSize()
+btn_negrito.setGeometry(50, 150, 20,20)
 def negrito():
     textEdit.setStyleSheet('QLineEdit{\n'
             'font-weight: bold;'
