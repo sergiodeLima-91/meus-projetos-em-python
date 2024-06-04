@@ -1,5 +1,5 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QLineEdit
+from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QLineEdit, QComboBox
 
 
 # ============= CRIANDO A JANELA BASE =============
@@ -26,7 +26,6 @@ def mudaCorBotao():
 # Aplicar negrito:
 btn_negrito = QPushButton('B', window)
 btn_negrito.adjustSize()
-btn.setGeometry()
 def negrito():
     textEdit.setStyleSheet('QLineEdit{\n'
             'font-weight: bold;'
@@ -50,6 +49,15 @@ textEdit.setGeometry(210, 150, 200, 150)
 textEdit.setStyleSheet("QLineEdit:focus{\n"
 "    border: 2px solid rgb(100, 100, 255);\n"
 "}")
+
+# Inserindo combo box:
+combo_box = QComboBox(window)
+combo_box.addItem("Selecione uma cor para este combo box")
+combo_box.addItem("Azul")
+combo_box.addItem("Vermelho")
+combo_box.addItem("Amarelo")
+combo_box.move(210, 330)
+
 
 # Criando evento de clique:
 btn.clicked.connect(mudaCorTexto)
