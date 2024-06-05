@@ -45,6 +45,11 @@ def applyUnderline():
     cursor.mergeCharFormat(char_format)
     textEdit.mergeCurrentCharFormat(char_format)
 
+def showText():
+    texto_digitado = textEdit.toPlainText()
+    print("Texto digitado:")
+    print(texto_digitado)
+
 
 # === Botões ===:
 # Negrito:
@@ -56,6 +61,10 @@ btn_italic.setGeometry(150,140, 72, 25)
 # Sublinhado:
 btn_under = QPushButton("Sublinhado", window)
 btn_under.setGeometry(150, 170, 75, 25)
+# Mostrar texto digitado no textEdit:
+btn_show_text = QPushButton("Exibir Texto", window)
+btn_show_text.setGeometry(150, 230, 100, 25)
+btn_show_text.clicked.connect(showText)
 
 # Campo de Testo:
 textEdit = QTextEdit("", window)
@@ -65,6 +74,7 @@ textEdit.setGeometry(250, 110, 100, 100)
 btn_bold.clicked.connect(applyBold)
 btn_italic.clicked.connect(applyItalic)
 btn_under.clicked.connect(applyUnderline)
+btn_show_text.clicked.connect(showText)
 
 
 # Start da Janela:
