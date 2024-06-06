@@ -12,9 +12,10 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Cancel_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(829, 470)
+        MainWindow.resize(1000, 470)
+        MainWindow.setMaximumSize(QtCore.QSize(16777215, 16777215))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icon/sgt_icon_48x48.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("src/images/logo.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("QScrollBar:vertical{\n"
 "    border: none;\n"
@@ -131,7 +132,7 @@ class Ui_Cancel_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -230, 815, 700))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 986, 700))
         self.scrollAreaWidgetContents.setStyleSheet("")
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.scrollAreaWidgetContents)
@@ -146,196 +147,6 @@ class Ui_Cancel_MainWindow(object):
         self.frame_fill_fiedls.setObjectName("frame_fill_fiedls")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_fill_fiedls)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.frame_coverages_outside = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
-        self.frame_coverages_outside.setMinimumSize(QtCore.QSize(150, 0))
-        self.frame_coverages_outside.setMaximumSize(QtCore.QSize(300, 16777215))
-        self.frame_coverages_outside.setStyleSheet("background-image: url(./src/images/background-blue-1715x980.jpg);\n"
-"border-radius: 8px;")
-        self.frame_coverages_outside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_coverages_outside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_coverages_outside.setObjectName("frame_coverages_outside")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.frame_coverages_outside)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.frame_coverages_inside = QtWidgets.QFrame(parent=self.frame_coverages_outside)
-        self.frame_coverages_inside.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_coverages_inside.setStyleSheet("QFrame{\n"
-"    border: 2px solid rgb(36, 183, 253);\n"
-"    border-radius: 8px;\n"
-"}")
-        self.frame_coverages_inside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_coverages_inside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_coverages_inside.setObjectName("frame_coverages_inside")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.frame_coverages_inside)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.label_coverage = QtWidgets.QLabel(parent=self.frame_coverages_inside)
-        self.label_coverage.setMinimumSize(QtCore.QSize(0, 0))
-        self.label_coverage.setMaximumSize(QtCore.QSize(16777215, 20))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_coverage.setFont(font)
-        self.label_coverage.setStyleSheet("border: no-border")
-        self.label_coverage.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_coverage.setObjectName("label_coverage")
-        self.verticalLayout.addWidget(self.label_coverage)
-        self.checkBox_monitoring = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_monitoring.setFont(font)
-        self.checkBox_monitoring.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_monitoring.setObjectName("checkBox_monitoring")
-        self.verticalLayout.addWidget(self.checkBox_monitoring)
-        self.checkBox_robbery = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_robbery.setFont(font)
-        self.checkBox_robbery.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_robbery.setObjectName("checkBox_robbery")
-        self.verticalLayout.addWidget(self.checkBox_robbery)
-        self.checkBox_theft = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_theft.setFont(font)
-        self.checkBox_theft.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_theft.setObjectName("checkBox_theft")
-        self.verticalLayout.addWidget(self.checkBox_theft)
-        self.checkBox_pt = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_pt.setFont(font)
-        self.checkBox_pt.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_pt.setObjectName("checkBox_pt")
-        self.verticalLayout.addWidget(self.checkBox_pt)
-        self.checkBox_collision = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_collision.setFont(font)
-        self.checkBox_collision.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_collision.setObjectName("checkBox_collision")
-        self.verticalLayout.addWidget(self.checkBox_collision)
-        self.checkBox_winch3 = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_winch3.setFont(font)
-        self.checkBox_winch3.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_winch3.setObjectName("checkBox_winch3")
-        self.verticalLayout.addWidget(self.checkBox_winch3)
-        self.checkBox_winch6 = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_winch6.setFont(font)
-        self.checkBox_winch6.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_winch6.setObjectName("checkBox_winch6")
-        self.verticalLayout.addWidget(self.checkBox_winch6)
-        self.checkBox_unlimited_winch = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_unlimited_winch.setFont(font)
-        self.checkBox_unlimited_winch.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_unlimited_winch.setObjectName("checkBox_unlimited_winch")
-        self.verticalLayout.addWidget(self.checkBox_unlimited_winch)
-        self.checkBox_winch500 = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_winch500.setFont(font)
-        self.checkBox_winch500.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_winch500.setObjectName("checkBox_winch500")
-        self.verticalLayout.addWidget(self.checkBox_winch500)
-        self.checkBox_glasses = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_glasses.setFont(font)
-        self.checkBox_glasses.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_glasses.setObjectName("checkBox_glasses")
-        self.verticalLayout.addWidget(self.checkBox_glasses)
-        self.checkBox_others = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_others.setFont(font)
-        self.checkBox_others.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_others.setObjectName("checkBox_others")
-        self.verticalLayout.addWidget(self.checkBox_others)
-        self.verticalLayout_4.addWidget(self.frame_coverages_inside)
-        self.horizontalLayout_3.addWidget(self.frame_coverages_outside)
         self.frame_client_data_outside = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
         self.frame_client_data_outside.setMinimumSize(QtCore.QSize(150, 0))
         self.frame_client_data_outside.setMaximumSize(QtCore.QSize(300, 16777215))
@@ -609,6 +420,16 @@ class Ui_Cancel_MainWindow(object):
         self.verticalLayout_5.addWidget(self.lineEdit_cep)
         self.verticalLayout_2.addWidget(self.frame_client_data_inside)
         self.horizontalLayout_3.addWidget(self.frame_client_data_outside)
+        self.frame_divisor1_3 = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
+        self.frame_divisor1_3.setMaximumSize(QtCore.QSize(10, 16777215))
+        self.frame_divisor1_3.setStyleSheet("QFrame {\n"
+"    background-color: rgb(150, 217, 255);\n"
+"    border-radius: 5px;\n"
+"}")
+        self.frame_divisor1_3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_divisor1_3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_divisor1_3.setObjectName("frame_divisor1_3")
+        self.horizontalLayout_3.addWidget(self.frame_divisor1_3)
         self.frame_vehicle_pain_data_outside = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
         self.frame_vehicle_pain_data_outside.setMinimumSize(QtCore.QSize(0, 0))
         self.frame_vehicle_pain_data_outside.setMaximumSize(QtCore.QSize(300, 16777215))
@@ -833,6 +654,16 @@ class Ui_Cancel_MainWindow(object):
         self.verticalLayout_11.addWidget(self.textEdit)
         self.verticalLayout_9.addWidget(self.frame_plaintype_inside)
         self.horizontalLayout_3.addWidget(self.frame_vehicle_pain_data_outside)
+        self.frame_divisor1_2 = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
+        self.frame_divisor1_2.setMaximumSize(QtCore.QSize(10, 16777215))
+        self.frame_divisor1_2.setStyleSheet("QFrame {\n"
+"    background-color: rgb(150, 217, 255);\n"
+"    border-radius: 5px;\n"
+"}")
+        self.frame_divisor1_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_divisor1_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_divisor1_2.setObjectName("frame_divisor1_2")
+        self.horizontalLayout_3.addWidget(self.frame_divisor1_2)
         self.frame_financial_buttons_company_data = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
         self.frame_financial_buttons_company_data.setMinimumSize(QtCore.QSize(0, 0))
         self.frame_financial_buttons_company_data.setMaximumSize(QtCore.QSize(300, 16777215))
@@ -1091,27 +922,30 @@ class Ui_Cancel_MainWindow(object):
         self.frame_buttons_observations.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_buttons_observations.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_buttons_observations.setObjectName("frame_buttons_observations")
-        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.frame_buttons_observations)
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.pushButton_adhesion = QtWidgets.QPushButton(parent=self.frame_buttons_observations)
-        self.pushButton_adhesion.setMinimumSize(QtCore.QSize(20, 22))
-        self.pushButton_adhesion.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.frame_buttons_observations)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.pushButton_declaration_2 = QtWidgets.QPushButton(parent=self.frame_buttons_observations)
+        self.pushButton_declaration_2.setMinimumSize(QtCore.QSize(20, 22))
+        self.pushButton_declaration_2.setMaximumSize(QtCore.QSize(16777215, 16777215))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
-        self.pushButton_adhesion.setFont(font)
-        self.pushButton_adhesion.setStyleSheet("QPushButton{\n"
+        self.pushButton_declaration_2.setFont(font)
+        self.pushButton_declaration_2.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pushButton_declaration_2.setStyleSheet("QPushButton{\n"
 "    border: 1px solid rgb(10, 10, 10);\n"
 "    border-radius: 5px;\n"
-"    background-color: rgb(136, 230, 253);\n"
+"    background-color: rgb(100, 230, 253);\n"
 "}\n"
 "QPushButton:hover{\n"
 "    border: 1px solid rgb(150,150,150);\n"
+"     font: 12px;\n"
 "}\n"
 "QPushButton:pressed{\n"
 "    border: 2px solid rgb(50, 50, 255);\n"
+"    font: 10px;\n"
 "}")
-        self.pushButton_adhesion.setObjectName("pushButton_adhesion")
-        self.verticalLayout_7.addWidget(self.pushButton_adhesion)
+        self.pushButton_declaration_2.setObjectName("pushButton_declaration_2")
+        self.verticalLayout.addWidget(self.pushButton_declaration_2)
         self.verticalLayout_10.addWidget(self.frame_buttons_observations)
         self.horizontalLayout_3.addWidget(self.frame_financial_buttons_company_data)
         self.horizontalLayout_2.addWidget(self.frame_fill_fiedls)
@@ -1136,19 +970,7 @@ class Ui_Cancel_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Termo de Adesão"))
-        self.label_coverage.setText(_translate("MainWindow", "COBERTURAS"))
-        self.checkBox_monitoring.setText(_translate("MainWindow", "Monitoramento e Rastreamento"))
-        self.checkBox_robbery.setText(_translate("MainWindow", "Roubo"))
-        self.checkBox_theft.setText(_translate("MainWindow", "Furto"))
-        self.checkBox_pt.setText(_translate("MainWindow", "Perda Total"))
-        self.checkBox_collision.setText(_translate("MainWindow", "Colisão do Associado"))
-        self.checkBox_winch3.setText(_translate("MainWindow", "3 Reboques Gratuitos a.a."))
-        self.checkBox_winch6.setText(_translate("MainWindow", "6 Reboques Gratuitos a.a."))
-        self.checkBox_unlimited_winch.setText(_translate("MainWindow", "Reboque Ilimitado"))
-        self.checkBox_winch500.setText(_translate("MainWindow", "Quinhentos Quilômetros de Reboque"))
-        self.checkBox_glasses.setText(_translate("MainWindow", "Vidros em Geral"))
-        self.checkBox_others.setText(_translate("MainWindow", "Terceiros"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Termo de Cancelamento"))
         self.label_clientdata.setText(_translate("MainWindow", "DADOS DO CLIENTE"))
         self.lineEdit_name.setPlaceholderText(_translate("MainWindow", "NOME"))
         self.lineEdit_rg_3.setPlaceholderText(_translate("MainWindow", "RG"))
@@ -1176,7 +998,7 @@ class Ui_Cancel_MainWindow(object):
         self.lineEdit_fipe_value.setPlaceholderText(_translate("MainWindow", "FALOR - FIPE"))
         self.lineEdit_fipe_code.setPlaceholderText(_translate("MainWindow", "COD - FIPE"))
         self.lineEdit_hora.setPlaceholderText(_translate("MainWindow", "HORARIO DE EVENTOS"))
-        self.label_textArea.setText(_translate("MainWindow", "CONTRATO"))
+        self.label_textArea.setText(_translate("MainWindow", "OBSERVAÇÕES"))
         self.label_finance.setText(_translate("MainWindow", "FINANCEIRO"))
         self.lineEdit_monthly_payment.setPlaceholderText(_translate("MainWindow", "MENSALIDADE"))
         self.lineEdit_membership_fee.setPlaceholderText(_translate("MainWindow", "TAXA DE ADESÃO/CANCELAMENTO"))
@@ -1189,7 +1011,7 @@ class Ui_Cancel_MainWindow(object):
         self.label_company_data.setText(_translate("MainWindow", "DADOS DA EMPRESA"))
         self.lineEdit_razao_social.setPlaceholderText(_translate("MainWindow", "RAZÃO SOCIAL"))
         self.lineEdit_cnpj.setPlaceholderText(_translate("MainWindow", "CNPJ"))
-        self.pushButton_adhesion.setText(_translate("MainWindow", "Gerar Termo de Adesão"))
+        self.pushButton_declaration_2.setText(_translate("MainWindow", "Gerar Termo de Cancelamento"))
         self.actionGerar_termo_de_ades_o.setText(_translate("MainWindow", "Gerar termo de adesão"))
         self.actionNovo.setText(_translate("MainWindow", "Novo..."))
         self.actionSalvar.setText(_translate("MainWindow", "Salvar"))

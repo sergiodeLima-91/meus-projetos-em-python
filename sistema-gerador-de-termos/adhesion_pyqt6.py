@@ -14,7 +14,7 @@ class Ui_Adhesion_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(829, 470)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icon/sgt_icon_48x48.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("./src/images/logo.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("QScrollBar:vertical{\n"
 "    border: none;\n"

@@ -80,6 +80,7 @@ class Ui_MainWindow(object):
         self.pushButtonAdesao.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.pushButtonAdesao.setStyleSheet("background-color: rgb(150, 170, 255);\n"
 "text-align: center;\n"
+"font-weight: bold;\n"
 "\n"
 "")
         self.pushButtonAdesao.setObjectName("pushButtonAdesao")
@@ -92,7 +93,7 @@ class Ui_MainWindow(object):
         self.frameButtonDec.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frameButtonDec.setObjectName("frameButtonDec")
         self.pushButtonDec = QtWidgets.QPushButton(parent=self.frameButtonDec)
-        self.pushButtonDec.setGeometry(QtCore.QRect(0, 70, 90, 23))
+        self.pushButtonDec.setGeometry(QtCore.QRect(5, 70, 90, 23))
         self.pushButtonDec.setMaximumSize(QtCore.QSize(90, 16777215))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
@@ -102,6 +103,7 @@ class Ui_MainWindow(object):
         self.pushButtonDec.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.pushButtonDec.setStyleSheet("background-color: rgb(150, 170, 255);\n"
 "text-align: center;\n"
+"font-weight: bold;\n"
 "\n"
 "")
         self.pushButtonDec.setObjectName("pushButtonDec")
@@ -114,7 +116,7 @@ class Ui_MainWindow(object):
         self.frameButtonCanc.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frameButtonCanc.setObjectName("frameButtonCanc")
         self.pushButtonCanc = QtWidgets.QPushButton(parent=self.frameButtonCanc)
-        self.pushButtonCanc.setGeometry(QtCore.QRect(10, 70, 100, 23))
+        self.pushButtonCanc.setGeometry(QtCore.QRect(12, 70, 100, 23))
         self.pushButtonCanc.setMinimumSize(QtCore.QSize(100, 0))
         self.pushButtonCanc.setMaximumSize(QtCore.QSize(90, 16777215))
         font = QtGui.QFont()
@@ -125,22 +127,26 @@ class Ui_MainWindow(object):
         self.pushButtonCanc.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.pushButtonCanc.setStyleSheet("background-color: rgb(150, 170, 255);\n"
 "text-align: center;\n"
+"font-weight: bold;\n"
 "")
         self.pushButtonCanc.setObjectName("pushButtonCanc")
         self.horizontalLayout.addWidget(self.frameButtonCanc)
         self.verticalLayout_2.addWidget(self.frameMenus)
-        self.label = QtWidgets.QLabel(parent=self.scrollAreaWidgetContents)
-        self.label.setMinimumSize(QtCore.QSize(0, 20))
-        self.label.setMaximumSize(QtCore.QSize(400, 15))
+        self.label_credits = QtWidgets.QLabel(parent=self.scrollAreaWidgetContents)
+        # Label author credits:
+        self.label_credits.setMinimumSize(QtCore.QSize(0, 20))
+        self.label_credits.setMaximumSize(QtCore.QSize(400, 15))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
-        font.setBold(True)
         font.setItalic(True)
         font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setStyleSheet("")
-        self.label.setObjectName("label")
-        self.verticalLayout_2.addWidget(self.label)
+        self.label_credits.setFont(font)
+        self.label_credits.setStyleSheet("")
+        self.label_credits.setObjectName("label")
+        self.label_credits.setStyleSheet(
+        "font-weight: bold;\n"
+"")
+        self.verticalLayout_2.addWidget(self.label_credits)
         self.scrollAreaMain.setWidget(self.scrollAreaWidgetContents)
         self.verticalLayout.addWidget(self.scrollAreaMain)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -159,7 +165,7 @@ class Ui_MainWindow(object):
         self.pushButtonAdesao.setText(_translate("MainWindow", "ADESÃO"))
         self.pushButtonDec.setText(_translate("MainWindow", "DECLARAÇÃO"))
         self.pushButtonCanc.setText(_translate("MainWindow", "CANCELAMENTO"))
-        self.label.setText(_translate("MainWindow", "created by Sérgio Lima"))
+        self.label_credits.setText(_translate("MainWindow", "created by Sérgio Lima"))
 
         # Functions:
     def createAdhesionTerm(self):
@@ -180,6 +186,7 @@ class Ui_MainWindow(object):
         self.ui.setupUi(self.window)
         self.window.show()
 
+import file_rc_SGT
 
 if __name__ == "__main__":
     import sys

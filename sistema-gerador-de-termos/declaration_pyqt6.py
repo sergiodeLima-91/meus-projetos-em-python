@@ -12,9 +12,10 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Declaration_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(829, 470)
+        MainWindow.resize(1273, 619)
+        MainWindow.setMaximumSize(QtCore.QSize(16777215, 16777215))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icon/sgt_icon_48x48.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("src/images/logo.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("QScrollBar:vertical{\n"
 "    border: none;\n"
@@ -131,7 +132,7 @@ class Ui_Declaration_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -230, 815, 700))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1259, 700))
         self.scrollAreaWidgetContents.setStyleSheet("")
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.scrollAreaWidgetContents)
@@ -140,213 +141,26 @@ class Ui_Declaration_MainWindow(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.frame_fill_fiedls = QtWidgets.QFrame(parent=self.scrollAreaWidgetContents)
         self.frame_fill_fiedls.setMinimumSize(QtCore.QSize(700, 700))
-        self.frame_fill_fiedls.setStyleSheet("background-color: rgb(170, 255, 255);")
+        self.frame_fill_fiedls.setStyleSheet("QFrame{\n"
+"    background-color: rgb(170, 255, 255);\n"
+"}\n"
+"")
         self.frame_fill_fiedls.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_fill_fiedls.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_fill_fiedls.setObjectName("frame_fill_fiedls")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_fill_fiedls)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.frame_coverages_outside = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
-        self.frame_coverages_outside.setMinimumSize(QtCore.QSize(150, 0))
-        self.frame_coverages_outside.setMaximumSize(QtCore.QSize(300, 16777215))
-        self.frame_coverages_outside.setStyleSheet("background-image: url(./src/images/background-blue-1715x980.jpg);\n"
+        self.frame_vehicle_pain_data_outside = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
+        self.frame_vehicle_pain_data_outside.setMinimumSize(QtCore.QSize(150, 0))
+        self.frame_vehicle_pain_data_outside.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.frame_vehicle_pain_data_outside.setStyleSheet("background-image: url(./src/images/background-blue-1715x980.jpg);\n"
 "border-radius: 8px;")
-        self.frame_coverages_outside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_coverages_outside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_coverages_outside.setObjectName("frame_coverages_outside")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.frame_coverages_outside)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.frame_coverages_inside = QtWidgets.QFrame(parent=self.frame_coverages_outside)
-        self.frame_coverages_inside.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_coverages_inside.setStyleSheet("QFrame{\n"
-"    border: 2px solid rgb(36, 183, 253);\n"
-"    border-radius: 8px;\n"
-"}")
-        self.frame_coverages_inside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_coverages_inside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_coverages_inside.setObjectName("frame_coverages_inside")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.frame_coverages_inside)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.label_coverage = QtWidgets.QLabel(parent=self.frame_coverages_inside)
-        self.label_coverage.setMinimumSize(QtCore.QSize(0, 0))
-        self.label_coverage.setMaximumSize(QtCore.QSize(16777215, 20))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_coverage.setFont(font)
-        self.label_coverage.setStyleSheet("border: no-border")
-        self.label_coverage.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_coverage.setObjectName("label_coverage")
-        self.verticalLayout.addWidget(self.label_coverage)
-        self.checkBox_monitoring = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_monitoring.setFont(font)
-        self.checkBox_monitoring.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_monitoring.setObjectName("checkBox_monitoring")
-        self.verticalLayout.addWidget(self.checkBox_monitoring)
-        self.checkBox_robbery = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_robbery.setFont(font)
-        self.checkBox_robbery.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_robbery.setObjectName("checkBox_robbery")
-        self.verticalLayout.addWidget(self.checkBox_robbery)
-        self.checkBox_theft = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_theft.setFont(font)
-        self.checkBox_theft.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_theft.setObjectName("checkBox_theft")
-        self.verticalLayout.addWidget(self.checkBox_theft)
-        self.checkBox_pt = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_pt.setFont(font)
-        self.checkBox_pt.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_pt.setObjectName("checkBox_pt")
-        self.verticalLayout.addWidget(self.checkBox_pt)
-        self.checkBox_collision = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_collision.setFont(font)
-        self.checkBox_collision.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_collision.setObjectName("checkBox_collision")
-        self.verticalLayout.addWidget(self.checkBox_collision)
-        self.checkBox_winch3 = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_winch3.setFont(font)
-        self.checkBox_winch3.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_winch3.setObjectName("checkBox_winch3")
-        self.verticalLayout.addWidget(self.checkBox_winch3)
-        self.checkBox_winch6 = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_winch6.setFont(font)
-        self.checkBox_winch6.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_winch6.setObjectName("checkBox_winch6")
-        self.verticalLayout.addWidget(self.checkBox_winch6)
-        self.checkBox_unlimited_winch = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_unlimited_winch.setFont(font)
-        self.checkBox_unlimited_winch.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_unlimited_winch.setObjectName("checkBox_unlimited_winch")
-        self.verticalLayout.addWidget(self.checkBox_unlimited_winch)
-        self.checkBox_winch500 = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_winch500.setFont(font)
-        self.checkBox_winch500.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_winch500.setObjectName("checkBox_winch500")
-        self.verticalLayout.addWidget(self.checkBox_winch500)
-        self.checkBox_glasses = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_glasses.setFont(font)
-        self.checkBox_glasses.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_glasses.setObjectName("checkBox_glasses")
-        self.verticalLayout.addWidget(self.checkBox_glasses)
-        self.checkBox_others = QtWidgets.QCheckBox(parent=self.frame_coverages_inside)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setBold(True)
-        font.setWeight(75)
-        self.checkBox_others.setFont(font)
-        self.checkBox_others.setStyleSheet("QCheckBox{\n"
-"    background-color: rgb(92, 230, 255);\n"
-"}\n"
-"QCheckBox:hover{\n"
-"    color: rgb(0, 0, 255);\n"
-"}")
-        self.checkBox_others.setObjectName("checkBox_others")
-        self.verticalLayout.addWidget(self.checkBox_others)
-        self.verticalLayout_4.addWidget(self.frame_coverages_inside)
-        self.horizontalLayout_3.addWidget(self.frame_coverages_outside)
-        self.frame_client_data_outside = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
-        self.frame_client_data_outside.setMinimumSize(QtCore.QSize(150, 0))
-        self.frame_client_data_outside.setMaximumSize(QtCore.QSize(300, 16777215))
-        self.frame_client_data_outside.setStyleSheet("background-image: url(./src/images/background-blue-1715x980.jpg);\n"
-"border-radius: 8px;")
-        self.frame_client_data_outside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_client_data_outside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_client_data_outside.setObjectName("frame_client_data_outside")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame_client_data_outside)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.frame_client_data_inside = QtWidgets.QFrame(parent=self.frame_client_data_outside)
+        self.frame_vehicle_pain_data_outside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_vehicle_pain_data_outside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_vehicle_pain_data_outside.setObjectName("frame_vehicle_pain_data_outside")
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.frame_vehicle_pain_data_outside)
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.frame_client_data_inside = QtWidgets.QFrame(parent=self.frame_vehicle_pain_data_outside)
         self.frame_client_data_inside.setMinimumSize(QtCore.QSize(150, 50))
         self.frame_client_data_inside.setStyleSheet("QFrame{\n"
 "    border: 2px solid rgb(36, 183, 253);\n"
@@ -418,207 +232,7 @@ class Ui_Declaration_MainWindow(object):
 "}")
         self.lineEdit_cpf.setObjectName("lineEdit_cpf")
         self.verticalLayout_5.addWidget(self.lineEdit_cpf)
-        self.lineEdit_birth = QtWidgets.QLineEdit(parent=self.frame_client_data_inside)
-        self.lineEdit_birth.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_birth.setObjectName("lineEdit_birth")
-        self.verticalLayout_5.addWidget(self.lineEdit_birth)
-        self.lineEdit_nationality = QtWidgets.QLineEdit(parent=self.frame_client_data_inside)
-        self.lineEdit_nationality.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_nationality.setObjectName("lineEdit_nationality")
-        self.verticalLayout_5.addWidget(self.lineEdit_nationality)
-        self.lineEdit_phone1 = QtWidgets.QLineEdit(parent=self.frame_client_data_inside)
-        self.lineEdit_phone1.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_phone1.setObjectName("lineEdit_phone1")
-        self.verticalLayout_5.addWidget(self.lineEdit_phone1)
-        self.lineEdit_phone2 = QtWidgets.QLineEdit(parent=self.frame_client_data_inside)
-        self.lineEdit_phone2.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_phone2.setObjectName("lineEdit_phone2")
-        self.verticalLayout_5.addWidget(self.lineEdit_phone2)
-        self.label_adress = QtWidgets.QLabel(parent=self.frame_client_data_inside)
-        self.label_adress.setMinimumSize(QtCore.QSize(0, 0))
-        self.label_adress.setMaximumSize(QtCore.QSize(16777215, 20))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(8)
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_adress.setFont(font)
-        self.label_adress.setStyleSheet("border-color: rgb(36, 183, 253);")
-        self.label_adress.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_adress.setObjectName("label_adress")
-        self.verticalLayout_5.addWidget(self.label_adress)
-        self.lineEdit_street = QtWidgets.QLineEdit(parent=self.frame_client_data_inside)
-        self.lineEdit_street.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_street.setObjectName("lineEdit_street")
-        self.verticalLayout_5.addWidget(self.lineEdit_street)
-        self.lineEdit_number = QtWidgets.QLineEdit(parent=self.frame_client_data_inside)
-        self.lineEdit_number.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_number.setObjectName("lineEdit_number")
-        self.verticalLayout_5.addWidget(self.lineEdit_number)
-        self.lineEdit_comp = QtWidgets.QLineEdit(parent=self.frame_client_data_inside)
-        self.lineEdit_comp.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_comp.setObjectName("lineEdit_comp")
-        self.verticalLayout_5.addWidget(self.lineEdit_comp)
-        self.lineEdit_neghbordhood = QtWidgets.QLineEdit(parent=self.frame_client_data_inside)
-        self.lineEdit_neghbordhood.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_neghbordhood.setObjectName("lineEdit_neghbordhood")
-        self.verticalLayout_5.addWidget(self.lineEdit_neghbordhood)
-        self.lineEdit_city = QtWidgets.QLineEdit(parent=self.frame_client_data_inside)
-        self.lineEdit_city.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_city.setObjectName("lineEdit_city")
-        self.verticalLayout_5.addWidget(self.lineEdit_city)
-        self.lineEdit_uf = QtWidgets.QLineEdit(parent=self.frame_client_data_inside)
-        self.lineEdit_uf.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_uf.setObjectName("lineEdit_uf")
-        self.verticalLayout_5.addWidget(self.lineEdit_uf)
-        self.lineEdit_cep = QtWidgets.QLineEdit(parent=self.frame_client_data_inside)
-        self.lineEdit_cep.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_cep.setObjectName("lineEdit_cep")
-        self.verticalLayout_5.addWidget(self.lineEdit_cep)
-        self.verticalLayout_2.addWidget(self.frame_client_data_inside)
-        self.horizontalLayout_3.addWidget(self.frame_client_data_outside)
-        self.frame_vehicle_pain_data_outside = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
-        self.frame_vehicle_pain_data_outside.setMinimumSize(QtCore.QSize(0, 0))
-        self.frame_vehicle_pain_data_outside.setMaximumSize(QtCore.QSize(300, 16777215))
-        self.frame_vehicle_pain_data_outside.setStyleSheet("background-image: url(./src/images/background-blue-1715x980.jpg);\n"
-"border-radius: 8px;")
-        self.frame_vehicle_pain_data_outside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_vehicle_pain_data_outside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_vehicle_pain_data_outside.setObjectName("frame_vehicle_pain_data_outside")
-        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.frame_vehicle_pain_data_outside)
-        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.verticalLayout_9.addWidget(self.frame_client_data_inside)
         self.frame_vehicle_plain_data_inside = QtWidgets.QFrame(parent=self.frame_vehicle_pain_data_outside)
         self.frame_vehicle_plain_data_inside.setMinimumSize(QtCore.QSize(150, 50))
         self.frame_vehicle_plain_data_inside.setStyleSheet("QFrame{\n"
@@ -804,7 +418,28 @@ class Ui_Declaration_MainWindow(object):
         self.lineEdit_hora.setObjectName("lineEdit_hora")
         self.verticalLayout_3.addWidget(self.lineEdit_hora)
         self.verticalLayout_9.addWidget(self.frame_vehicle_plain_data_inside)
-        self.frame_plaintype_inside = QtWidgets.QFrame(parent=self.frame_vehicle_pain_data_outside)
+        self.horizontalLayout_3.addWidget(self.frame_vehicle_pain_data_outside)
+        self.frame_divisor1 = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
+        self.frame_divisor1.setMaximumSize(QtCore.QSize(10, 16777215))
+        self.frame_divisor1.setStyleSheet("QFrame {\n"
+"    background-color: rgb(150, 217, 255);\n"
+"    border-radius: 5px;\n"
+"}")
+        self.frame_divisor1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_divisor1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_divisor1.setObjectName("frame_divisor1")
+        self.horizontalLayout_3.addWidget(self.frame_divisor1)
+        self.frame_financial_buttons_company_data = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
+        self.frame_financial_buttons_company_data.setMinimumSize(QtCore.QSize(0, 0))
+        self.frame_financial_buttons_company_data.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.frame_financial_buttons_company_data.setStyleSheet("background-image: url(./src/images/background-blue-1715x980.jpg);\n"
+"border-radius: 5px;")
+        self.frame_financial_buttons_company_data.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_financial_buttons_company_data.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_financial_buttons_company_data.setObjectName("frame_financial_buttons_company_data")
+        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.frame_financial_buttons_company_data)
+        self.verticalLayout_10.setObjectName("verticalLayout_10")
+        self.frame_plaintype_inside = QtWidgets.QFrame(parent=self.frame_financial_buttons_company_data)
         self.frame_plaintype_inside.setMinimumSize(QtCore.QSize(1, 221))
         self.frame_plaintype_inside.setStyleSheet("QFrame{\n"
 "    border: 2px solid rgb(36, 183, 253);\n"
@@ -815,34 +450,104 @@ class Ui_Declaration_MainWindow(object):
         self.frame_plaintype_inside.setObjectName("frame_plaintype_inside")
         self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.frame_plaintype_inside)
         self.verticalLayout_11.setObjectName("verticalLayout_11")
-        self.label_textArea = QtWidgets.QLabel(parent=self.frame_plaintype_inside)
-        self.label_textArea.setMinimumSize(QtCore.QSize(0, 0))
-        self.label_textArea.setMaximumSize(QtCore.QSize(16777215, 20))
+        self.label_company_data = QtWidgets.QLabel(parent=self.frame_plaintype_inside)
+        self.label_company_data.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_company_data.setMaximumSize(QtCore.QSize(16777215, 15))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
-        self.label_textArea.setFont(font)
-        self.label_textArea.setStyleSheet("border: no")
-        self.label_textArea.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_textArea.setObjectName("label_textArea")
-        self.verticalLayout_11.addWidget(self.label_textArea)
-        self.textEdit = QtWidgets.QTextEdit(parent=self.frame_plaintype_inside)
-        self.textEdit.setObjectName("textEdit")
-        self.verticalLayout_11.addWidget(self.textEdit)
-        self.verticalLayout_9.addWidget(self.frame_plaintype_inside)
-        self.horizontalLayout_3.addWidget(self.frame_vehicle_pain_data_outside)
-        self.frame_financial_buttons_company_data = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
-        self.frame_financial_buttons_company_data.setMinimumSize(QtCore.QSize(0, 0))
-        self.frame_financial_buttons_company_data.setMaximumSize(QtCore.QSize(300, 16777215))
-        self.frame_financial_buttons_company_data.setStyleSheet("")
-        self.frame_financial_buttons_company_data.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_financial_buttons_company_data.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_financial_buttons_company_data.setObjectName("frame_financial_buttons_company_data")
-        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.frame_financial_buttons_company_data)
-        self.verticalLayout_10.setObjectName("verticalLayout_10")
-        self.frame_financial = QtWidgets.QFrame(parent=self.frame_financial_buttons_company_data)
+        self.label_company_data.setFont(font)
+        self.label_company_data.setStyleSheet("border:no")
+        self.label_company_data.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_company_data.setObjectName("label_company_data")
+        self.verticalLayout_11.addWidget(self.label_company_data)
+        self.frame_company_data = QtWidgets.QFrame(parent=self.frame_plaintype_inside)
+        self.frame_company_data.setMinimumSize(QtCore.QSize(150, 118))
+        self.frame_company_data.setStyleSheet("QFrame{\n"
+"    border: 2px solid rgb(36, 183, 253);\n"
+"    border-radius: 8px;\n"
+"}")
+        self.frame_company_data.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_company_data.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_company_data.setObjectName("frame_company_data")
+        self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.frame_company_data)
+        self.verticalLayout_13.setObjectName("verticalLayout_13")
+        self.lineEdit_razao_social = QtWidgets.QLineEdit(parent=self.frame_company_data)
+        self.lineEdit_razao_social.setStyleSheet("QLineEdit{\n"
+"    \n"
+"    background-color: rgb(103, 229, 254);\n"
+"    border: 1px solid rgb(10,10,10);\n"
+"    border-radius: 5px;\n"
+"    padding: 2px;\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 1px solid rgb(150,150,150);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(100, 100, 255);\n"
+"}")
+        self.lineEdit_razao_social.setObjectName("lineEdit_razao_social")
+        self.verticalLayout_13.addWidget(self.lineEdit_razao_social)
+        self.lineEdit_cnpj = QtWidgets.QLineEdit(parent=self.frame_company_data)
+        self.lineEdit_cnpj.setStyleSheet("QLineEdit{\n"
+"    \n"
+"    background-color: rgb(103, 229, 254);\n"
+"    border: 1px solid rgb(10,10,10);\n"
+"    border-radius: 5px;\n"
+"    padding: 2px;\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 1px solid rgb(150,150,150);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(100, 100, 255);\n"
+"}")
+        self.lineEdit_cnpj.setObjectName("lineEdit_cnpj")
+        self.verticalLayout_13.addWidget(self.lineEdit_cnpj)
+        self.verticalLayout_11.addWidget(self.frame_company_data)
+        self.label_details_declaration_title = QtWidgets.QLabel(parent=self.frame_plaintype_inside)
+        self.label_details_declaration_title.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_details_declaration_title.setMaximumSize(QtCore.QSize(16777215, 20))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_details_declaration_title.setFont(font)
+        self.label_details_declaration_title.setStyleSheet("border: no")
+        self.label_details_declaration_title.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_details_declaration_title.setObjectName("label_details_declaration_title")
+        self.verticalLayout_11.addWidget(self.label_details_declaration_title)
+        self.textEdit_details = QtWidgets.QTextEdit(parent=self.frame_plaintype_inside)
+        self.textEdit_details.setStyleSheet("QTextEdit{\n"
+"    border:  1px solid rgb(15,15,15);\n"
+"}\n"
+"\n"
+"QTextEdit:hover{\n"
+"    border: 1px solid rgb(150,150,150);\n"
+"}\n"
+"\n"
+"QTextEdit:focus{\n"
+"    border: 2px solid rgb(100, 100, 255);\n"
+"}\n"
+"")
+        self.textEdit_details.setObjectName("textEdit_details")
+        self.verticalLayout_11.addWidget(self.textEdit_details)
+        self.verticalLayout_10.addWidget(self.frame_plaintype_inside)
+        self.horizontalLayout_3.addWidget(self.frame_financial_buttons_company_data)
+        self.frame_divisor2 = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
+        self.frame_divisor2.setMaximumSize(QtCore.QSize(10, 16777215))
+        self.frame_divisor2.setStyleSheet("QFrame {\n"
+"    background-color: rgb(150, 217, 255);\n"
+"    border-radius: 5px;\n"
+"}")
+        self.frame_divisor2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_divisor2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_divisor2.setObjectName("frame_divisor2")
+        self.horizontalLayout_3.addWidget(self.frame_divisor2)
+        self.frame_financial = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
         self.frame_financial.setMinimumSize(QtCore.QSize(161, 286))
         self.frame_financial.setMaximumSize(QtCore.QSize(300, 16777215))
         self.frame_financial.setStyleSheet("QFrame{\n"
@@ -1014,106 +719,37 @@ class Ui_Declaration_MainWindow(object):
         self.comboBox_formapagto.setObjectName("comboBox_formapagto")
         self.verticalLayout_8.addWidget(self.comboBox_formapagto)
         self.verticalLayout_6.addWidget(self.frame_playndate_2)
-        self.verticalLayout_10.addWidget(self.frame_financial)
-        self.frame_company_data_outside_2 = QtWidgets.QFrame(parent=self.frame_financial_buttons_company_data)
-        self.frame_company_data_outside_2.setMinimumSize(QtCore.QSize(150, 120))
-        self.frame_company_data_outside_2.setMaximumSize(QtCore.QSize(300, 200))
-        self.frame_company_data_outside_2.setStyleSheet("border-radius: 8px;\n"
-"background-color: rgb(170, 255, 255);")
-        self.frame_company_data_outside_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_company_data_outside_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_company_data_outside_2.setObjectName("frame_company_data_outside_2")
-        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_company_data_outside_2)
-        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.frame_company_data = QtWidgets.QFrame(parent=self.frame_company_data_outside_2)
-        self.frame_company_data.setMinimumSize(QtCore.QSize(150, 118))
-        self.frame_company_data.setStyleSheet("QFrame{\n"
-"    border: 2px solid rgb(36, 183, 253);\n"
-"    border-radius: 8px;\n"
-"}")
-        self.frame_company_data.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_company_data.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_company_data.setObjectName("frame_company_data")
-        self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.frame_company_data)
-        self.verticalLayout_13.setObjectName("verticalLayout_13")
-        self.label_company_data = QtWidgets.QLabel(parent=self.frame_company_data)
-        self.label_company_data.setMinimumSize(QtCore.QSize(0, 0))
-        self.label_company_data.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.horizontalLayout_3.addWidget(self.frame_financial)
+        self.frame_buttons = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
+        self.frame_buttons.setMinimumSize(QtCore.QSize(150, 0))
+        self.frame_buttons.setMaximumSize(QtCore.QSize(156, 16777215))
+        self.frame_buttons.setStyleSheet("")
+        self.frame_buttons.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_buttons.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_buttons.setObjectName("frame_buttons")
+        self.pushButton_declaration = QtWidgets.QPushButton(parent=self.frame_buttons)
+        self.pushButton_declaration.setGeometry(QtCore.QRect(30, 10, 113, 22))
+        self.pushButton_declaration.setMinimumSize(QtCore.QSize(20, 22))
+        self.pushButton_declaration.setMaximumSize(QtCore.QSize(16777215, 16777215))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_company_data.setFont(font)
-        self.label_company_data.setStyleSheet("border:no")
-        self.label_company_data.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_company_data.setObjectName("label_company_data")
-        self.verticalLayout_13.addWidget(self.label_company_data)
-        self.lineEdit_razao_social = QtWidgets.QLineEdit(parent=self.frame_company_data)
-        self.lineEdit_razao_social.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(103, 229, 254);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_razao_social.setObjectName("lineEdit_razao_social")
-        self.verticalLayout_13.addWidget(self.lineEdit_razao_social)
-        self.lineEdit_cnpj = QtWidgets.QLineEdit(parent=self.frame_company_data)
-        self.lineEdit_cnpj.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(103, 229, 254);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_cnpj.setObjectName("lineEdit_cnpj")
-        self.verticalLayout_13.addWidget(self.lineEdit_cnpj)
-        self.horizontalLayout_4.addWidget(self.frame_company_data)
-        self.verticalLayout_10.addWidget(self.frame_company_data_outside_2)
-        self.frame_buttons_observations = QtWidgets.QFrame(parent=self.frame_financial_buttons_company_data)
-        self.frame_buttons_observations.setMaximumSize(QtCore.QSize(16777215, 200))
-        self.frame_buttons_observations.setStyleSheet("QFrame{\n"
-"    border: no\n"
-"}")
-        self.frame_buttons_observations.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_buttons_observations.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_buttons_observations.setObjectName("frame_buttons_observations")
-        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.frame_buttons_observations)
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.pushButton_adhesion = QtWidgets.QPushButton(parent=self.frame_buttons_observations)
-        self.pushButton_adhesion.setMinimumSize(QtCore.QSize(20, 22))
-        self.pushButton_adhesion.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        self.pushButton_adhesion.setFont(font)
-        self.pushButton_adhesion.setStyleSheet("QPushButton{\n"
+        self.pushButton_declaration.setFont(font)
+        self.pushButton_declaration.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pushButton_declaration.setStyleSheet("QPushButton{\n"
 "    border: 1px solid rgb(10, 10, 10);\n"
 "    border-radius: 5px;\n"
-"    background-color: rgb(136, 230, 253);\n"
+"    background-color: rgb(100, 230, 253);\n"
 "}\n"
 "QPushButton:hover{\n"
 "    border: 1px solid rgb(150,150,150);\n"
+"     font: 12px;\n"
 "}\n"
 "QPushButton:pressed{\n"
 "    border: 2px solid rgb(50, 50, 255);\n"
+"    font: 10px;\n"
 "}")
-        self.pushButton_adhesion.setObjectName("pushButton_adhesion")
-        self.verticalLayout_7.addWidget(self.pushButton_adhesion)
-        self.verticalLayout_10.addWidget(self.frame_buttons_observations)
-        self.horizontalLayout_3.addWidget(self.frame_financial_buttons_company_data)
+        self.pushButton_declaration.setObjectName("pushButton_declaration")
+        self.horizontalLayout_3.addWidget(self.frame_buttons)
         self.horizontalLayout_2.addWidget(self.frame_fill_fiedls)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.horizontalLayout.addWidget(self.scrollArea)
@@ -1136,35 +772,11 @@ class Ui_Declaration_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Termo de Adesão"))
-        self.label_coverage.setText(_translate("MainWindow", "COBERTURAS"))
-        self.checkBox_monitoring.setText(_translate("MainWindow", "Monitoramento e Rastreamento"))
-        self.checkBox_robbery.setText(_translate("MainWindow", "Roubo"))
-        self.checkBox_theft.setText(_translate("MainWindow", "Furto"))
-        self.checkBox_pt.setText(_translate("MainWindow", "Perda Total"))
-        self.checkBox_collision.setText(_translate("MainWindow", "Colisão do Associado"))
-        self.checkBox_winch3.setText(_translate("MainWindow", "3 Reboques Gratuitos a.a."))
-        self.checkBox_winch6.setText(_translate("MainWindow", "6 Reboques Gratuitos a.a."))
-        self.checkBox_unlimited_winch.setText(_translate("MainWindow", "Reboque Ilimitado"))
-        self.checkBox_winch500.setText(_translate("MainWindow", "Quinhentos Quilômetros de Reboque"))
-        self.checkBox_glasses.setText(_translate("MainWindow", "Vidros em Geral"))
-        self.checkBox_others.setText(_translate("MainWindow", "Terceiros"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Declaração"))
         self.label_clientdata.setText(_translate("MainWindow", "DADOS DO CLIENTE"))
         self.lineEdit_name.setPlaceholderText(_translate("MainWindow", "NOME"))
         self.lineEdit_rg_3.setPlaceholderText(_translate("MainWindow", "RG"))
         self.lineEdit_cpf.setPlaceholderText(_translate("MainWindow", "CPF"))
-        self.lineEdit_birth.setPlaceholderText(_translate("MainWindow", "DATA DE NASCIMENTO"))
-        self.lineEdit_nationality.setPlaceholderText(_translate("MainWindow", "NACIONALIDADE"))
-        self.lineEdit_phone1.setPlaceholderText(_translate("MainWindow", "TELEFONE 1"))
-        self.lineEdit_phone2.setPlaceholderText(_translate("MainWindow", "TELEFONE 2"))
-        self.label_adress.setText(_translate("MainWindow", "ENDEREÇO"))
-        self.lineEdit_street.setPlaceholderText(_translate("MainWindow", "RUA/AV"))
-        self.lineEdit_number.setPlaceholderText(_translate("MainWindow", "NUMERO"))
-        self.lineEdit_comp.setPlaceholderText(_translate("MainWindow", "COMPLEMENTO"))
-        self.lineEdit_neghbordhood.setPlaceholderText(_translate("MainWindow", "BAIRRO"))
-        self.lineEdit_city.setPlaceholderText(_translate("MainWindow", "CIDADE"))
-        self.lineEdit_uf.setPlaceholderText(_translate("MainWindow", "UF"))
-        self.lineEdit_cep.setPlaceholderText(_translate("MainWindow", "CEP"))
         self.label_vehicle.setText(_translate("MainWindow", "DADOS DO VEÍCULO"))
         self.lineEdit_assembler.setPlaceholderText(_translate("MainWindow", "MONTADORA"))
         self.lineEdit_model.setPlaceholderText(_translate("MainWindow", "MODELO"))
@@ -1176,7 +788,11 @@ class Ui_Declaration_MainWindow(object):
         self.lineEdit_fipe_value.setPlaceholderText(_translate("MainWindow", "FALOR - FIPE"))
         self.lineEdit_fipe_code.setPlaceholderText(_translate("MainWindow", "COD - FIPE"))
         self.lineEdit_hora.setPlaceholderText(_translate("MainWindow", "HORARIO DE EVENTOS"))
-        self.label_textArea.setText(_translate("MainWindow", "CONTRATO"))
+        self.label_company_data.setText(_translate("MainWindow", "DADOS DA EMPRESA"))
+        self.lineEdit_razao_social.setPlaceholderText(_translate("MainWindow", "RAZÃO SOCIAL"))
+        self.lineEdit_cnpj.setPlaceholderText(_translate("MainWindow", "CNPJ"))
+        self.label_details_declaration_title.setText(_translate("MainWindow", "DETALHES DA DECLARAÇÃO"))
+        self.textEdit_details.setPlaceholderText(_translate("MainWindow", "A empresa X declara, para os devidos fins..."))
         self.label_finance.setText(_translate("MainWindow", "FINANCEIRO"))
         self.lineEdit_monthly_payment.setPlaceholderText(_translate("MainWindow", "MENSALIDADE"))
         self.lineEdit_membership_fee.setPlaceholderText(_translate("MainWindow", "TAXA DE ADESÃO/CANCELAMENTO"))
@@ -1186,10 +802,7 @@ class Ui_Declaration_MainWindow(object):
         self.label_detail_recibo.setText(_translate("MainWindow", "Detalhamento para Recibo"))
         self.textEdit_detail_pagto_obs.setPlaceholderText(_translate("MainWindow", "OBSERVAÇÕES"))
         self.label_formapagto.setText(_translate("MainWindow", "Forma de Pagamento"))
-        self.label_company_data.setText(_translate("MainWindow", "DADOS DA EMPRESA"))
-        self.lineEdit_razao_social.setPlaceholderText(_translate("MainWindow", "RAZÃO SOCIAL"))
-        self.lineEdit_cnpj.setPlaceholderText(_translate("MainWindow", "CNPJ"))
-        self.pushButton_adhesion.setText(_translate("MainWindow", "Gerar Termo de Adesão"))
+        self.pushButton_declaration.setText(_translate("MainWindow", "Gerar Declaração"))
         self.actionGerar_termo_de_ades_o.setText(_translate("MainWindow", "Gerar termo de adesão"))
         self.actionNovo.setText(_translate("MainWindow", "Novo..."))
         self.actionSalvar.setText(_translate("MainWindow", "Salvar"))
@@ -1197,6 +810,7 @@ class Ui_Declaration_MainWindow(object):
         self.actionImprimir_Termo.setText(_translate("MainWindow", "Imprimir Termo"))
         self.actionImprimir_Termo_2.setText(_translate("MainWindow", "Imprimir Termo"))
 
+import file_rc_SGT
 
 if __name__ == "__main__":
     import sys
