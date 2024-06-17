@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'window-adhesion.ui'
+# Form implementation generated from reading ui file '.\window-adhesion.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -7,176 +7,14 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import A4
-from datetime import date
-
+from tests import Ui_File_MainWindow
 
 class Ui_Adhesion_MainWindow(object):
-    
-    def GenerateAdhesionTerm(self):
-                self.cnv = canvas.Canvas(f'{self.lineEdit_name.text().upper()} - ADESÃO.pdf')
-                self.cnv.setFont(psfontname='Times-Roman',size=10)
-                #INSERIR IMAGEM DO NOME DO PROGRAMA E LOGO:
-                self.cnv.drawImage(r'system_name_logo.png',x=40,y=800,width=190,height=30)
-                self.cnv.drawImage(r'system_name_logo.png',x=372,y=10,width=190,height=30)
-                #INSERIR IMAGEM DOS DADOS DA EMPRESA:
-                self.cnv.drawImage(r'company_data.png', x=290, y=710, width=270, height=50)
-                                #INSERIR DADOS DA EMPRESA
-                self.cnv.drawString(x=298,y=737, text= self.lineEdit_razao_social.text().upper())
-                self.cnv.drawString(x=298,y=725, text= self.lineEdit_cnpj.text().upper())
-                #INSERIR IMAGEM DE TÍTULO, CABEÇALHO E TIPO DE PLANO:
-                self.cnv.drawImage(r'header_sgt.png',x=40,y=600,width=520,height=110)
-                                #INSERIR DADOS DO PLANO:
-                self.plain_type = 'MONITORAMENTO'
-                if self.radioButton_monitoring.isChecked():
-                        self.plain_type =   'MONITORAMENTO'
-                if self.radioButton_bronze01.isChecked():
-                        self.plain_type =   'BRONZE 01'
-                if self.radioButton_bronze02.isChecked():
-                        self.plain_type =   'BRONZE 02'
-                if self.radioButton_silver01.isChecked():
-                        self.plain_type =   'PRATA 01'
-                if self.radioButton_silver02.isChecked():
-                        self.plain_type =   'PRATA 02'
-                if self.radioButton_gold.isChecked():
-                        self.plain_type =   'OURO'
-                self.cnv.drawString(x=75,y=609, text= self.plain_type.upper())
-                #INSERIR IMAGEM DOS DADOS DO ASSOCIADO E ENDEREÇO:
-                self.cnv.drawImage(r'clientdata_address.png',x=40,y=440,width=520,height=160)
-                #INSERIR DADOS DO ASSOCIADO:
-                                #NOME:
-                self.cnv.drawString(x=155, y=556, text= self.lineEdit_name.text().upper())
-                                #RG:
-                self.cnv.drawString(x=62, y=536, text= self.lineEdit_rg.text().upper())
-                                #CPF/CNPJ:
-                self.cnv.drawString(x=200, y=535, text= self.lineEdit_cpf.text().upper())
-                                #DATA DE NASCIMENTO:
-                self.cnv.drawString(x=425, y=535, text= self.lineEdit_birth.text().upper())
-                                #NACIONALIDADE:
-                self.cnv.drawString(x=105, y=512, text= self.lineEdit_nationality.text().upper())
-                                #DATA DA RUA:
-                self.cnv.drawString(x=290, y=511, text= self.lineEdit_street.text().upper())
-                                #NUMERO:
-                self.cnv.drawString(x=62, y=491, text= self.lineEdit_number.text().upper())
-                                #COMPLEMENTO:
-                self.cnv.drawString(x=160, y=491, text= self.lineEdit_comp.text().upper())
-                                #BAIRRO:
-                self.cnv.drawString(x=380, y=491, text= self.lineEdit_neghbordhood.text().upper())
-                                #CEP:
-                self.cnv.drawString(x=62, y=469, text= self.lineEdit_cep.text().upper())
-                                #CIDADE:
-                self.cnv.drawString(x=205, y=469, text= self.lineEdit_city.text().upper())
-                                #UF:
-                self.cnv.drawString(x=510, y=469, text= self.lineEdit_uf.text().upper())
-                                #TELEFONE 1:
-                self.cnv.drawString(x=95, y=448, text= self.lineEdit_phone1.text().upper())
-                                #TELEFONE 2:
-                self.cnv.drawString(x=275, y=448, text= self.lineEdit_phone2.text().upper())
-                #INSERIR IMAGEM DOS DADOS DO VEÍCULO:
-                self.cnv.drawImage(r'vehicle_data.png',x=40,y=340,width=520,height=100)
-                #INSERIR DADOS DO VEICULO:
-                                #MONTADORA:
-                self.cnv.drawString(x=88, y=403, text= self.lineEdit_assembler.text().upper())
-                                #MODELO:
-                self.cnv.drawString(x=260,y=403, text= self.lineEdit_model.text().upper())
-                                #ANO:
-                self.cnv.drawString(x=450, y=404, text=self.lineEdit_year.text())
-                                #PLACA:
-                self.cnv.drawString(x=70, y=385, text= self.lineEdit_plate.text().upper())
-                                #COR:
-                self.cnv.drawString(x=230, y=385, text= self.lineEdit_color.text().upper())
-                                #RENAVAM:
-                self.cnv.drawString(x=410, y=385, text= self.lineEdit_renavam.text().upper())
-                                #CHASSI:
-                self.cnv.drawString(x=73, y=366, text= self.lineEdit_chassis.text().upper())
-                        #VALOR FIPE:
-                self.cnv.drawString(x=426, y=366, text= self.lineEdit_fipe_value.text())
-                                #CÓD.FIPE:
-                self.cnv.drawString(x=85, y=347, text= self.lineEdit_fipe_code.text())
-                #INSERIR IMAGEM DOS DADOS FINANCEIROS:
-                self.cnv.drawImage(r'finance.png',x=40,y=290,width=520,height=50)
-                #INSERIR DADOS FINANCEIROS:
-                                #MENSALIDADE:
-                self.cnv.drawString(x=106, y=298, text= self.lineEdit_monthly_payment.text())
-                                #ADESÃO:
-                self.cnv.drawString(x=220, y=298, text= self.lineEdit_membership_fee.text())
-                                #PARCELA ÚNICA:
-                self.cnv.drawString(x=492, y=298, text= self.lineEdit_total_payment.text())
-                #INSERIR IMAGEM DO CAMPO DA COBERTURA:
-                self.cnv.drawImage(r'coverages.png',x=40,y=115,width=520,height=175)
-                #INSERIR DADOS DA COBERTURA:
-                self.coberturas = []
-                
-                        #SELEÇÃO DA COBERTURA:
-                if self.checkBox_monitoring.isChecked():
-                        self.coberturas.append(self.checkBox_monitoring.text())
-                if self.checkBox_robbery.isChecked():
-                        self.coberturas.append(self.checkBox_robbery.text())
-                if self.checkBox_theft.isChecked():
-                        self.coberturas.append(self.checkBox_theft.text())
-                if self.checkBox_collision.isChecked():
-                        self.coberturas.append(self.checkBox_collision.text())
-                if self.checkBox_pt.isChecked():
-                        self.coberturas.append(self.checkBox_pt.text())
-                if self.checkBox_winch3.isChecked():
-                        self.coberturas.append(self.checkBox_winch3.text())
-                if self.checkBox_winch6.isChecked():
-                        self.coberturas.append(self.checkBox_winch6.text())
-                if self.checkBox_unlimited_winch.isChecked():
-                        self.coberturas.append(self.checkBox_unlimited_winch.text())
-                if self.checkBox_winch500.isChecked():
-                        self.coberturas.append(self.checkBox_winch500.text())
-                if self.checkBox_glasses.isChecked():
-                        self.coberturas.append(self.checkBox_glasses.text())
-                if self.checkBox_others.isChecked():
-                        self.coberturas.append(self.checkBox_others.text())
-                self.eixo_y = 240
-                for cobertura in self.coberturas:
-                        self.cnv.drawString(x=50, y= self.eixo_y, text=f'{cobertura}')
-                        self.eixo_y -= 11
-                #IMPRIMIR DATA ATUAL NO DOCUMENTO E NOME FANTASIA DA EMPRESA:
-                self.day = date.today().day
-                self.month = date.today().month
-                self.year = date.today().year
-                self.month_current = str()
-                if self.month == 1:
-                        self.month_current = 'JANEIRO'
-                elif self.month == 2:
-                        self.month_current = 'FEVEREIRO'
-                elif self.month == 3:
-                       self. month_current = 'MARCO'
-                elif self.month == 4:
-                        self.month_current = 'ABRIL'
-                elif self.month == 5:
-                        self.month_current = 'MAIO'
-                elif self.month == 6:
-                        self.month_current = 'JUNHO'
-                elif self.month == 7:
-                        self.month_current = 'JULHO'
-                elif self.month == 8:
-                        self.month_current = 'AGOSTO'
-                elif self.month == 9:
-                        self.month_current = 'SETEMBRO'
-                elif self.month == 10:
-                        self.month_current = 'OUTUBRO'
-                elif self.month == 11:
-                        self.month_current = 'NOVEMBRO'
-                elif self.month == 12:
-                        self.month_current = 'DEZEMBRO'
-                self.cnv.setFont(psfontname='Times-Italic',size=10)
-                self.cnv.drawString(x=40,y=75,text= self.lineEdit_razao_social.text().upper())
-                self.cnv.setFont(psfontname='Times-BoldItalic',size=10)
-                self.cnv.drawString(x=40,y=21,text= 'CAMPINA GRANDE ,'  + f' {self.day} de {self.month_current} de {self.year}')
-                
-                #SALVAR EM PDF:
-                self.cnv.save()
-
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(829, 470)
+        MainWindow.resize(990, 528)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("./src/images/logo.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(".\\src/images/logo.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("QScrollBar:vertical{\n"
 "    border: none;\n"
@@ -293,7 +131,7 @@ class Ui_Adhesion_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -230, 815, 700))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -172, 976, 700))
         self.scrollAreaWidgetContents.setStyleSheet("")
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.scrollAreaWidgetContents)
@@ -496,6 +334,22 @@ class Ui_Adhesion_MainWindow(object):
 "}")
         self.checkBox_others.setObjectName("checkBox_others")
         self.verticalLayout.addWidget(self.checkBox_others)
+        self.lineEdit_plain_type = QtWidgets.QLineEdit(parent=self.frame_coverages_inside)
+        self.lineEdit_plain_type.setStyleSheet("QLineEdit{\n"
+"    \n"
+"    background-color: rgb(148, 148, 148);\n"
+"    border: 1px solid rgb(10,10,10);\n"
+"    border-radius: 5px;\n"
+"    padding: 2px;\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 1px solid rgb(150,150,150);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(100, 100, 255);\n"
+"}")
+        self.lineEdit_plain_type.setObjectName("lineEdit_plain_type")
+        self.verticalLayout.addWidget(self.lineEdit_plain_type)
         self.verticalLayout_4.addWidget(self.frame_coverages_inside)
         self.horizontalLayout_3.addWidget(self.frame_coverages_outside)
         self.frame_client_data_outside = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
@@ -771,17 +625,17 @@ class Ui_Adhesion_MainWindow(object):
         self.verticalLayout_5.addWidget(self.lineEdit_cep)
         self.verticalLayout_2.addWidget(self.frame_client_data_inside)
         self.horizontalLayout_3.addWidget(self.frame_client_data_outside)
-        self.frame_vehicle_pain_data_outside = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
-        self.frame_vehicle_pain_data_outside.setMinimumSize(QtCore.QSize(0, 0))
-        self.frame_vehicle_pain_data_outside.setMaximumSize(QtCore.QSize(300, 16777215))
-        self.frame_vehicle_pain_data_outside.setStyleSheet("background-image: url(./src/images/background-blue-1715x980.jpg);\n"
+        self.frame_contract_outside = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
+        self.frame_contract_outside.setMinimumSize(QtCore.QSize(0, 0))
+        self.frame_contract_outside.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.frame_contract_outside.setStyleSheet("background-image: url(./src/images/background-blue-1715x980.jpg);\n"
 "border-radius: 8px;")
-        self.frame_vehicle_pain_data_outside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_vehicle_pain_data_outside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_vehicle_pain_data_outside.setObjectName("frame_vehicle_pain_data_outside")
-        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.frame_vehicle_pain_data_outside)
+        self.frame_contract_outside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_contract_outside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_contract_outside.setObjectName("frame_contract_outside")
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.frame_contract_outside)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.frame_vehicle_plain_data_inside = QtWidgets.QFrame(parent=self.frame_vehicle_pain_data_outside)
+        self.frame_vehicle_plain_data_inside = QtWidgets.QFrame(parent=self.frame_contract_outside)
         self.frame_vehicle_plain_data_inside.setMinimumSize(QtCore.QSize(150, 50))
         self.frame_vehicle_plain_data_inside.setStyleSheet("QFrame{\n"
 "    border: 2px solid rgb(36, 183, 253);\n"
@@ -966,18 +820,18 @@ class Ui_Adhesion_MainWindow(object):
         self.lineEdit_hora.setObjectName("lineEdit_hora")
         self.verticalLayout_3.addWidget(self.lineEdit_hora)
         self.verticalLayout_9.addWidget(self.frame_vehicle_plain_data_inside)
-        self.frame_plaintype_inside = QtWidgets.QFrame(parent=self.frame_vehicle_pain_data_outside)
-        self.frame_plaintype_inside.setMinimumSize(QtCore.QSize(1, 221))
-        self.frame_plaintype_inside.setStyleSheet("QFrame{\n"
+        self.frame_contract_inside = QtWidgets.QFrame(parent=self.frame_contract_outside)
+        self.frame_contract_inside.setMinimumSize(QtCore.QSize(1, 221))
+        self.frame_contract_inside.setStyleSheet("QFrame{\n"
 "    border: 2px solid rgb(36, 183, 253);\n"
 "    border-radius: 8px;\n"
 "}")
-        self.frame_plaintype_inside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_plaintype_inside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_plaintype_inside.setObjectName("frame_plaintype_inside")
-        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.frame_plaintype_inside)
+        self.frame_contract_inside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_contract_inside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_contract_inside.setObjectName("frame_contract_inside")
+        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.frame_contract_inside)
         self.verticalLayout_11.setObjectName("verticalLayout_11")
-        self.label_textArea = QtWidgets.QLabel(parent=self.frame_plaintype_inside)
+        self.label_textArea = QtWidgets.QLabel(parent=self.frame_contract_inside)
         self.label_textArea.setMinimumSize(QtCore.QSize(0, 0))
         self.label_textArea.setMaximumSize(QtCore.QSize(16777215, 20))
         font = QtGui.QFont()
@@ -990,11 +844,25 @@ class Ui_Adhesion_MainWindow(object):
         self.label_textArea.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_textArea.setObjectName("label_textArea")
         self.verticalLayout_11.addWidget(self.label_textArea)
-        self.textEdit = QtWidgets.QTextEdit(parent=self.frame_plaintype_inside)
-        self.textEdit.setObjectName("textEdit")
-        self.verticalLayout_11.addWidget(self.textEdit)
-        self.verticalLayout_9.addWidget(self.frame_plaintype_inside)
-        self.horizontalLayout_3.addWidget(self.frame_vehicle_pain_data_outside)
+        self.pushButton_insert_file = QtWidgets.QPushButton(parent=self.frame_contract_inside)
+        self.pushButton_insert_file.setStyleSheet("QPushButton{\n"
+"    border: 1px solid rgb(10, 10, 10);\n"
+"    border-radius: 5px;\n"
+"    background-color: rgb(100, 230, 253);\n"
+"    padding: 5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    border: 1px solid rgb(150,150,150);\n"
+"     font: 12px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    border: 2px solid rgb(50, 50, 255);\n"
+"    font: 10px;\n"
+"}")
+        self.pushButton_insert_file.setObjectName("pushButton_insert_file")
+        self.verticalLayout_11.addWidget(self.pushButton_insert_file)
+        self.verticalLayout_9.addWidget(self.frame_contract_inside)
+        self.horizontalLayout_3.addWidget(self.frame_contract_outside)
         self.frame_financial_buttons_company_data = QtWidgets.QFrame(parent=self.frame_fill_fiedls)
         self.frame_financial_buttons_company_data.setMinimumSize(QtCore.QSize(0, 0))
         self.frame_financial_buttons_company_data.setMaximumSize(QtCore.QSize(300, 16777215))
@@ -1264,13 +1132,15 @@ class Ui_Adhesion_MainWindow(object):
         self.pushButton_adhesion.setStyleSheet("QPushButton{\n"
 "    border: 1px solid rgb(10, 10, 10);\n"
 "    border-radius: 5px;\n"
-"    background-color: rgb(136, 230, 253);\n"
+"    background-color: rgb(100, 230, 253);\n"
 "}\n"
 "QPushButton:hover{\n"
 "    border: 1px solid rgb(150,150,150);\n"
+"     font: 12px;\n"
 "}\n"
 "QPushButton:pressed{\n"
 "    border: 2px solid rgb(50, 50, 255);\n"
+"    font: 10px;\n"
 "}")
         self.pushButton_adhesion.setObjectName("pushButton_adhesion")
         self.verticalLayout_7.addWidget(self.pushButton_adhesion)
@@ -1297,12 +1167,18 @@ class Ui_Adhesion_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
         # FUNCTIONS:
-        self.pushButton_adhesion.clicked.connect(self.GenerateAdhesionTerm)
+        self.pushButton_insert_file.clicked.connect(self.show_file_dialog)
+
+    def show_file_dialog(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_File_MainWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Termo de Adesão"))
-        self.label_coverage.setText(_translate("MainWindow", "COBERTURAS"))
+        self.label_coverage.setText(_translate("MainWindow", "COBERTURAS / PLANO"))
         self.checkBox_monitoring.setText(_translate("MainWindow", "Monitoramento e Rastreamento"))
         self.checkBox_robbery.setText(_translate("MainWindow", "Roubo"))
         self.checkBox_theft.setText(_translate("MainWindow", "Furto"))
@@ -1314,6 +1190,7 @@ class Ui_Adhesion_MainWindow(object):
         self.checkBox_winch500.setText(_translate("MainWindow", "Quinhentos Quilômetros de Reboque"))
         self.checkBox_glasses.setText(_translate("MainWindow", "Vidros em Geral"))
         self.checkBox_others.setText(_translate("MainWindow", "Terceiros"))
+        self.lineEdit_plain_type.setPlaceholderText(_translate("MainWindow", "PLANO"))
         self.label_clientdata.setText(_translate("MainWindow", "DADOS DO CLIENTE"))
         self.lineEdit_name.setPlaceholderText(_translate("MainWindow", "NOME"))
         self.lineEdit_rg_3.setPlaceholderText(_translate("MainWindow", "RG"))
@@ -1342,6 +1219,7 @@ class Ui_Adhesion_MainWindow(object):
         self.lineEdit_fipe_code.setPlaceholderText(_translate("MainWindow", "COD - FIPE"))
         self.lineEdit_hora.setPlaceholderText(_translate("MainWindow", "HORARIO DE EVENTOS"))
         self.label_textArea.setText(_translate("MainWindow", "CONTRATO"))
+        self.pushButton_insert_file.setText(_translate("MainWindow", "ADICIONAR CONTRATO (PDF)"))
         self.label_finance.setText(_translate("MainWindow", "FINANCEIRO"))
         self.lineEdit_monthly_payment.setPlaceholderText(_translate("MainWindow", "MENSALIDADE"))
         self.lineEdit_membership_fee.setPlaceholderText(_translate("MainWindow", "TAXA DE ADESÃO/CANCELAMENTO"))
