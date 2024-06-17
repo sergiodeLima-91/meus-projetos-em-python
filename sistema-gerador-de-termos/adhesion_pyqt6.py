@@ -1172,7 +1172,7 @@ class Ui_Adhesion_MainWindow(object):
     def show_file_dialog(self):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_File_MainWindow()
-        self.ui.setupUi(self.window)
+        self.ui.setUp(self.window)
         self.window.show()
 
     def retranslateUi(self, MainWindow):
