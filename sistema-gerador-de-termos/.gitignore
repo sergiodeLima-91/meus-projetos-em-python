@@ -29,4 +29,8 @@ window-adhesion.ui
 Sistema Gerador de Termos.exe
 
 #.qrc
-/src/file_rc_main_window.qrc 
+/src/file_rc_main_window.qrc
+file_rc_main_window.qrc
+
+# pdf:
+testes.pdf
