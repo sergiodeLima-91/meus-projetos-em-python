@@ -10,6 +10,9 @@ file_rcV3.py
 file_rcV4.py
 main-window-temp.py
 adhesion-temp.py
+adhesion.py
+cancel.py
+declaration.py
 temp3.py
 text-editor.py
 tests.py
