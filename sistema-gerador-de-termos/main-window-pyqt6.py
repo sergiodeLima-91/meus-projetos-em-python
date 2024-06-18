@@ -7,9 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from adhesion_pyqt6 import Ui_Adhesion_MainWindow
-from declaration_pyqt6 import Ui_Declaration_MainWindow
-from cancel_pyqt6 import Ui_Cancel_MainWindow
+from adhesion_pyqt6 import Adhesion_MainWindow
 
 
 class Ui_MainWindow(object):
@@ -156,8 +154,6 @@ class Ui_MainWindow(object):
 
         # Connecting buttons in to functions:
         self.pushButtonAdesao.clicked.connect(self.createAdhesionTerm)
-        self.pushButtonDec.clicked.connect(self.createDeclarationTerm)
-        self.pushButtonCanc.clicked.connect(self.createCancelTerm)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -170,20 +166,7 @@ class Ui_MainWindow(object):
         # Functions:
     def createAdhesionTerm(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_Adhesion_MainWindow()
-        self.ui.setupUi(self.window)
-        self.window.show()
-
-    def createDeclarationTerm(self):
-        self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_Declaration_MainWindow()
-        self.ui.setupUi(self.window)
-        self.window.show()
-
-    def createCancelTerm(self):
-        self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_Cancel_MainWindow()
-        self.ui.setupUi(self.window)
+        self.window = Adhesion_MainWindow()
         self.window.show()
 
 import file_rc_SGT
