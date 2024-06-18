@@ -12,9 +12,11 @@ main-window-temp.py
 adhesion-temp.py
 temp3.py
 text-editor.py
-testes.py
+tests.py
 first_window_pyqt6.py
 
+#.pdf
+testes.pdf
 #.docx
 layouts_maker.docx
 
