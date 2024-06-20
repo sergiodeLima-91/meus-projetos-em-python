@@ -1,13 +1,15 @@
-from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog
+from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog, QScrollArea
+from PyQt6 import QtCore, QtGui, QtWidgets
 
-class Adhesion_MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("Campo de Arquivos")
-        self.setGeometry(100, 100, 400, 200)
-
-        button = QPushButton("Selecionar Arquivo", self)
-        button.clicked.connect(self.show_file_dialog)
+class Ui_Adhesion_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(400, 400)
+        MainWindow.setMaximumSize(QtCore.QSize(400, 400))
+        MainWindow.setWindowTitle("Termo de Adesão")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("./src/images/logo.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        MainWindow.setWindowIcon(icon)
 
     def show_file_dialog(self):
         file_name, _ = QFileDialog.getOpenFileName(self, "Selecionar Arquivo", "", "PDF Files (*.pdf);;All Files (*)")
@@ -15,7 +17,10 @@ class Adhesion_MainWindow(QMainWindow):
             print(f"Arquivo selecionado: {file_name}")
 
 if __name__ == "__main__":
-    app = QApplication([])
-    window = Adhesion_MainWindow()
-    window.show()
-    app.exec()
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_Adhesion_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec())
