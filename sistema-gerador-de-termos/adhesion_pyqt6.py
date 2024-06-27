@@ -1,5 +1,5 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QFileDialog
+from select_file import SelectorPDF
 
 class Ui_Adhesion_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -1162,7 +1162,10 @@ class Ui_Adhesion_MainWindow(object):
         self.pushButton_insert_file.clicked.connect(self.show_file_dialog)
 
     def show_file_dialog(self):
-        file_name, _ = QFileDialog.getOpenFileName(MainWindow, "Selecionar Arquivo", "", "PDF Files (*.pdf);;All Files (*)")
+        self. selected = SelectorPDF()
+        self.file_path = self.selected.select_pdf_file()
+        return self.file_path
+        
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
