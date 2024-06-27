@@ -1,7 +1,18 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from select_file import SelectorPDF
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import A4
+from datetime import date
 
 class Ui_Adhesion_MainWindow(object):
+    
+    def GenerateAdhesionTerm(self):
+        self.cnv = canvas.Canvas(f'{self.lineEdit_name.text()} - {self.lineEdit_plain_type.text()} - {self.lineEdit_plate.text()}.pdf')
+
+        self.cnv.drawImage(r'./src/images/logo.png',x=530,y=5,width=50,height=50, mask='auto')
+
+        self.cnv.save()
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(990, 528)
@@ -1160,6 +1171,7 @@ class Ui_Adhesion_MainWindow(object):
 
         # FUNCTIONS:
         self.pushButton_insert_file.clicked.connect(self.show_file_dialog)
+        self. pushButton_adhesion.clicked.connect(self.GenerateAdhesionTerm)
 
     def show_file_dialog(self):
         self. selected = SelectorPDF()
