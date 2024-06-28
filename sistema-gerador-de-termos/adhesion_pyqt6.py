@@ -9,7 +9,11 @@ class Ui_Adhesion_MainWindow(object):
     def GenerateAdhesionTerm(self):
         self.cnv = canvas.Canvas(f'{self.lineEdit_name.text()} - {self.lineEdit_plain_type.text()} - {self.lineEdit_plate.text()}.pdf')
 
+        self.cnv.drawImage(r'./src/images/wm_maximaprotecao.png', x=5, y=15, width=585, height=800)
         self.cnv.drawImage(r'./src/images/logo.png',x=530,y=5,width=50,height=50, mask='auto')
+
+        self.cnv.drawString(x=15, y=200, text='DADOS DO CLIENTE', mode=1)
+
 
         self.cnv.save()
 
