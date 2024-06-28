@@ -7,12 +7,112 @@ from datetime import date
 class Ui_Adhesion_MainWindow(object):
     
     def GenerateAdhesionTerm(self):
-        self.cnv = canvas.Canvas(f'{self.lineEdit_name.text()} - {self.lineEdit_plain_type.text()} - {self.lineEdit_plate.text()}.pdf')
+        self.cnv = canvas.Canvas(f'{self.lineEdit_name.text().upper()} - {self.lineEdit_plain_type.text().upper()} - {self.lineEdit_plate.text()}.pdf')
 
         self.cnv.drawImage(r'./src/images/wm_maximaprotecao.png', x=5, y=15, width=585, height=800)
         self.cnv.drawImage(r'./src/images/logo.png',x=530,y=5,width=50,height=50, mask='auto')
 
-        self.cnv.drawString(x=15, y=200, text='DADOS DO CLIENTE', mode=1)
+        # CLIENT DATA:
+        self.cnv.drawString(x=40, y=680, text='DADOS DO CLIENTE', mode=1)
+        self.cnv.drawString(x=40, y=650, text=f'NOME/RAZÃO SOCIAL:   {self.lineEdit_name.text().upper()}')
+        self.cnv.drawString(x=40, y=635, text=f'RG:   {self.lineEdit_rg_3.text().upper()}')
+        self.cnv.drawString(x=40, y=620, text=f'CPF/CNPJ:   {self.lineEdit_cpf.text().upper()}')
+        self.cnv.drawString(x=40, y=605, text=f'NASCIMENTO:   {self.lineEdit_birth.text().upper()}')
+        self.cnv.drawString(x=40, y=590, text=f'NACIONALIDADE:   {self.lineEdit_nationality.text().upper()}')
+        self.cnv.drawString(x=40, y=575, text=f'TEL.1:   {self.lineEdit_phone1.text().upper()}')
+        self.cnv.drawString(x=40, y=560, text=f'TEL.2:   {self.lineEdit_phone2.text().upper()}')
+        self.cnv.drawString(x=40, y=545, text=f'ENDEREÇO(RUA/AV):  {self.lineEdit_street.text().upper()}')
+        self.cnv.drawString(x=40, y=530, text=f'Nº:  {self.lineEdit_number.text().upper()}')
+        self.cnv.drawString(x=40, y=515, text=f'COMPLEMENTO:  {self.lineEdit_comp.text().upper()}')
+        self.cnv.drawString(x=40, y=500, text=f'BAIRRO:  {self.lineEdit_neghbordhood.text().upper()}')
+        self.cnv.drawString(x=40, y=485, text=f'CIDADE:  {self.lineEdit_city.text().upper()}')
+        self.cnv.drawString(x=40, y=470, text=f'UF:  {self.lineEdit_uf.text().upper()}')
+        self.cnv.drawString(x=40, y=455, text=f'CEP:  {self.lineEdit_cep.text().upper()}')
+
+        # VEHICLE DATA:
+        self.cnv.drawString(x=40, y=435, text='DADOS DO VEÍCULO', mode=1)
+        self.cnv.drawString(x=40, y=405, text=f'MONTADORA:   {self.lineEdit_assembler.text().upper()}')
+        self.cnv.drawString(x=40, y=390, text=f'MODELO:   {self.lineEdit_model.text().upper()}')
+        self.cnv.drawString(x=40, y=375, text=f'PLACA:   {self.lineEdit_plate.text().upper()}')
+        self.cnv.drawString(x=40, y=360, text=f'COR:   {self.lineEdit_color.text().upper()}')
+        self.cnv.drawString(x=40, y=345, text=f'ANO:   {self.lineEdit_year.text().upper()}')
+        self.cnv.drawString(x=40, y=330, text=f'CHASSI:  {self.lineEdit_chassis.text().upper()}')
+        self.cnv.drawString(x=40, y=315, text=f'RENAVAM:  {self.lineEdit_renavam.text().upper()}')
+        self.cnv.drawString(x=40, y=300, text=f'VALOR-FIPE:  {self.lineEdit_fipe_value.text().upper()}')
+        self.cnv.drawString(x=40, y=285, text=f'COD-FIPE:  {self.lineEdit_fipe_code.text().upper()}')
+        self.cnv.drawString(x=40, y=270, text=f'PLANO:  {self.lineEdit_plain_type.text().upper()}')
+
+        # FINANCE DATA:
+        self.cnv.drawString(x=330, y=435, text='DADOS FINANCEIROS', mode=1)
+        self.cnv.drawString(x=330, y=405, text=f'MENSALIDADE:   {self.lineEdit_monthly_payment.text().upper()}')
+        self.cnv.drawString(x=330, y=390, text=f'ADESÃO:   {self.lineEdit_membership_fee.text().upper()}')
+        self.cnv.drawString(x=330, y=375, text=f'VENCIMENTO:   {self.lineEdit_due_date.text().upper()}')
+
+        # COVERAGE DATA:
+        self.coverage = []
+
+                #SELEÇÃO DA COBERTURA:
+        if self.checkBox_monitoring.isChecked():
+                self.coverage.append(self.checkBox_monitoring.text())
+        if self.checkBox_robbery.isChecked():
+                self.coverage.append(self.checkBox_robbery.text())
+        if self.checkBox_theft.isChecked():
+                self.coverage.append(self.checkBox_theft.text())
+        if self.checkBox_collision.isChecked():
+                self.coverage.append(self.checkBox_collision.text())
+        if self.checkBox_pt.isChecked():
+                self.coverage.append(self.checkBox_pt.text())
+        if self.checkBox_winch3.isChecked():
+                self.coverage.append(self.checkBox_winch3.text())
+        if self.checkBox_winch6.isChecked():
+                self.coverage.append(self.checkBox_winch6.text())
+        if self.checkBox_unlimited_winch.isChecked():
+                self.coverage.append(self.checkBox_unlimited_winch.text())
+        if self.checkBox_winch500.isChecked():
+                self.coverage.append(self.checkBox_winch500.text())
+        if self.checkBox_glasses.isChecked():
+                self.coverage.append(self.checkBox_glasses.text())
+        if self.checkBox_others.isChecked():
+                self.coverage.append(self.checkBox_others.text())
+        self.eixo_y = 240
+        for cobertura in self.coverage:
+                self.cnv.drawString(x=50, y= self.eixo_y, text=f'{cobertura}')
+                self.eixo_y -= 11
+
+        # SUBSCRIPTIONS:
+        self.cnv.drawString(x=40, y=210, text=f'{self.lineEdit_razao_social.text().upper()}', mode=1)
+
+        #INSERT DATE
+        day = date.today().day
+        month = date.today().month
+        year = date.today().year
+
+        month_current = str()
+        if month == 1:
+                month_current = 'JANEIRO'
+        elif month == 2:
+                month_current = 'FEVEREIRO'
+        elif month == 3:
+                month_current = 'MARCO'
+        elif month == 4:
+                month_current = 'ABRIL'
+        elif month == 5:
+                month_current = 'MAIO'
+        elif month == 6:
+                month_current = 'JUNHO'
+        elif month == 7:
+                month_current = 'JULHO'
+        elif month == 8:
+                month_current = 'AGOSTO'
+        elif month == 9:
+                month_current = 'SETEMBRO'
+        elif month == 10:
+                month_current = 'OUTUBRO'
+        elif month == 11:
+                month_current = 'NOVEMBRO'
+        elif month == 12:
+                month_current = 'DEZEMBRO'
+        self.cnv.drawString(x=340,y=52,text=f'{day} de {month_current} de {year}')
 
 
         self.cnv.save()
@@ -938,8 +1038,8 @@ class Ui_Adhesion_MainWindow(object):
 "}")
         self.lineEdit_membership_fee.setObjectName("lineEdit_membership_fee")
         self.verticalLayout_6.addWidget(self.lineEdit_membership_fee)
-        self.lineEdit_total_payment = QtWidgets.QLineEdit(parent=self.frame_financial)
-        self.lineEdit_total_payment.setStyleSheet("QLineEdit{\n"
+        self.lineEdit_due_date = QtWidgets.QLineEdit(parent=self.frame_financial)
+        self.lineEdit_due_date.setStyleSheet("QLineEdit{\n"
 "    \n"
 "    background-color: rgb(142, 216, 141);\n"
 "    border: 2px solid rgb(0, 102, 52);\n"
@@ -952,8 +1052,8 @@ class Ui_Adhesion_MainWindow(object):
 "QLineEdit:focus{\n"
 "    border: 2px solid rgb(0, 0, 255);\n"
 "}")
-        self.lineEdit_total_payment.setObjectName("lineEdit_total_payment")
-        self.verticalLayout_6.addWidget(self.lineEdit_total_payment)
+        self.lineEdit_due_date.setObjectName("lineEdit_due_date")
+        self.verticalLayout_6.addWidget(self.lineEdit_due_date)
         self.frame_playndate = QtWidgets.QFrame(parent=self.frame_financial)
         self.frame_playndate.setMaximumSize(QtCore.QSize(16777215, 142))
         font = QtGui.QFont()
@@ -1186,7 +1286,7 @@ class Ui_Adhesion_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Termo de Adesão"))
-        self.label_coverage.setText(_translate("MainWindow", "COBERTURAS / PLANO"))
+        self.label_coverage.setText(_translate("MainWindow", "coverage / PLANO"))
         self.checkBox_monitoring.setText(_translate("MainWindow", "Monitoramento e Rastreamento"))
         self.checkBox_robbery.setText(_translate("MainWindow", "Roubo"))
         self.checkBox_theft.setText(_translate("MainWindow", "Furto"))
@@ -1200,9 +1300,9 @@ class Ui_Adhesion_MainWindow(object):
         self.checkBox_others.setText(_translate("MainWindow", "Terceiros"))
         self.lineEdit_plain_type.setPlaceholderText(_translate("MainWindow", "PLANO"))
         self.label_clientdata.setText(_translate("MainWindow", "DADOS DO CLIENTE"))
-        self.lineEdit_name.setPlaceholderText(_translate("MainWindow", "NOME"))
+        self.lineEdit_name.setPlaceholderText(_translate("MainWindow", "NOME/RAZÃO SOCIAL"))
         self.lineEdit_rg_3.setPlaceholderText(_translate("MainWindow", "RG"))
-        self.lineEdit_cpf.setPlaceholderText(_translate("MainWindow", "CPF"))
+        self.lineEdit_cpf.setPlaceholderText(_translate("MainWindow", "CPF/CNPJ"))
         self.lineEdit_birth.setPlaceholderText(_translate("MainWindow", "DATA DE NASCIMENTO"))
         self.lineEdit_nationality.setPlaceholderText(_translate("MainWindow", "NACIONALIDADE"))
         self.lineEdit_phone1.setPlaceholderText(_translate("MainWindow", "TELEFONE 1"))
@@ -1231,7 +1331,7 @@ class Ui_Adhesion_MainWindow(object):
         self.label_finance.setText(_translate("MainWindow", "FINANCEIRO"))
         self.lineEdit_monthly_payment.setPlaceholderText(_translate("MainWindow", "MENSALIDADE"))
         self.lineEdit_membership_fee.setPlaceholderText(_translate("MainWindow", "TAXA DE ADESÃO/CANCELAMENTO"))
-        self.lineEdit_total_payment.setPlaceholderText(_translate("MainWindow", "PARCELA ÚNICA (PAGTO TOTAL DE PLANO)"))
+        self.lineEdit_due_date.setPlaceholderText(_translate("MainWindow", "DATA DE VENCIMENTO"))
         self.label_start.setText(_translate("MainWindow", "Plano válido de:"))
         self.label_finish.setText(_translate("MainWindow", "Até"))
         self.label_detail_recibo.setText(_translate("MainWindow", "Detalhamento para Recibo"))
