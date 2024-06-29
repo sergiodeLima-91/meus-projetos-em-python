@@ -13,7 +13,7 @@ class Ui_Adhesion_MainWindow(object):
         self.cnv.drawImage(r'./src/images/logo.png',x=530,y=5,width=50,height=50, mask='auto')
 
         # CLIENT DATA:
-        self.cnv.drawString(x=40, y=680, text='DADOS DO CLIENTE', mode=1)
+        self.cnv.drawString(x=40, y=680, text='DADOS DO ASSOCIADO', mode=1)
         self.cnv.drawString(x=40, y=650, text=f'NOME/RAZÃO SOCIAL:   {self.lineEdit_name.text().upper()}')
         self.cnv.drawString(x=40, y=635, text=f'RG:   {self.lineEdit_rg_3.text().upper()}')
         self.cnv.drawString(x=40, y=620, text=f'CPF/CNPJ:   {self.lineEdit_cpf.text().upper()}')
@@ -29,6 +29,8 @@ class Ui_Adhesion_MainWindow(object):
         self.cnv.drawString(x=40, y=470, text=f'UF:  {self.lineEdit_uf.text().upper()}')
         self.cnv.drawString(x=40, y=455, text=f'CEP:  {self.lineEdit_cep.text().upper()}')
 
+        self.cnv.line(x1=40,y1=448, x2=530,y2=448)
+
         # VEHICLE DATA:
         self.cnv.drawString(x=40, y=435, text='DADOS DO VEÍCULO', mode=1)
         self.cnv.drawString(x=40, y=405, text=f'MONTADORA:   {self.lineEdit_assembler.text().upper()}')
@@ -42,6 +44,8 @@ class Ui_Adhesion_MainWindow(object):
         self.cnv.drawString(x=40, y=285, text=f'COD-FIPE:  {self.lineEdit_fipe_code.text().upper()}')
         self.cnv.drawString(x=40, y=270, text=f'PLANO:  {self.lineEdit_plain_type.text().upper()}')
 
+        self.cnv.line(x1=40,y1=263, x2=530,y2=263)
+
         # FINANCE DATA:
         self.cnv.drawString(x=330, y=435, text='DADOS FINANCEIROS', mode=1)
         self.cnv.drawString(x=330, y=405, text=f'MENSALIDADE:   {self.lineEdit_monthly_payment.text().upper()}')
@@ -50,8 +54,8 @@ class Ui_Adhesion_MainWindow(object):
 
         # COVERAGE DATA:
         self.coverage = []
-
-                #SELEÇÃO DA COBERTURA:
+        self.cnv.drawString(x=40, y=250, text='COBERTURA', mode=1)
+                #COVERAGE SELECTION:
         if self.checkBox_monitoring.isChecked():
                 self.coverage.append(self.checkBox_monitoring.text())
         if self.checkBox_robbery.isChecked():
@@ -74,13 +78,15 @@ class Ui_Adhesion_MainWindow(object):
                 self.coverage.append(self.checkBox_glasses.text())
         if self.checkBox_others.isChecked():
                 self.coverage.append(self.checkBox_others.text())
-        self.eixo_y = 240
+        self.eixo_y = 225
         for cobertura in self.coverage:
-                self.cnv.drawString(x=50, y= self.eixo_y, text=f'{cobertura}')
+                self.cnv.drawString(x=40, y= self.eixo_y, text=f'{cobertura}')
                 self.eixo_y -= 11
 
         # SUBSCRIPTIONS:
-        self.cnv.drawString(x=40, y=210, text=f'{self.lineEdit_razao_social.text().upper()}', mode=1)
+        self.cnv.setFont('Times-Italic', 12)
+        self.cnv.drawImage(r'./src/images/rubrica_digitalizada_sem_fundo.png', x=120, y=55, width=50, height=50, mask='auto')
+        self.cnv.drawString(x=40, y=75, text=f'{self.lineEdit_razao_social.text().upper()}')
 
         #INSERT DATE
         day = date.today().day
@@ -1286,7 +1292,7 @@ class Ui_Adhesion_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Termo de Adesão"))
-        self.label_coverage.setText(_translate("MainWindow", "coverage / PLANO"))
+        self.label_coverage.setText(_translate("MainWindow", "COBERTURA / PLANO"))
         self.checkBox_monitoring.setText(_translate("MainWindow", "Monitoramento e Rastreamento"))
         self.checkBox_robbery.setText(_translate("MainWindow", "Roubo"))
         self.checkBox_theft.setText(_translate("MainWindow", "Furto"))
