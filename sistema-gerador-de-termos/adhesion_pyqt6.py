@@ -2,12 +2,15 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from select_file import SelectorPDF
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
+from PyPDF2 import PdfMerger, PdfReader
 from datetime import date
 
 class Ui_Adhesion_MainWindow(object):
     
     def GenerateAdhesionTerm(self):
-        self.cnv = canvas.Canvas(f'{self.lineEdit_name.text().upper()} - {self.lineEdit_plain_type.text().upper()} - {self.lineEdit_plate.text()}.pdf')
+        pdf_path = f'{self.lineEdit_name.text().upper()} - {self.lineEdit_plain_type.text().upper()} - {self.lineEdit_plate.text()}.pdf'
+        self.cnv = canvas.Canvas(pdf_path)
+
 
         self.cnv.drawImage(r'./src/images/wm_maximaprotecao.png', x=5, y=15, width=585, height=800)
         self.cnv.drawImage(r'./src/images/logo.png',x=530,y=5,width=50,height=50, mask='auto')
@@ -122,6 +125,20 @@ class Ui_Adhesion_MainWindow(object):
 
 
         self.cnv.save()
+
+        # MERGING PDFs
+        if self.selected_pdf_path:
+                merger = PdfMerger()
+                with open(self.selected_pdf_path, 'rb') as f:
+                  merger.append(PdfReader(f, strict=False))
+                with open(pdf_path, 'rb') as f:
+                  merger.append(PdfReader(f, strict=False))
+                  merged_pdf_path = f'{pdf_path}'
+                with open(merged_pdf_path, 'wb') as merged_file:
+                  merger.write(merged_file)
+                  merger.close()
+                print(f'PDFs mesclados e salvos em {merged_pdf_path}')
+
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -1284,9 +1301,9 @@ class Ui_Adhesion_MainWindow(object):
         self. pushButton_adhesion.clicked.connect(self.GenerateAdhesionTerm)
 
     def show_file_dialog(self):
-        self. selected = SelectorPDF()
-        self.file_path = self.selected.select_pdf_file()
-        return self.file_path
+        self.selected = SelectorPDF()
+        self.selected_pdf_path = self.selected.select_pdf_file()
+        return self.selected_pdf_path
         
 
     def retranslateUi(self, MainWindow):
