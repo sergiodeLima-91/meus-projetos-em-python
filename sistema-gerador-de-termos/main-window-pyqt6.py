@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from adhesion_pyqt6 import Adhesion_MainWindow
+from adhesion_pyqt6 import Ui_Adhesion_MainWindow
 
 
 class Ui_MainWindow(object):
@@ -166,7 +166,8 @@ class Ui_MainWindow(object):
         # Functions:
     def createAdhesionTerm(self):
         self.window = QtWidgets.QMainWindow()
-        self.window = Adhesion_MainWindow()
+        self.ui = Ui_Adhesion_MainWindow()
+        self.ui.setupUi(self.window)
         self.window.show()
 
 import file_rc_SGT
