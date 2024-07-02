@@ -960,14 +960,14 @@ class Ui_Adhesion_MainWindow(object):
         self.verticalLayout_11.addWidget(self.label_textArea)
         self.pushButton_insert_file = QtWidgets.QPushButton(parent=self.frame_contract_inside)
         self.pushButton_insert_file.setStyleSheet("QPushButton{\n"
-"    border: 1px solid rgb(10, 10, 10);\n"
+"    border: 3px solid rgb(10, 10, 10);\n"
 "    border-radius: 5px;\n"
 "    background-color: rgb(100, 230, 253);\n"
 "    padding: 5px;\n"
 "}\n"
 "QPushButton:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"     font: 12px;\n"
+"    border: 2px solid rgb(50,50,50);\n"
+"     font: 13px;\n"
 "}\n"
 "QPushButton:pressed{\n"
 "    border: 2px solid rgb(50, 50, 255);\n"
@@ -1152,13 +1152,13 @@ class Ui_Adhesion_MainWindow(object):
         font.setFamily("Segoe UI")
         self.pushButton_adhesion.setFont(font)
         self.pushButton_adhesion.setStyleSheet("QPushButton{\n"
-"    border: 1px solid rgb(10, 10, 10);\n"
+"    border: 3px solid rgb(10, 10, 10);\n"
 "    border-radius: 5px;\n"
 "    background-color: rgb(100, 230, 253);\n"
 "}\n"
 "QPushButton:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"     font: 12px;\n"
+"    border: 2px solid rgb(50,50,50);\n"
+"     font: 13px;\n"
 "}\n"
 "QPushButton:pressed{\n"
 "    border: 2px solid rgb(50, 50, 255);\n"
@@ -1202,6 +1202,7 @@ class Ui_Adhesion_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Termo de Adesão"))
         self.label_coverage.setText(_translate("MainWindow", "COBERTURA / PLANO"))
+        self.label_coverage.setStyleSheet("font: bold;")
         self.checkBox_monitoring.setText(_translate("MainWindow", "Monitoramento e Rastreamento"))
         self.checkBox_robbery.setText(_translate("MainWindow", "Roubo"))
         self.checkBox_theft.setText(_translate("MainWindow", "Furto"))
@@ -1214,7 +1215,8 @@ class Ui_Adhesion_MainWindow(object):
         self.checkBox_glasses.setText(_translate("MainWindow", "Vidros em Geral"))
         self.checkBox_others.setText(_translate("MainWindow", "Terceiros"))
         self.lineEdit_plain_type.setPlaceholderText(_translate("MainWindow", "PLANO"))
-        self.label_clientdata.setText(_translate("MainWindow", "DADOS DO CLIENTE"))
+        self.label_clientdata.setText(_translate("MainWindow", "DADOS DO ASSOCIADO"))
+        self.label_clientdata.setStyleSheet("font: bold;")
         self.lineEdit_name.setPlaceholderText(_translate("MainWindow", "NOME/RAZÃO SOCIAL"))
         self.lineEdit_rg_3.setPlaceholderText(_translate("MainWindow", "RG"))
         self.lineEdit_cpf.setPlaceholderText(_translate("MainWindow", "CPF/CNPJ"))
@@ -1231,6 +1233,7 @@ class Ui_Adhesion_MainWindow(object):
         self.lineEdit_uf.setPlaceholderText(_translate("MainWindow", "UF"))
         self.lineEdit_cep.setPlaceholderText(_translate("MainWindow", "CEP"))
         self.label_vehicle.setText(_translate("MainWindow", "DADOS DO VEÍCULO"))
+        self.label_vehicle.setStyleSheet("font: bold;")
         self.lineEdit_assembler.setPlaceholderText(_translate("MainWindow", "MONTADORA"))
         self.lineEdit_model.setPlaceholderText(_translate("MainWindow", "MODELO"))
         self.lineEdit_plate.setPlaceholderText(_translate("MainWindow", "PLACA"))
@@ -1241,14 +1244,17 @@ class Ui_Adhesion_MainWindow(object):
         self.lineEdit_fipe_value.setPlaceholderText(_translate("MainWindow", "FALOR - FIPE"))
         self.lineEdit_fipe_code.setPlaceholderText(_translate("MainWindow", "COD - FIPE"))
         self.label_textArea.setText(_translate("MainWindow", "CONTRATO"))
+        self.label_textArea.setStyleSheet("font: bold;")
         self.pushButton_insert_file.setText(_translate("MainWindow", "ADICIONAR CONTRATO (PDF)"))
         self.label_finance.setText(_translate("MainWindow", "FINANCEIRO"))
+        self.label_finance.setStyleSheet("font:bold;")
         self.lineEdit_monthly_payment.setPlaceholderText(_translate("MainWindow", "MENSALIDADE"))
-        self.lineEdit_membership_fee.setPlaceholderText(_translate("MainWindow", "TAXA DE ADESÃO/CANCELAMENTO"))
+        self.lineEdit_membership_fee.setPlaceholderText(_translate("MainWindow", "TAXA DE ADESÃO"))
         self.lineEdit_due_date.setPlaceholderText(_translate("MainWindow", "DATA DE VENCIMENTO"))
         self.label_company_data.setText(_translate("MainWindow", "NOME DA EMPRESA"))
+        self.frame_company_data.setStyleSheet("font: bold;")
         self.lineEdit_razao_social.setPlaceholderText(_translate("MainWindow", "RAZÃO SOCIAL"))
-        self.pushButton_adhesion.setText(_translate("MainWindow", "Gerar Termo de Adesão"))
+        self.pushButton_adhesion.setText(_translate("MainWindow", "GERAR TERMO"))
         self.actionGerar_termo_de_ades_o.setText(_translate("MainWindow", "Gerar termo de adesão"))
         self.actionNovo.setText(_translate("MainWindow", "Novo..."))
         self.actionSalvar.setText(_translate("MainWindow", "Salvar"))
