@@ -1200,7 +1200,7 @@ class Ui_Adhesion_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Termo de Adesão"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Gerador de Termo de Adesão"))
         self.label_coverage.setText(_translate("MainWindow", "COBERTURA / PLANO"))
         self.label_coverage.setStyleSheet("font: bold;")
         self.checkBox_monitoring.setText(_translate("MainWindow", "Monitoramento e Rastreamento"))
