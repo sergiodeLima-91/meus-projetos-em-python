@@ -1077,103 +1077,27 @@ class Ui_Adhesion_MainWindow(object):
 "}")
         self.lineEdit_due_date.setObjectName("lineEdit_due_date")
         self.verticalLayout_6.addWidget(self.lineEdit_due_date)
-        self.frame_playndate = QtWidgets.QFrame(parent=self.frame_financial)
-        self.frame_playndate.setMaximumSize(QtCore.QSize(16777215, 142))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
-        self.frame_playndate.setFont(font)
-        self.frame_playndate.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_playndate.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_playndate.setObjectName("frame_playndate")
-        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.frame_playndate)
-        self.verticalLayout_12.setObjectName("verticalLayout_12")
-        self.label_start = QtWidgets.QLabel(parent=self.frame_playndate)
-        self.label_start.setMaximumSize(QtCore.QSize(16777215, 30))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
-        self.label_start.setFont(font)
-        self.label_start.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.label_start.setObjectName("label_start")
-        self.verticalLayout_12.addWidget(self.label_start)
-        self.dateEdit_start = QtWidgets.QDateEdit(parent=self.frame_playndate)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
-        self.dateEdit_start.setFont(font)
-        self.dateEdit_start.setStyleSheet("")
-        self.dateEdit_start.setObjectName("dateEdit_start")
-        self.verticalLayout_12.addWidget(self.dateEdit_start)
-        self.label_finish = QtWidgets.QLabel(parent=self.frame_playndate)
-        self.label_finish.setMaximumSize(QtCore.QSize(16777215, 30))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setBold(True)
         font.setWeight(75)
-        self.label_finish.setFont(font)
-        self.label_finish.setObjectName("label_finish")
-        self.verticalLayout_12.addWidget(self.label_finish)
-        self.dateEdit_finish = QtWidgets.QDateEdit(parent=self.frame_playndate)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
-        self.dateEdit_finish.setFont(font)
-        self.dateEdit_finish.setObjectName("dateEdit_finish")
-        self.verticalLayout_12.addWidget(self.dateEdit_finish)
-        self.verticalLayout_6.addWidget(self.frame_playndate)
-        self.frame_playndate_2 = QtWidgets.QFrame(parent=self.frame_financial)
-        self.frame_playndate_2.setMinimumSize(QtCore.QSize(0, 0))
-        self.frame_playndate_2.setMaximumSize(QtCore.QSize(16777215, 142))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
-        self.frame_playndate_2.setFont(font)
-        self.frame_playndate_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_playndate_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_playndate_2.setObjectName("frame_playndate_2")
-        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.frame_playndate_2)
-        self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.label_detail_recibo = QtWidgets.QLabel(parent=self.frame_playndate_2)
-        self.label_detail_recibo.setMaximumSize(QtCore.QSize(16777215, 30))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
-        self.label_detail_recibo.setFont(font)
-        self.label_detail_recibo.setTextFormat(QtCore.Qt.TextFormat.PlainText)
-        self.label_detail_recibo.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_detail_recibo.setObjectName("label_detail_recibo")
-        self.verticalLayout_8.addWidget(self.label_detail_recibo)
-        self.textEdit_detail_pagto_obs = QtWidgets.QTextEdit(parent=self.frame_playndate_2)
-        self.textEdit_detail_pagto_obs.setMinimumSize(QtCore.QSize(0, 58))
-        self.textEdit_detail_pagto_obs.setStyleSheet("QTextEdit{\n"
-"    \n"
-"    background-color: rgb(142, 216, 141);\n"
-"    border: 2px solid rgb(0, 102, 52);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QTextEdit:hover{\n"
-"    border: 2px solid rgb(100, 202, 152);\n"
-"}\n"
-"QTextEdit:focus{\n"
-"    border: 2px solid rgb(0, 0, 255);\n"
-"}")
-        self.textEdit_detail_pagto_obs.setObjectName("textEdit_detail_pagto_obs")
-        self.verticalLayout_8.addWidget(self.textEdit_detail_pagto_obs)
-        self.label_formapagto = QtWidgets.QLabel(parent=self.frame_playndate_2)
-        self.label_formapagto.setMaximumSize(QtCore.QSize(16777215, 30))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
-        self.label_formapagto.setFont(font)
-        self.label_formapagto.setTextFormat(QtCore.Qt.TextFormat.PlainText)
-        self.label_formapagto.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_formapagto.setObjectName("label_formapagto")
-        self.verticalLayout_8.addWidget(self.label_formapagto)
-        self.comboBox_formapagto = QtWidgets.QComboBox(parent=self.frame_playndate_2)
-        self.comboBox_formapagto.setStyleSheet("QComboBox{\n"
-"    border-radius: 2px;\n"
-"}")
-        self.comboBox_formapagto.setObjectName("comboBox_formapagto")
-        self.verticalLayout_8.addWidget(self.comboBox_formapagto)
-        self.verticalLayout_6.addWidget(self.frame_playndate_2)
         self.verticalLayout_10.addWidget(self.frame_financial)
         self.frame_company_data_outside_2 = QtWidgets.QFrame(parent=self.frame_financial_buttons_company_data)
         self.frame_company_data_outside_2.setMinimumSize(QtCore.QSize(150, 120))
@@ -1225,22 +1149,6 @@ class Ui_Adhesion_MainWindow(object):
 "}")
         self.lineEdit_razao_social.setObjectName("lineEdit_razao_social")
         self.verticalLayout_13.addWidget(self.lineEdit_razao_social)
-        self.lineEdit_cnpj = QtWidgets.QLineEdit(parent=self.frame_company_data)
-        self.lineEdit_cnpj.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(103, 229, 254);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_cnpj.setObjectName("lineEdit_cnpj")
-        self.verticalLayout_13.addWidget(self.lineEdit_cnpj)
         self.horizontalLayout_4.addWidget(self.frame_company_data)
         self.verticalLayout_10.addWidget(self.frame_company_data_outside_2)
         self.frame_buttons_observations = QtWidgets.QFrame(parent=self.frame_financial_buttons_company_data)
@@ -1355,14 +1263,8 @@ class Ui_Adhesion_MainWindow(object):
         self.lineEdit_monthly_payment.setPlaceholderText(_translate("MainWindow", "MENSALIDADE"))
         self.lineEdit_membership_fee.setPlaceholderText(_translate("MainWindow", "TAXA DE ADESÃO/CANCELAMENTO"))
         self.lineEdit_due_date.setPlaceholderText(_translate("MainWindow", "DATA DE VENCIMENTO"))
-        self.label_start.setText(_translate("MainWindow", "Plano válido de:"))
-        self.label_finish.setText(_translate("MainWindow", "Até"))
-        self.label_detail_recibo.setText(_translate("MainWindow", "Detalhamento para Recibo"))
-        self.textEdit_detail_pagto_obs.setPlaceholderText(_translate("MainWindow", "OBSERVAÇÕES"))
-        self.label_formapagto.setText(_translate("MainWindow", "Forma de Pagamento"))
-        self.label_company_data.setText(_translate("MainWindow", "DADOS DA EMPRESA"))
+        self.label_company_data.setText(_translate("MainWindow", "NOME DA EMPRESA"))
         self.lineEdit_razao_social.setPlaceholderText(_translate("MainWindow", "RAZÃO SOCIAL"))
-        self.lineEdit_cnpj.setPlaceholderText(_translate("MainWindow", "CNPJ"))
         self.pushButton_adhesion.setText(_translate("MainWindow", "Gerar Termo de Adesão"))
         self.actionGerar_termo_de_ades_o.setText(_translate("MainWindow", "Gerar termo de adesão"))
         self.actionNovo.setText(_translate("MainWindow", "Novo..."))
