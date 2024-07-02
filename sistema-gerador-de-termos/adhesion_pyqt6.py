@@ -933,22 +933,6 @@ class Ui_Adhesion_MainWindow(object):
 "}")
         self.lineEdit_fipe_code.setObjectName("lineEdit_fipe_code")
         self.verticalLayout_3.addWidget(self.lineEdit_fipe_code)
-        self.lineEdit_hora = QtWidgets.QLineEdit(parent=self.frame_vehicle_plain_data_inside)
-        self.lineEdit_hora.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_hora.setObjectName("lineEdit_hora")
-        self.verticalLayout_3.addWidget(self.lineEdit_hora)
         self.verticalLayout_9.addWidget(self.frame_vehicle_plain_data_inside)
         self.frame_contract_inside = QtWidgets.QFrame(parent=self.frame_contract_outside)
         self.frame_contract_inside.setMinimumSize(QtCore.QSize(1, 221))
@@ -1256,7 +1240,6 @@ class Ui_Adhesion_MainWindow(object):
         self.lineEdit_renavam.setPlaceholderText(_translate("MainWindow", "RENAVAM"))
         self.lineEdit_fipe_value.setPlaceholderText(_translate("MainWindow", "FALOR - FIPE"))
         self.lineEdit_fipe_code.setPlaceholderText(_translate("MainWindow", "COD - FIPE"))
-        self.lineEdit_hora.setPlaceholderText(_translate("MainWindow", "HORARIO DE EVENTOS"))
         self.label_textArea.setText(_translate("MainWindow", "CONTRATO"))
         self.pushButton_insert_file.setText(_translate("MainWindow", "ADICIONAR CONTRATO (PDF)"))
         self.label_finance.setText(_translate("MainWindow", "FINANCEIRO"))
