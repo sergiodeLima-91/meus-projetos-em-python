@@ -463,6 +463,21 @@ class Ui_Adhesion_MainWindow(object):
 "    color: rgb(0, 0, 255);\n"
 "}")
         self.checkBox_others.setObjectName("checkBox_others")
+
+        self.label_credits = QtWidgets.QLabel(parent=self.frame_coverages_outside)
+        self.label_credits.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_credits.setMaximumSize(QtCore.QSize(16777215, 20))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(10)
+        font.setItalic(True)
+        font.setWeight(75)
+        self.label_credits.setFont(font)
+        self.label_credits.setStyleSheet("border:no")
+        self.label_credits.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_credits.setObjectName("label_credits")
+        self.label_credits.setGeometry(10, 650, 140, 700)
+
         self.verticalLayout.addWidget(self.checkBox_others)
         self.lineEdit_plain_type = QtWidgets.QLineEdit(parent=self.frame_coverages_inside)
         self.lineEdit_plain_type.setStyleSheet("QLineEdit{\n"
@@ -1216,6 +1231,7 @@ class Ui_Adhesion_MainWindow(object):
         self.checkBox_others.setText(_translate("MainWindow", "Terceiros"))
         self.lineEdit_plain_type.setPlaceholderText(_translate("MainWindow", "PLANO"))
         self.label_clientdata.setText(_translate("MainWindow", "DADOS DO ASSOCIADO"))
+        self.label_credits.setText(_translate("MainWindow", "created by Sérgio Lima"))
         self.label_clientdata.setStyleSheet("font: bold;")
         self.lineEdit_name.setPlaceholderText(_translate("MainWindow", "NOME/RAZÃO SOCIAL"))
         self.lineEdit_rg_3.setPlaceholderText(_translate("MainWindow", "RG"))
