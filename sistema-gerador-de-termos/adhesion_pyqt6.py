@@ -142,7 +142,7 @@ class Ui_Adhesion_MainWindow(object):
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(990, 528)
+        MainWindow.showMaximized()
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(".\\src/images/logo.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
