@@ -137,7 +137,6 @@ class Ui_Adhesion_MainWindow(object):
                 with open(merged_pdf_path, 'wb') as merged_file:
                   merger.write(merged_file)
                   merger.close()
-                print(f'PDFs mesclados e salvos em {merged_pdf_path}')
 
 
     def setupUi(self, MainWindow):
@@ -146,6 +145,7 @@ class Ui_Adhesion_MainWindow(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(".\\src/images/logo.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
+        self.selected_pdf_path = None
         MainWindow.setStyleSheet("QScrollBar:vertical{\n"
 "    border: none;\n"
 "    background-color: rgb(170, 255, 255);\n"
