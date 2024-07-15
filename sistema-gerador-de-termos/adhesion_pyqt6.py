@@ -26,7 +26,7 @@ if not is_admin():
 class Ui_Adhesion_MainWindow(object):
     
     def GenerateAdhesionTerm(self):
-        pdf_path = f'{self.lineEdit_name.text().upper()} - {self.lineEdit_plain_type.text().upper()} - {self.lineEdit_plate.text()}.pdf'
+        pdf_path = f'{self.lineEdit_name.text().upper()} - {self.lineEdit_plain_type.text().upper()} - {self.lineEdit_plate.text().upper()}.pdf'
         self.cnv = canvas.Canvas(pdf_path)
 
 
