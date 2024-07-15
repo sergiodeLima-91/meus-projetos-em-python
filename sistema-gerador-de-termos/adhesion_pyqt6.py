@@ -1,9 +1,27 @@
+import os
+import sys
+import ctypes
 from PyQt6 import QtCore, QtGui, QtWidgets
 from select_file import SelectorPDF
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from PyPDF2 import PdfMerger, PdfReader
 from datetime import date
+
+
+# Admin  Verification
+def is_admin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
+
+if not is_admin():
+    
+    script = os.path.abspath(sys.argv[0])
+    params = ' '.join([script] + sys.argv[1:])
+    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, params, None, 1)
+    sys.exit(0)
 
 class Ui_Adhesion_MainWindow(object):
     
