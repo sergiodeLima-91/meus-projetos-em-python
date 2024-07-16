@@ -1,25 +1,31 @@
-import requests, webbrowser
-from PyQt6.QtWidgets import QMessageBox, QPushButton
+import requests
+import json
+from PyQt6 import QtWidgets, QtGui, QtCore
 
-def check_updates(cur_ver):
-      repo_url = "https://api.github.com/repos/sergiodeLima-91/Python_Tests_Repository/releases/latest"
-      response = requests.get(repo_url)
-      latest_version = response.json()["tag_name"]
+class UpdateChecker:
+    def __init__(self, current_version):
+        self.current_version = current_version
+        self.repo_url = "https://api.github.com/repos/sergiodeLima-91/Python_Tests_Repository/releases/latest"
 
-      if latest_version != cur_ver:
-            return latest_version
-      
-      return None
+    def check_for_updates(self):
+        response = requests.get(self.repo_url)
+        latest_release = json.loads(response.text)
+        latest_version = latest_release["tag_name"]
 
-def notify_user(new_ver_url):
-      msg = QMessageBox()
-      msg.setIcon(QMessageBox.Icon.Information)
-      msg.setText("Uma nova versão está disponível")
-      msg.setInformativeText(f"Baixe a nova versão aqui: {new_ver_url}")
+        if latest_version != self.current_version:
+            self.show_update_dialog(latest_release["html_url"])
 
-      download_button = QPushButton("Baixar Nova Versão")
-      download_button.clicked.connect(lambda: webbrowser.open(new_ver_url))
+    def show_update_dialog(self, download_url):
+        app = QtWidgets.QApplication([])
+        dialog = QtWidgets.QMessageBox()
+        dialog.setIcon(QtWidgets.QMessageBox.Icon.Information)
+        dialog.setWindowTitle("Atualização Disponível")
+        dialog.setText("Uma nova versão do aplicativo está disponível.")
+        dialog.setInformativeText("Deseja baixar a nova versão?")
+        dialog.setStandardButtons(QtWidgets.QMessageBox.StandardButton.Yes | QtWidgets.QMessageBox.StandardButton.No)
+        dialog.setDefaultButton(QtWidgets.QMessageBox.StandardButton.Yes)
+        
+        if dialog.exec() == QtWidgets.QMessageBox.StandardButton.Yes:
+            QtGui.QDesktopServices.openUrl(QtCore.QUrl(download_url))
+        app.exec()
 
-      msg.addButton(download_button, QMessageBox.ButtonRole.ActionRole)
-      
-      msg.exec()
