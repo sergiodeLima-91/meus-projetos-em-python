@@ -7,6 +7,7 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from PyPDF2 import PdfMerger, PdfReader
 from datetime import date
+from update_checker import UpdateChecker
 
 
 # Admin  Verification
@@ -1304,4 +1305,9 @@ if __name__ == "__main__":
     ui = Ui_Adhesion_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+
+    current_version = "1.1.2"
+    update_checker = UpdateChecker(current_version)
+    update_checker.check_for_updates()
+
     sys.exit(app.exec())
