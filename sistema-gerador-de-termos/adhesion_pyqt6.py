@@ -1306,7 +1306,7 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
 
-    current_version = "1.1.2"
+    current_version = "v1.1.2"
     update_checker = UpdateChecker(current_version)
     update_checker.check_for_updates()
 
