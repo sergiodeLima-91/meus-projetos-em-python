@@ -11,6 +11,7 @@ import sys
 import ctypes
 from PyQt6 import QtCore, QtGui, QtWidgets
 from select_file import SelectorPDF
+from wm_selector import WmSelector
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from PyPDF2 import PdfMerger, PdfReader
@@ -37,8 +38,7 @@ class Ui_Adhesion_MainWindow(object):
         pdf_path = f'{self.lineEdit_name.text().upper()} - {self.lineEdit_plain_type.text().upper()} - {self.lineEdit_plate.text().upper()}.pdf'
         self.cnv = canvas.Canvas(pdf_path)
 
-
-        self.cnv.drawImage(r'./src/images/wm_maximaprotecao.png', x=5, y=15, width=585, height=800)
+        self.cnv.drawImage(self.selected_img_path, x=5, y=15, width=585, height=800)
         self.cnv.drawImage(r'./src/images/logo.png',x=530,y=5,width=50,height=50, mask='auto')
 
         # CLIENT DATA:
@@ -1296,13 +1296,19 @@ class Ui_Adhesion_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
         # FUNCTIONS:
-        self.pushButton_insert_file.clicked.connect(self.show_file_dialog)
+        self.pushButton_insert_file.clicked.connect(self.selectPDF)
+        self.pushButton_insert_water_mark.clicked.connect(self.selectWb)
         self. pushButton_adhesion.clicked.connect(self.GenerateAdhesionTerm)
 
-    def show_file_dialog(self):
+    def selectPDF(self):
         self.selected = SelectorPDF()
         self.selected_pdf_path = self.selected.select_pdf_file()
         return self.selected_pdf_path
+    
+    def selectWb(self):
+        self.img_path = WmSelector()
+        self.selected_img_path = self.img_path.select_img_file()
+        return self.selected_img_path
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
