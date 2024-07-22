@@ -4,6 +4,7 @@ import ctypes
 from PyQt6 import QtCore, QtGui, QtWidgets
 from select_file import SelectorPDF
 from wm_selector import WmSelector
+from initials_selector import InitialsSelector
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from PyPDF2 import PdfMerger, PdfReader
@@ -107,8 +108,9 @@ class Ui_Adhesion_MainWindow(object):
 
         # SUBSCRIPTIONS:
         self.cnv.setFont('Times-Italic', 12)
-        self.cnv.drawImage(r'./src/images/rubrica_digitalizada_sem_fundo.png', x=120, y=55, width=50, height=50, mask='auto')
-        self.cnv.drawString(x=40, y=75, text=f'{self.lineEdit_razao_social.text().upper()}')
+        if self.initial_path != None:
+                self.cnv.drawImage(self.initial_path, x=80, y=55, width=50, height=50, mask='auto')
+                self.cnv.drawString(x=40, y=75, text=f'{self.lineEdit_razao_social.text().upper()}')
 
         #INSERT DATE
         day = date.today().day
@@ -165,6 +167,7 @@ class Ui_Adhesion_MainWindow(object):
         MainWindow.setWindowIcon(icon)
         self.selected_pdf_path = None
         self.selected_img_path = None
+        self.initial_path = None
         MainWindow.setStyleSheet("QScrollBar:vertical{\n"
 "    border: none;\n"
 "    background-color: rgb(170, 255, 255);\n"
@@ -1292,6 +1295,7 @@ class Ui_Adhesion_MainWindow(object):
         # FUNCTIONS:
         self.pushButton_insert_file.clicked.connect(self.selectPDF)
         self.pushButton_insert_water_mark.clicked.connect(self.selectWb)
+        self.pushButton_insert_initials.clicked.connect(self.selectInitial)
         self. pushButton_adhesion.clicked.connect(self.GenerateAdhesionTerm)
 
     def selectPDF(self):
@@ -1303,6 +1307,11 @@ class Ui_Adhesion_MainWindow(object):
         self.img_path = WmSelector()
         self.selected_img_path = self.img_path.select_img_file()
         return self.selected_img_path
+    
+    def selectInitial(self):
+        self.init_path = InitialsSelector()
+        self.initial_path = self.init_path.select_initial()  
+        return self.initial_path     
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
