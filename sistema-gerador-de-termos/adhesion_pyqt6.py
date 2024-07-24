@@ -2,6 +2,7 @@ import os
 import sys
 import ctypes
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import QDate
 from select_file import SelectorPDF
 from wm_selector import WmSelector
 from initials_selector import InitialsSelector
@@ -12,7 +13,7 @@ from datetime import date
 from update_checker import UpdateChecker
 
 # Admin  Verification
-"""def is_admin():
+def is_admin():
     try:
         return ctypes.windll.shell32.IsUserAnAdmin()
     except:
@@ -23,7 +24,7 @@ if not is_admin():
     script = os.path.abspath(sys.argv[0])
     params = ' '.join([script] + sys.argv[1:])
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, params, None, 1)
-    sys.exit(0)"""
+    sys.exit(0)
 
 class Ui_Adhesion_MainWindow(object):
     
@@ -73,7 +74,7 @@ class Ui_Adhesion_MainWindow(object):
         self.cnv.drawString(x=330, y=435, text='DADOS FINANCEIROS', mode=1)
         self.cnv.drawString(x=330, y=405, text=f'MENSALIDADE:   {self.lineEdit_monthly_payment.text().upper()}')
         self.cnv.drawString(x=330, y=390, text=f'ADESÃO:   {self.lineEdit_membership_fee.text().upper()}')
-        self.cnv.drawString(x=330, y=375, text=f'VENCIMENTO:   {self.dateEdit_due_date.text().upper()}')
+        self.cnv.drawString(x=330, y=375, text=f'VENCIMENTO:   {self.dateEdit_due.text().upper()}')
 
         # COVERAGE DATA:
         self.coverage = []
@@ -113,36 +114,72 @@ class Ui_Adhesion_MainWindow(object):
                 self.cnv.drawString(x=40, y=75, text=f'{self.lineEdit_razao_social.text().upper()}')
 
         #INSERT DATE
-        day = date.today().day
-        month = date.today().month
-        year = date.today().year
+        if self.current_date:
+                self.cur_date = self.dateEdit_current_date.date().currentDate()
+                day = self.cur_date.day()
+                month = self.cur_date.month()
+                year = self.cur_date.year()
 
-        month_current = str()
-        if month == 1:
-                month_current = 'JANEIRO'
-        elif month == 2:
-                month_current = 'FEVEREIRO'
-        elif month == 3:
-                month_current = 'MARCO'
-        elif month == 4:
-                month_current = 'ABRIL'
-        elif month == 5:
-                month_current = 'MAIO'
-        elif month == 6:
-                month_current = 'JUNHO'
-        elif month == 7:
-                month_current = 'JULHO'
-        elif month == 8:
-                month_current = 'AGOSTO'
-        elif month == 9:
-                month_current = 'SETEMBRO'
-        elif month == 10:
-                month_current = 'OUTUBRO'
-        elif month == 11:
-                month_current = 'NOVEMBRO'
-        elif month == 12:
-                month_current = 'DEZEMBRO'
-        self.cnv.drawString(x=340,y=52,text=f'{day} de {month_current} de {year}')
+                month_current = str()
+                if month == 1:
+                        month_current = 'JANEIRO'
+                elif month == 2:
+                        month_current = 'FEVEREIRO'
+                elif month == 3:
+                        month_current = 'MARCO'
+                elif month == 4:
+                        month_current = 'ABRIL'
+                elif month == 5:
+                        month_current = 'MAIO'
+                elif month == 6:
+                        month_current = 'JUNHO'
+                elif month == 7:
+                        month_current = 'JULHO'
+                elif month == 8:
+                        month_current = 'AGOSTO'
+                elif month == 9:
+                        month_current = 'SETEMBRO'
+                elif month == 10:
+                        month_current = 'OUTUBRO'
+                elif month == 11:
+                        month_current = 'NOVEMBRO'
+                elif month == 12:
+                        month_current = 'DEZEMBRO'
+                self.cnv.drawString(x=340,y=52,text=f'{day} de {month_current} de {year}')
+                self.current_date = None
+
+        else:
+                self.date = self.dateEdit_current_date.date()
+                day = self.date.day()
+                month = self.date.month()
+                year = self.date.year()
+
+                month_cor = str()
+                if month == 1:
+                        month_cor = 'JANEIRO'
+                elif month == 2:
+                        month_cor = 'FEVEREIRO'
+                elif month == 3:
+                        month_cor = 'MARCO'
+                elif month == 4:
+                        month_cor = 'ABRIL'
+                elif month == 5:
+                        month_cor = 'MAIO'
+                elif month == 6:
+                        month_cor = 'JUNHO'
+                elif month == 7:
+                        month_cor = 'JULHO'
+                elif month == 8:
+                        month_cor = 'AGOSTO'
+                elif month == 9:
+                        month_cor = 'SETEMBRO'
+                elif month == 10:
+                        month_cor = 'OUTUBRO'
+                elif month == 11:
+                        month_cor = 'NOVEMBRO'
+                elif month == 12:
+                        month_cor = 'DEZEMBRO'
+                self.cnv.drawString(x=340,y=52,text=f'{day} de {month_cor} de {year}')               
 
 
         self.cnv.save()
@@ -168,6 +205,7 @@ class Ui_Adhesion_MainWindow(object):
         self.selected_pdf_path = None
         self.selected_img_path = None
         self.initial_path = None
+        self.current_date = None
         MainWindow.setStyleSheet("QScrollBar:vertical{\n"
 "    border: none;\n"
 "    background-color: rgb(170, 255, 255);\n"
@@ -1122,22 +1160,55 @@ class Ui_Adhesion_MainWindow(object):
         self.frame_playndate.setObjectName("frame_playndate")
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.frame_playndate)
         self.verticalLayout_12.setObjectName("verticalLayout_12")
-        self.label_due_date = QtWidgets.QLabel(parent=self.frame_playndate)
-        self.label_due_date.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.label_due = QtWidgets.QLabel(parent=self.frame_playndate)
+        self.label_due.setMaximumSize(QtCore.QSize(16777215, 30))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
-        self.label_due_date.setFont(font)
-        self.label_due_date.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.label_due_date.setObjectName("label_due_date")
-        self.verticalLayout_12.addWidget(self.label_due_date)
-        self.dateEdit_due_date = QtWidgets.QDateEdit(parent=self.frame_playndate)
+        self.label_due.setFont(font)
+        self.label_due.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.label_due.setObjectName("label_due")
+        self.verticalLayout_12.addWidget(self.label_due)
+        self.dateEdit_due = QtWidgets.QDateEdit(parent=self.frame_playndate)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
-        self.dateEdit_due_date.setFont(font)
-        self.dateEdit_due_date.setStyleSheet("")
-        self.dateEdit_due_date.setObjectName("dateEdit_due_date")
-        self.verticalLayout_12.addWidget(self.dateEdit_due_date)
+        self.dateEdit_due.setFont(font)
+        self.dateEdit_due.setStyleSheet("")
+        self.dateEdit_due.setObjectName("dateEdit_due")
+        self.verticalLayout_12.addWidget(self.dateEdit_due)
+        self.label_current_date = QtWidgets.QLabel(parent=self.frame_playndate)
+        self.label_current_date.setMaximumSize(QtCore.QSize(16777215, 30))
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_current_date.setFont(font)
+        self.label_current_date.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.label_current_date.setObjectName("label_current_date")
+        self.verticalLayout_12.addWidget(self.label_current_date)
+        self.dateEdit_current_date = QtWidgets.QDateEdit(parent=self.frame_playndate)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        self.dateEdit_current_date.setFont(font)
+        self.dateEdit_current_date.setStyleSheet("")
+        self.dateEdit_current_date.setObjectName("dateEdit_current_date")
+        self.verticalLayout_12.addWidget(self.dateEdit_current_date)
+        self.pushButton_current_date = QtWidgets.QPushButton(parent=self.frame_playndate)
+        self.pushButton_current_date.setStyleSheet("QPushButton{\n"
+"    border: 3px solid rgb(10, 10, 10);\n"
+"    border-radius: 5px;\n"
+"    background-color: rgb(99, 181, 97);\n"
+"    padding: 5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    border: 2px solid rgb(150,150,150);\n"
+"     font: 12px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    border: 2px solid rgb(50, 50, 255);\n"
+"    font: 10px;\n"
+"}")
+        self.pushButton_current_date.setObjectName("pushButton_current_date")
+        self.verticalLayout_12.addWidget(self.pushButton_current_date)
         self.verticalLayout_6.addWidget(self.frame_playndate)
         self.frame_playndate_2 = QtWidgets.QFrame(parent=self.frame_financial)
         self.frame_playndate_2.setMinimumSize(QtCore.QSize(0, 0))
@@ -1297,6 +1368,7 @@ class Ui_Adhesion_MainWindow(object):
         self.pushButton_insert_water_mark.clicked.connect(self.selectWb)
         self.pushButton_insert_initials.clicked.connect(self.selectInitial)
         self. pushButton_adhesion.clicked.connect(self.GenerateAdhesionTerm)
+        self.pushButton_current_date.clicked.connect(self.insertCurrentDate)
 
     def selectPDF(self):
         self.selected = SelectorPDF()
@@ -1311,11 +1383,15 @@ class Ui_Adhesion_MainWindow(object):
     def selectInitial(self):
         self.init_path = InitialsSelector()
         self.initial_path = self.init_path.select_initial()  
-        return self.initial_path     
+        return self.initial_path
+
+    def insertCurrentDate(self):
+        self.current_date = True
+        return self.current_date   
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Termo de Adesão"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Gerador de Termo de Adesão - v1.1.3"))
         self.label_coverage.setText(_translate("MainWindow", "COBERTURAS / PLANO"))
         self.checkBox_monitoring.setText(_translate("MainWindow", "Monitoramento e Rastreamento"))
         self.checkBox_robbery.setText(_translate("MainWindow", "Roubo"))
@@ -1363,7 +1439,9 @@ class Ui_Adhesion_MainWindow(object):
         self.label_finance.setText(_translate("MainWindow", "FINANCEIRO"))
         self.lineEdit_monthly_payment.setPlaceholderText(_translate("MainWindow", "MENSALIDADE"))
         self.lineEdit_membership_fee.setPlaceholderText(_translate("MainWindow", "TAXA DE ADESÃO"))
-        self.label_due_date.setText(_translate("MainWindow", "Data de Vencimento"))
+        self.label_due.setText(_translate("MainWindow", "Data de Vencimento"))
+        self.label_current_date.setText(_translate("MainWindow", "Data da Adesão"))
+        self.pushButton_current_date.setText(_translate("MainWindow", "INSERIR DATA DE HOJE"))
         self.label_formapagto.setText(_translate("MainWindow", "Forma de Pagamento"))
         self.label_company_data.setText(_translate("MainWindow", "DADOS DA EMPRESA"))
         self.lineEdit_razao_social.setPlaceholderText(_translate("MainWindow", "RAZÃO SOCIAL"))
@@ -1385,8 +1463,8 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
 
-    #current_version = "v1.1.2"
-    #update_checker = UpdateChecker(current_version)
-    #pdate_checker.check_for_updates()
+    current_version = "v1.1.3"
+    update_checker = UpdateChecker(current_version)
+    update_checker.check_for_updates()
 
     sys.exit(app.exec())
