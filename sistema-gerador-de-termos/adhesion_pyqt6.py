@@ -367,6 +367,7 @@ class Ui_Adhesion_MainWindow(object):
         font.setWeight(75)
         self.label_coverage.setFont(font)
         self.label_coverage.setStyleSheet("border: no-border")
+        self.label_coverage.setStyleSheet("font-weight: bold")
         self.label_coverage.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_coverage.setObjectName("label_coverage")
         self.verticalLayout.addWidget(self.label_coverage)
@@ -559,6 +560,7 @@ class Ui_Adhesion_MainWindow(object):
         self.frame_client_data_outside.setMaximumSize(QtCore.QSize(300, 16777215))
         self.frame_client_data_outside.setStyleSheet("background-image: url(./src/images/background-blue-1715x980.jpg);\n"
 "border-radius: 8px;")
+        self.label_coverage.setStyleSheet("font-weight: bold")
         self.frame_client_data_outside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_client_data_outside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_client_data_outside.setObjectName("frame_client_data_outside")
@@ -585,6 +587,7 @@ class Ui_Adhesion_MainWindow(object):
         font.setWeight(75)
         self.label_clientdata.setFont(font)
         self.label_clientdata.setStyleSheet("border:no")
+        self.label_clientdata.setStyleSheet("font-weight: bold")
         self.label_clientdata.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_clientdata.setObjectName("label_clientdata")
         self.verticalLayout_5.addWidget(self.label_clientdata)
@@ -843,6 +846,7 @@ class Ui_Adhesion_MainWindow(object):
 "    border: 2px solid rgb(36, 183, 253);\n"
 "    border-radius: 8px;\n"
 "}")
+        self.label_coverage.setStyleSheet("font-weight: bold")
         self.frame_vehicle_plain_data_inside.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_vehicle_plain_data_inside.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_vehicle_plain_data_inside.setObjectName("frame_vehicle_plain_data_inside")
@@ -858,6 +862,7 @@ class Ui_Adhesion_MainWindow(object):
         font.setWeight(75)
         self.label_vehicle.setFont(font)
         self.label_vehicle.setStyleSheet("border:no")
+        self.label_vehicle.setStyleSheet("font-weight: bold")
         self.label_vehicle.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_vehicle.setObjectName("label_vehicle")
         self.verticalLayout_3.addWidget(self.label_vehicle)
@@ -1033,19 +1038,20 @@ class Ui_Adhesion_MainWindow(object):
         self.frame_contract_inside.setObjectName("frame_contract_inside")
         self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.frame_contract_inside)
         self.verticalLayout_11.setObjectName("verticalLayout_11")
-        self.label_textArea = QtWidgets.QLabel(parent=self.frame_contract_inside)
-        self.label_textArea.setMinimumSize(QtCore.QSize(0, 0))
-        self.label_textArea.setMaximumSize(QtCore.QSize(16777215, 20))
+        self.label_additional_files = QtWidgets.QLabel(parent=self.frame_contract_inside)
+        self.label_additional_files.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_additional_files.setMaximumSize(QtCore.QSize(16777215, 20))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
-        self.label_textArea.setFont(font)
-        self.label_textArea.setStyleSheet("border: no")
-        self.label_textArea.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_textArea.setObjectName("label_textArea")
-        self.verticalLayout_11.addWidget(self.label_textArea)
+        self.label_additional_files.setFont(font)
+        self.label_additional_files.setStyleSheet("border: no")
+        self.label_additional_files.setStyleSheet("font-weight: bold")
+        self.label_additional_files.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_additional_files.setObjectName("label_additional_files")
+        self.verticalLayout_11.addWidget(self.label_additional_files)
         self.pushButton_insert_file = QtWidgets.QPushButton(parent=self.frame_contract_inside)
         self.pushButton_insert_file.setStyleSheet("QPushButton{\n"
 "    border: 3px solid rgb(10, 10, 10);\n"
@@ -1055,7 +1061,7 @@ class Ui_Adhesion_MainWindow(object):
 "}\n"
 "QPushButton:hover{\n"
 "    border: 2px solid rgb(150,150,150);\n"
-"     font: 12px;\n"
+"     font: 13px;\n"
 "}\n"
 "QPushButton:pressed{\n"
 "    border: 2px solid rgb(50, 50, 255);\n"
@@ -1072,7 +1078,7 @@ class Ui_Adhesion_MainWindow(object):
 "}\n"
 "QPushButton:hover{\n"
 "    border: 2px solid rgb(150,150,150);\n"
-"     font: 12px;\n"
+"     font: 13px;\n"
 "}\n"
 "QPushButton:pressed{\n"
 "    border: 2px solid rgb(50, 50, 255);\n"
@@ -1115,6 +1121,7 @@ class Ui_Adhesion_MainWindow(object):
         self.label_finance.setStyleSheet("QLabel{\n"
 "    border:no;\n"
 "}")
+        self.label_finance.setStyleSheet("font-weight: bold")        
         self.label_finance.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_finance.setObjectName("label_finance")
         self.verticalLayout_6.addWidget(self.label_finance)
@@ -1201,7 +1208,7 @@ class Ui_Adhesion_MainWindow(object):
 "}\n"
 "QPushButton:hover{\n"
 "    border: 2px solid rgb(150,150,150);\n"
-"     font: 12px;\n"
+"     font: 13px;\n"
 "}\n"
 "QPushButton:pressed{\n"
 "    border: 2px solid rgb(50, 50, 255);\n"
@@ -1252,7 +1259,9 @@ class Ui_Adhesion_MainWindow(object):
         self.frame_company_data = QtWidgets.QFrame(parent=self.frame_company_data_outside_2)
         self.frame_company_data.setMinimumSize(QtCore.QSize(150, 118))
         self.frame_company_data.setStyleSheet("QFrame{\n"
-"    border: 2px solid rgb(36, 183, 253);\n"
+"    background-color: rgb(85, 170, 255);\n"
+"    border: no-border;\n"
+"    border-radius: 5px;\n"
 "    border-radius: 8px;\n"
 "}")
         self.frame_company_data.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
@@ -1269,14 +1278,13 @@ class Ui_Adhesion_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_company_data.setFont(font)
-        self.label_company_data.setStyleSheet("border:no")
         self.label_company_data.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_company_data.setObjectName("label_company_data")
         self.verticalLayout_13.addWidget(self.label_company_data)
         self.lineEdit_razao_social = QtWidgets.QLineEdit(parent=self.frame_company_data)
         self.lineEdit_razao_social.setStyleSheet("QLineEdit{\n"
 "    \n"
-"    background-color: rgb(103, 229, 254);\n"
+"    background-color: rgb(110, 200, 255);\n"
 "    border: 1px solid rgb(10,10,10);\n"
 "    border-radius: 5px;\n"
 "    padding: 2px;\n"
@@ -1287,18 +1295,19 @@ class Ui_Adhesion_MainWindow(object):
 "QLineEdit:focus{\n"
 "    border: 2px solid rgb(100, 100, 255);\n"
 "}")
+        self.label_company_data.setStyleSheet("font-weight: bold")  
         self.lineEdit_razao_social.setObjectName("lineEdit_razao_social")
         self.verticalLayout_13.addWidget(self.lineEdit_razao_social)
         self.pushButton_insert_initials = QtWidgets.QPushButton(parent=self.frame_company_data)
         self.pushButton_insert_initials.setStyleSheet("QPushButton{\n"
 "    border: 3px solid rgb(10, 10, 10);\n"
 "    border-radius: 5px;\n"
-"    background-color: rgb(100, 230, 253);\n"
+"    background-color: rgb(30, 150, 180);\n"
 "    padding: 5px;\n"
 "}\n"
 "QPushButton:hover{\n"
 "    border: 2px solid rgb(150,150,150);\n"
-"     font: 12px;\n"
+"    font: 13px;\n"
 "}\n"
 "QPushButton:pressed{\n"
 "    border: 2px solid rgb(50, 50, 255);\n"
@@ -1415,6 +1424,7 @@ class Ui_Adhesion_MainWindow(object):
         self.lineEdit_phone1.setPlaceholderText(_translate("MainWindow", "TELEFONE 1"))
         self.lineEdit_phone2.setPlaceholderText(_translate("MainWindow", "TELEFONE 2"))
         self.label_adress.setText(_translate("MainWindow", "ENDEREÇO"))
+        self.label_adress.setStyleSheet("font-weight: bold;")
         self.lineEdit_street.setPlaceholderText(_translate("MainWindow", "RUA/AV"))
         self.lineEdit_number.setPlaceholderText(_translate("MainWindow", "NUMERO"))
         self.lineEdit_comp.setPlaceholderText(_translate("MainWindow", "COMPLEMENTO"))
@@ -1433,17 +1443,21 @@ class Ui_Adhesion_MainWindow(object):
         self.lineEdit_fipe_value.setPlaceholderText(_translate("MainWindow", "FALOR - FIPE"))
         self.lineEdit_fipe_code.setPlaceholderText(_translate("MainWindow", "COD - FIPE"))
         self.lineEdit_hora.setPlaceholderText(_translate("MainWindow", "HORARIO DE EVENTOS"))
-        self.label_textArea.setText(_translate("MainWindow", "DADOS ADICIONAIS"))
+        self.label_additional_files.setText(_translate("MainWindow", "DADOS ADICIONAIS"))
         self.pushButton_insert_file.setText(_translate("MainWindow", "CONTRATO (PDF)"))
         self.pushButton_insert_water_mark.setText(_translate("MainWindow", "MARCA D´ÁGUA (905 x 1208)"))
         self.label_finance.setText(_translate("MainWindow", "FINANCEIRO"))
         self.lineEdit_monthly_payment.setPlaceholderText(_translate("MainWindow", "MENSALIDADE"))
         self.lineEdit_membership_fee.setPlaceholderText(_translate("MainWindow", "TAXA DE ADESÃO"))
         self.label_due.setText(_translate("MainWindow", "Data de Vencimento"))
+        self.label_due.setStyleSheet("font-weight: bold;")
         self.label_current_date.setText(_translate("MainWindow", "Data da Adesão"))
+        self.label_current_date.setStyleSheet("font-weight: bold;")
         self.pushButton_current_date.setText(_translate("MainWindow", "INSERIR DATA DE HOJE"))
         self.label_formapagto.setText(_translate("MainWindow", "Forma de Pagamento"))
+        self.label_formapagto.setStyleSheet("font-weight: bold;")
         self.label_company_data.setText(_translate("MainWindow", "DADOS DA EMPRESA"))
+        self.label_company_data.setStyleSheet("border: no-border; font-weight: bold;")
         self.lineEdit_razao_social.setPlaceholderText(_translate("MainWindow", "RAZÃO SOCIAL"))
         self.pushButton_insert_initials.setText(_translate("MainWindow", "INSERIR RUBRICA (165 x 169)"))
         self.pushButton_adhesion.setText(_translate("MainWindow", "GERAR TERMO"))
