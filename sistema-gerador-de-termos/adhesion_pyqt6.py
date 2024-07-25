@@ -1243,6 +1243,15 @@ class Ui_Adhesion_MainWindow(object):
 "    border-radius: 2px;\n"
 "}")
         self.comboBox_formapagto.setObjectName("comboBox_formapagto")
+        self.comboBox_formapagto.addItems([
+               "BOLETO",
+               "CARTÃO DE CRÉDITO",
+               "CHEQUE", 
+               "DINHEIRO",
+               "NÃO INFORMADO",
+               "TRANSFERÂNCIA"                           
+        ])
+        self.comboBox_formapagto.setCurrentText("NÃO INFORMADO")
         self.verticalLayout_8.addWidget(self.comboBox_formapagto)
         self.verticalLayout_6.addWidget(self.frame_playndate_2)
         self.verticalLayout_10.addWidget(self.frame_financial)
