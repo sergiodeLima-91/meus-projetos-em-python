@@ -2,14 +2,12 @@ import os
 import sys
 import ctypes
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import QDate
 from select_file import SelectorPDF
 from wm_selector import WmSelector
 from initials_selector import InitialsSelector
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from PyPDF2 import PdfMerger, PdfReader
-from datetime import date
 from update_checker import UpdateChecker
 
 # Admin  Verification
@@ -75,6 +73,7 @@ class Ui_Adhesion_MainWindow(object):
         self.cnv.drawString(x=330, y=405, text=f'MENSALIDADE:   {self.lineEdit_monthly_payment.text().upper()}')
         self.cnv.drawString(x=330, y=390, text=f'ADESÃO:   {self.lineEdit_membership_fee.text().upper()}')
         self.cnv.drawString(x=330, y=375, text=f'VENCIMENTO:   {self.dateEdit_due.text().upper()}')
+        self.cnv.drawString(x=330, y=360, text=f'FORMA DE PAGTO:  {self.comboBox_formapagto.currentText()}')
 
         # COVERAGE DATA:
         self.coverage = []
@@ -109,9 +108,10 @@ class Ui_Adhesion_MainWindow(object):
 
         # SUBSCRIPTIONS:
         self.cnv.setFont('Times-Italic', 12)
+        self.cnv.drawString(x=40, y=75, text=f'{self.lineEdit_razao_social.text().upper()}')
         if self.initial_path != None:
                 self.cnv.drawImage(self.initial_path, x=80, y=55, width=50, height=50, mask='auto')
-                self.cnv.drawString(x=40, y=75, text=f'{self.lineEdit_razao_social.text().upper()}')
+                
 
         #INSERT DATE
         if self.current_date:
@@ -1010,22 +1010,6 @@ class Ui_Adhesion_MainWindow(object):
 "}")
         self.lineEdit_fipe_code.setObjectName("lineEdit_fipe_code")
         self.verticalLayout_3.addWidget(self.lineEdit_fipe_code)
-        self.lineEdit_hora = QtWidgets.QLineEdit(parent=self.frame_vehicle_plain_data_inside)
-        self.lineEdit_hora.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    background-color: rgb(148, 148, 148);\n"
-"    border: 1px solid rgb(10,10,10);\n"
-"    border-radius: 5px;\n"
-"    padding: 2px;\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 1px solid rgb(150,150,150);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(100, 100, 255);\n"
-"}")
-        self.lineEdit_hora.setObjectName("lineEdit_hora")
-        self.verticalLayout_3.addWidget(self.lineEdit_hora)
         self.verticalLayout_9.addWidget(self.frame_vehicle_plain_data_inside)
         self.frame_contract_inside = QtWidgets.QFrame(parent=self.frame_contract_outside)
         self.frame_contract_inside.setMinimumSize(QtCore.QSize(1, 221))
@@ -1249,7 +1233,7 @@ class Ui_Adhesion_MainWindow(object):
                "CHEQUE", 
                "DINHEIRO",
                "NÃO INFORMADO",
-               "TRANSFERÂNCIA"                           
+               "TRANSFERÊNCIA"                           
         ])
         self.comboBox_formapagto.setCurrentText("NÃO INFORMADO")
         self.verticalLayout_8.addWidget(self.comboBox_formapagto)
@@ -1451,7 +1435,6 @@ class Ui_Adhesion_MainWindow(object):
         self.lineEdit_renavam.setPlaceholderText(_translate("MainWindow", "RENAVAM"))
         self.lineEdit_fipe_value.setPlaceholderText(_translate("MainWindow", "FALOR - FIPE"))
         self.lineEdit_fipe_code.setPlaceholderText(_translate("MainWindow", "COD - FIPE"))
-        self.lineEdit_hora.setPlaceholderText(_translate("MainWindow", "HORARIO DE EVENTOS"))
         self.label_additional_files.setText(_translate("MainWindow", "DADOS ADICIONAIS"))
         self.pushButton_insert_file.setText(_translate("MainWindow", "CONTRATO (PDF)"))
         self.pushButton_insert_water_mark.setText(_translate("MainWindow", "MARCA D´ÁGUA (905 x 1208)"))
