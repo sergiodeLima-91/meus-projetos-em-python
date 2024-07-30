@@ -19,13 +19,20 @@ class UpdateChecker:
         app = QtWidgets.QApplication([])
         dialog = QtWidgets.QMessageBox()
         dialog.setIcon(QtWidgets.QMessageBox.Icon.Information)
+        icon = QtGui.QIcon("./src/images/logo.ico")
+        dialog.setWindowIcon(icon)
         dialog.setWindowTitle("Atualização Disponível")
         dialog.setText("Uma nova versão do aplicativo está disponível.")
         dialog.setInformativeText("Deseja baixar a nova versão?")
         dialog.setStandardButtons(QtWidgets.QMessageBox.StandardButton.Yes | QtWidgets.QMessageBox.StandardButton.No)
         dialog.setDefaultButton(QtWidgets.QMessageBox.StandardButton.Yes)
         
+        # Alterando o texto dos botões
+        button_yes = dialog.button(QtWidgets.QMessageBox.StandardButton.Yes)
+        button_yes.setText("Sim")
+        button_no = dialog.button(QtWidgets.QMessageBox.StandardButton.No)
+        button_no.setText("Não")
+        
         if dialog.exec() == QtWidgets.QMessageBox.StandardButton.Yes:
             QtGui.QDesktopServices.openUrl(QtCore.QUrl(download_url))
         app.exec()
-
