@@ -11,7 +11,7 @@ from PyPDF2 import PdfMerger, PdfReader
 from update_checker import UpdateChecker
 
 # Admin  Verification
-"""def is_admin():
+def is_admin():
     try:
         return ctypes.windll.shell32.IsUserAnAdmin()
     except:
@@ -22,7 +22,7 @@ if not is_admin():
     script = os.path.abspath(sys.argv[0])
     params = ' '.join([script] + sys.argv[1:])
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, params, None, 1)
-    sys.exit(0)"""
+    sys.exit(0)
 
 class Ui_Adhesion_MainWindow(object):
     
