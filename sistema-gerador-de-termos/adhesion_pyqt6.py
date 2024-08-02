@@ -11,7 +11,7 @@ from PyPDF2 import PdfMerger, PdfReader
 from update_checker import UpdateChecker
 
 # Admin  Verification
-def is_admin():
+"""def is_admin():
     try:
         return ctypes.windll.shell32.IsUserAnAdmin()
     except:
@@ -22,7 +22,7 @@ if not is_admin():
     script = os.path.abspath(sys.argv[0])
     params = ' '.join([script] + sys.argv[1:])
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, params, None, 1)
-    sys.exit(0)
+    sys.exit(0)"""
 
 class Ui_Adhesion_MainWindow(object):
     
@@ -30,7 +30,7 @@ class Ui_Adhesion_MainWindow(object):
         pdf_path = f'{self.lineEdit_name.text().upper()} - {self.lineEdit_plain_type.text().upper()} - {self.lineEdit_plate.text().upper()}.pdf'
         self.cnv = canvas.Canvas(pdf_path)
 
-        if self.selected_img_path != None:
+        if self.selected_img_path:
                 self.cnv.drawImage(self.selected_img_path, x=5, y=15, width=585, height=800)
                 self.cnv.drawImage(r'./src/images/logo.png',x=530,y=5,width=50,height=50, mask='auto')
 
@@ -109,7 +109,7 @@ class Ui_Adhesion_MainWindow(object):
         # SUBSCRIPTIONS:
         self.cnv.setFont('Times-Italic', 12)
         self.cnv.drawString(x=40, y=75, text=f'{self.lineEdit_razao_social.text().upper()}')
-        if self.initial_path != None:
+        if self.initial_path:
                 self.cnv.drawImage(self.initial_path, x=80, y=55, width=50, height=50, mask='auto')
                 
 
